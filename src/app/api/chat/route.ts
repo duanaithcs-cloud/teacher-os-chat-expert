@@ -140,12 +140,17 @@ async function callLLMSequence(
   const attempted: string[] = [];
   let lastError = "";
 
-  for (const attempt of chain) {
+  // Cấp phát timeout theo thứ tự ưu tiên: tầng Primary được ưu tiên thời gian
+  // sinh bài dài (4096 tokens); tổng 25 + 18 + 15 = 58s, giữ dưới trần 60s Vercel Hobby.
+  const TIMEOUTS_MS = [25000, 18000, 15000];
+
+  for (let i = 0; i < chain.length; i++) {
+    const attempt = chain[i];
     attempted.push(attempt.model);
     try {
       const controller = new AbortController();
-      // 18s/tầng × 3 tầng = 54s, vừa khít trần 60s của Vercel Hobby.
-      const timer = setTimeout(() => controller.abort(), 18000);
+      const timeoutMs = TIMEOUTS_MS[i] ?? 18000;
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
 
       const res = await fetch(`${baseUrl}/chat/completions`, {
         method: "POST",
@@ -157,7 +162,8 @@ async function callLLMSequence(
           model: attempt.model,
           messages,
           temperature: 0.2,
-          max_tokens: 2000,
+          // 4096 tokens đủ cho bài phân tích HSG 4 khối, tránh cắt ngang giữa chừng.
+          max_tokens: 4096,
         }),
         signal: controller.signal,
       });
