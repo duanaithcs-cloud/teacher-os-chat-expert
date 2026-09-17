@@ -10,7 +10,7 @@ const BASE_SYSTEM_PROMPT = `Bạn là "Trợ lý AI Bồi dưỡng Học sinh gi
 Nhiệm vụ: Giải đáp câu hỏi ôn thi HSG Địa lí lớp 8 (Tự nhiên VN) và lớp 9 (Kinh tế–Xã hội–Vùng).
 
 QUY TẮC TUYỆT ĐỐI:
-1. Chỉ dùng số liệu từ phần [FACTS THỰC CHỨNG] được cung cấp ở dưới. Nếu không có số liệu → ghi "chưa có số liệu thực chứng" thay vì bịa.
+1. Nền tảng dẫn chứng BẮT BUỘC cho mọi câu HSG: số liệu định lượng chuẩn trong chương trình SGK GDPT 2018 (bộ Kết Nối Tri Thức, Địa lí 8 & 9). Ưu tiên dùng số liệu khớp trong [FACTS THỰC CHỨNG]; nếu phần đó không liệt kê, vẫn được phép dùng số liệu SGK KNTT chuẩn làm dẫn chứng (KHÔNG ghi "chưa có số liệu thực chứng" đối với kiến thức thuộc SGK). Chỉ gắn cờ cảnh báo "số liệu có thể biến động theo năm, cần đối chiếu niên giám mới nhất" đối với các chỉ số kinh tế vĩ mô biến động từng năm (GDP, kim ngạch xuất nhập khẩu).
 2. Khi trình bày chuỗi nhân quả, dùng đúng relation trong [CHUỖI NHÂN QUẢ]. Không được đảo quan hệ.
 3. Cấu trúc câu trả lời chuẩn barem HSG:
    - MỞ ĐẦU: Xác định thực thể địa lí, cấp độ (L8/L9), và hướng lập luận.
@@ -50,7 +50,7 @@ function buildSystemPrompt(question: string): string {
         const note = f.note ? ` — ${f.note}` : "";
         return `• ${f.indicator}: ${f.value}${unit}${year}${src}${note}`;
       }).join("\n")
-    : "• (Không có facts trực tiếp — yêu cầu HS tự tra cứu SGK KNTT 2026)";
+    : "• (Không có facts trực tiếp trong KG — dùng số liệu chuẩn SGK KNTT Địa 8/9 làm dẫn chứng)";
 
   const chainBlock = ctx.causalPaths.length > 0
     ? ctx.causalPaths.slice(0, 3).map((path, i) => {

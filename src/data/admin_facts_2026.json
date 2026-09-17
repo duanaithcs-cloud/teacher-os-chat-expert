@@ -310,12 +310,13 @@
     {
       "id": "fact_song_ngoi_tong_luong_nuoc",
       "indicator": "Tổng lượng nước sông ngòi",
-      "value": "hơn 800",
+      "value": "839,7",
       "unit": "tỉ m3/năm",
       "lesson": "Bài 6. Thủy văn Việt Nam",
       "source": "SGK KNTT 2026",
       "status": "approved_kntt",
-      "node_ref": "song ngoi nhieu nuoc giau phu sa"
+      "node_ref": "song ngoi nhieu nuoc giau phu sa",
+      "note": "Ngoại biên 63%, nội địa 37%"
     },
     {
       "id": "fact_song_ngoi_phu_sa",
@@ -2676,6 +2677,46 @@
       "source": "SGK KNTT 2026",
       "status": "approved_kntt",
       "node_ref": "cua_khau_cau_treo"
+    },
+    {
+      "id": "fact_song_ngoi_ty_le_ngoai_bien",
+      "indicator": "Tỉ lệ lượng nước sông từ phần ngoại biên",
+      "value": "63",
+      "unit": "%",
+      "lesson": "Bài 6. Thủy văn Việt Nam",
+      "source": "SGK KNTT 2026",
+      "status": "approved_kntt",
+      "node_ref": "song ngoi nhieu nuoc giau phu sa"
+    },
+    {
+      "id": "fact_song_ngoi_ty_le_noi_dia",
+      "indicator": "Tỉ lệ lượng nước sông nội địa",
+      "value": "37",
+      "unit": "%",
+      "lesson": "Bài 6. Thủy văn Việt Nam",
+      "source": "SGK KNTT 2026",
+      "status": "approved_kntt",
+      "node_ref": "song ngoi nhieu nuoc giau phu sa"
+    },
+    {
+      "id": "fact_song_ngoi_mua_lu_ty_le",
+      "indicator": "Tỉ lệ dòng chảy mùa lũ",
+      "value": "70 - 80",
+      "unit": "% tổng lượng nước năm",
+      "lesson": "Bài 6. Thủy văn Việt Nam",
+      "source": "SGK KNTT 2026",
+      "status": "approved_kntt",
+      "node_ref": "thuy che song ngoi co hai mua"
+    },
+    {
+      "id": "fact_mua_diem_lon",
+      "indicator": "Lượng mưa ở các điểm mưa lớn",
+      "value": "trên 3000 - 4000",
+      "unit": "mm/năm",
+      "lesson": "Bài 4. Khí hậu Việt Nam",
+      "source": "SGK KNTT 2026",
+      "status": "approved_kntt",
+      "node_ref": "tinh chat nhiet doi am gio mua"
     }
   ]
 }
