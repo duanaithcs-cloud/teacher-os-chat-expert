@@ -3563,6 +3563,118 @@
         "NTB"
       ],
       "description": "Vùng có diện tích lớn nhất cả nước, chuyên canh cây công nghiệp lâu năm (cà phê, hồ tiêu, cao su) và kinh tế biển; gồm dải duyên hải Nam Trung Bộ và cao nguyên Tây Nguyên."
+    },
+    "nen_co_hoa_nam": {
+      "label": "Nền cổ Hoa Nam (Trung Quốc)",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "nen_co_vom_song_chay": {
+      "label": "Nền cổ Vòm sông Chảy",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "nen_co_kon_tum": {
+      "label": "Khối nền cổ Kon Tum",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "van_dong_anpo_himalaya": {
+      "label": "Vận động tạo núi An-po – Hi-ma-lay-a (Tân kiến tạo)",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "canh_cung_song_gam": {
+      "label": "Cánh cung Sông Gâm",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "canh_cung_ngan_son": {
+      "label": "Cánh cung Ngân Sơn",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "canh_cung_bac_son": {
+      "label": "Cánh cung Bắc Sơn",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "canh_cung_dong_trieu": {
+      "label": "Cánh cung Đông Triều",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "tin_phong_nam_ban_cau": {
+      "label": "Tín phong Nam bán cầu",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "ap_cao_can_chi_tuyen_nam_ban_cau": {
+      "label": "Áp cao cận chí tuyến Nam bán cầu",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "mua_tieu_man": {
+      "label": "Mưa Tiểu mãn",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "bao_bien_dong": {
+      "label": "Bão và áp thấp nhiệt đới trên Biển Đông",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "he_thong_song_hong": {
+      "label": "Hệ thống sông Hồng",
+      "lesson": "Chuyên đề HSG: Sông ngòi Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "gio_mua_mua_ha": {
+      "label": "Gió mùa mùa hạ",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "gio_dong_nam_bien": {
+      "label": "Gió Đông Nam từ biển",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
+    },
+    "dia_hinh_long_mang_cao_bang_lang_son": {
+      "label": "Địa hình lòng máng Cao Bằng – Lạng Sơn",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "grade": "L9",
+      "category": "Tự nhiên",
+      "status": "approved_kntt"
     }
   },
   "edges": [
@@ -7121,6 +7233,116 @@
       "pedagogical_use": "HSG: giải thích nguồn ti-tan sa khoáng ven biển Nam Trung Bộ",
       "kind": "bridge",
       "status": "pending_audit"
+    },
+    {
+      "source": "van_dong_anpo_himalaya",
+      "target": "huong_nghieng_dia_hinh_thap_dan_tay_bac_dong_nam",
+      "relation": "quy định",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "level": null,
+      "note": "VN nằm rìa đông nam của vận động, xa tâm nâng nên phía tây bắc nâng mạnh hơn đông nam.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "nen_co_hoa_nam",
+      "target": "canh_cung_song_gam",
+      "relation": "định hướng",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "level": null,
+      "note": "Nền cổ Hoa Nam vững chắc định hướng các cánh cung vùng Đông Bắc.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "nen_co_vom_song_chay",
+      "target": "canh_cung_song_gam",
+      "relation": "định hướng",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "level": null,
+      "note": null,
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "nen_co_kon_tum",
+      "target": "huong_vong_cung_vung_nui_dong_bac_va_truong_son_nam",
+      "relation": "quy định",
+      "lesson": "Chuyên đề HSG: Địa hình Việt Nam",
+      "level": null,
+      "note": "Các mạch núi nâng lên ôm lấy khối nền cổ Kon Tum tạo hướng vòng cung Trường Sơn Nam.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "day hoang lien son",
+      "target": "gio mua dong bac",
+      "relation": "chắn gió",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "level": null,
+      "note": "Hướng TB-ĐN của Hoàng Liên Sơn chắn gió mùa Đông Bắc, Tây Bắc mùa đông bớt lạnh, đến muộn, kết thúc sớm.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "canh_cung_dong_trieu",
+      "target": "gio_dong_nam_bien",
+      "relation": "đón gió",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "level": null,
+      "note": "Mùa hạ cánh cung Đông Triều đón gió Đông Nam gây mưa cho ven biển Quảng Ninh, khô nóng cho Cao Bằng, Lạng Sơn.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "ap_cao_can_chi_tuyen_nam_ban_cau",
+      "target": "tin_phong_nam_ban_cau",
+      "relation": "tạo ra",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "level": null,
+      "note": "Giữa và cuối mùa hạ, áp cao cận chí tuyến Nam bán cầu hoạt động mạnh, Tín phong NBC vượt Xích đạo lệch thành gió Tây Nam.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "tin_phong_nam_ban_cau",
+      "target": "dai_hoi_tu_nhiet_doi_lui_dan_tu_bac_vao_nam_theo_chuyen_dong_bieu_kien",
+      "relation": "hội tụ",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "level": null,
+      "note": "Tín phong NBC (thành gió Tây Nam) hội tụ với Tín phong BBC tạo dải hội tụ nhiệt đới theo chiều vĩ tuyến.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "dai_hoi_tu_nhiet_doi_lui_dan_tu_bac_vao_nam_theo_chuyen_dong_bieu_kien",
+      "target": "bao_bien_dong",
+      "relation": "tạo điều kiện",
+      "lesson": "Chuyên đề HSG: Khí hậu Việt Nam",
+      "level": null,
+      "note": "Dải hội tụ là nơi không khí bất ổn định, tạo điều kiện hình thành bão, áp thấp; mùa bão chậm dần từ Bắc vào Nam.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "hinh_dang_lanh_tho_keo_dai_hep_ngang",
+      "target": "thien nhien chiu anh huong sau sac cua bien",
+      "relation": "tăng cường",
+      "lesson": "Chuyên đề HSG: Vị trí địa lí và hình thể",
+      "level": null,
+      "note": "Lãnh thổ hẹp ngang, bờ biển dài khiến biển tác động sâu vào nội địa, khí hậu mang tính hải dương.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "he_thong_song_hong",
+      "target": "lu_song_hong_len_nhanh_va_dot_ngot",
+      "relation": "gây ra",
+      "lesson": "Chuyên đề HSG: Sông ngòi Việt Nam",
+      "level": null,
+      "note": "Dạng nan quạt, nhiều phụ lưu hợp lưu, ít chi lưu (3 cửa sông) nên lũ tập trung nhanh, thoát chậm.",
+      "grade": "L9",
+      "status": "approved"
     }
   ]
 }
