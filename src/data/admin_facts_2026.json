@@ -3254,6 +3254,198 @@
                       "status":  "approved_kntt",
                       "note":  "Giảm mạnh (2010: 53,3%) nhưng vẫn đứng thứ hai cả nước",
                       "node_ref":  "vung kinh te dong nam bo"
+                  },
+                  {
+                      "id":  "fact_thuyvan_so_song_dai_10km",
+                      "indicator":  "Tổng số sông ngòi dài trên 10 km",
+                      "value":  "2360",
+                      "unit":  "con sông",
+                      "lesson":  "Bài 6. Thủy văn Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Phần lớn là sông nhỏ, ngắn, dốc (miền Trung)",
+                      "node_ref":  "song ngoi nhieu nuoc giau phu sa"
+                  },
+                  {
+                      "id":  "fact_thuyvan_mat_do_mang_luoi_chung",
+                      "indicator":  "Mật độ mạng lưới sông ngòi (chung)",
+                      "value":  "0,6 - 0,8",
+                      "unit":  "km/km²",
+                      "lesson":  "Bài 6. Thủy văn Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "node_ref":  "song ngoi nhieu nuoc giau phu sa"
+                  },
+                  {
+                      "id":  "fact_thuyvan_mat_do_mang_luoi_db",
+                      "indicator":  "Mật độ mạng lưới sông ngòi vùng đồng bằng",
+                      "value":  "2 - 4",
+                      "unit":  "km/km²",
+                      "lesson":  "Bài 6. Thủy văn Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "node_ref":  "song ngoi nhieu nuoc giau phu sa"
+                  },
+                  {
+                      "id":  "fact_thuyvan_phu_sa_tong",
+                      "indicator":  "Tổng lượng phù sa sông ngòi hàng năm",
+                      "value":  "khoảng 200",
+                      "unit":  "triệu tấn/năm",
+                      "lesson":  "Bài 6. Thủy văn Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Sông Hồng ~120 triệu tấn; Sông Cửu Long ~70 triệu tấn",
+                      "node_ref":  "song ngoi nhieu nuoc giau phu sa"
+                  },
+                  {
+                      "id":  "fact_thuyvan_phu_sa_song_hong",
+                      "indicator":  "Lượng phù sa sông Hồng hàng năm",
+                      "value":  "khoảng 120",
+                      "unit":  "triệu tấn/năm",
+                      "lesson":  "Bài 6. Thủy văn Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "node_ref":  "song ngoi nhieu nuoc giau phu sa"
+                  },
+                  {
+                      "id":  "fact_thuyvan_phu_sa_song_cuu_long",
+                      "indicator":  "Lượng phù sa sông Cửu Long hàng năm",
+                      "value":  "khoảng 70",
+                      "unit":  "triệu tấn/năm",
+                      "lesson":  "Bài 6. Thủy văn Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "node_ref":  "song ngoi nhieu nuoc giau phu sa"
+                  },
+                  {
+                      "id":  "fact_kh_nhiet_do_trung_binh",
+                      "indicator":  "Nhiệt độ trung bình năm",
+                      "value":  "trên 20",
+                      "unit":  "°C",
+                      "lesson":  "Bài 4. Khí hậu Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Toàn quốc đều trên 20°C (trừ vùng núi cao); tăng dần từ Bắc vào Nam",
+                      "node_ref":  "tinh chat nhiet doi am gio mua"
+                  },
+                  {
+                      "id":  "fact_kh_gio_nang_tong",
+                      "indicator":  "Tổng số giờ nắng hàng năm",
+                      "value":  "1.400 - 3.000",
+                      "unit":  "giờ/năm",
+                      "lesson":  "Bài 4. Khí hậu Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Tăng từ Bắc vào Nam; Nam Bộ và Tây Nguyên đạt cao nhất",
+                      "node_ref":  "tinh chat nhiet doi am gio mua"
+                  },
+                  {
+                      "id":  "fact_kh_mua_trung_binh_nam",
+                      "indicator":  "Lượng mưa trung bình năm",
+                      "value":  "1.500 - 2.000",
+                      "unit":  "mm/năm",
+                      "lesson":  "Bài 4. Khí hậu Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Các trung tâm mưa lớn (Móng Cái, Bạch Mã, Nam Đông): trên 3.000-4.000 mm/năm",
+                      "node_ref":  "tinh chat nhiet doi am gio mua"
+                  },
+                  {
+                      "id":  "fact_kh_mua_trung_tam_lon",
+                      "indicator":  "Lượng mưa các trung tâm mưa lớn (Móng Cái, Bạch Mã, Nam Đông)",
+                      "value":  "trên 3.000 - 4.000",
+                      "unit":  "mm/năm",
+                      "lesson":  "Bài 4. Khí hậu Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "node_ref":  "tinh chat nhiet doi am gio mua"
+                  },
+                  {
+                      "id":  "fact_kh_mua_kho_han",
+                      "indicator":  "Lượng mưa nơi khô hạn (Phan Rang, Phan Rí)",
+                      "value":  "dưới 800",
+                      "unit":  "mm/năm",
+                      "lesson":  "Bài 4. Khí hậu Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Vùng khô nhất Việt Nam; ảnh hưởng địa hình che khuất gió",
+                      "node_ref":  "tinh chat nhiet doi am gio mua"
+                  },
+                  {
+                      "id":  "fact_kh_do_am_tuong_doi_tb",
+                      "indicator":  "Độ ẩm tương đối trung bình năm",
+                      "value":  "trên 80",
+                      "unit":  "%",
+                      "lesson":  "Bài 4. Khí hậu Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "node_ref":  "tinh chat nhiet doi am gio mua"
+                  },
+                  {
+                      "id":  "fact_diahi_doi_nui_ty_le",
+                      "indicator":  "Tỉ lệ địa hình đồi núi so với diện tích lãnh thổ",
+                      "value":  "3/4",
+                      "unit":  "diện tích lãnh thổ",
+                      "lesson":  "Bài 2. Địa hình Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Phần còn lại là đồng bằng, chiếm 1/4 diện tích",
+                      "node_ref":  "dia hinh doi nui la chu yeu"
+                  },
+                  {
+                      "id":  "fact_diahi_nui_thap_duoi_1000m",
+                      "indicator":  "Tỉ lệ đồi núi thấp dưới 1.000 m trong tổng diện tích đồi núi",
+                      "value":  "85",
+                      "unit":  "%",
+                      "lesson":  "Bài 2. Địa hình Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Phản ánh đặc điểm địa hình già nua, bào mòn mạnh",
+                      "node_ref":  "dia hinh doi nui la chu yeu"
+                  },
+                  {
+                      "id":  "fact_diahi_nui_cao_tren_2000m",
+                      "indicator":  "Tỉ lệ núi cao trên 2.000 m",
+                      "value":  "1",
+                      "unit":  "%",
+                      "lesson":  "Bài 2. Địa hình Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Tập trung ở vùng Tây Bắc và Hoàng Liên Sơn",
+                      "node_ref":  "dia hinh doi nui la chu yeu"
+                  },
+                  {
+                      "id":  "fact_diahi_dinh_phan_xi_pang",
+                      "indicator":  "Đỉnh núi cao nhất Việt Nam (Phan-xi-păng)",
+                      "value":  "3.143",
+                      "unit":  "m",
+                      "lesson":  "Bài 2. Địa hình Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Nằm trong dãy Hoàng Liên Sơn, Sa Pa, Lào Cai; được mệnh danh \u0027Nóc nhà Đông Dương\u0027",
+                      "node_ref":  "dia hinh doi nui la chu yeu"
+                  },
+                  {
+                      "id":  "fact_dat_feralit_ty_le",
+                      "indicator":  "Tỉ lệ nhóm đất Feralit trong diện tích tự nhiên",
+                      "value":  "khoảng 65",
+                      "unit":  "%",
+                      "lesson":  "Bài 9. Thổ nhưỡng Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Phân bố chủ yếu ở vùng đồi núi; màu đỏ-vàng; thích hợp cây công nghiệp lâu năm",
+                      "node_ref":  "dat feralit chiem phan lon vung doi nui"
+                  },
+                  {
+                      "id":  "fact_dat_phu_sa_ty_le",
+                      "indicator":  "Tỉ lệ nhóm đất phù sa trong diện tích tự nhiên",
+                      "value":  "khoảng 24",
+                      "unit":  "%",
+                      "lesson":  "Bài 9. Thổ nhưỡng Việt Nam - Địa lí 8 KNTT",
+                      "source":  "SGK Địa lí 8 KNTT 2026",
+                      "status":  "approved_kntt",
+                      "note":  "Tập trung ở các đồng bằng lớn (ĐBSH, ĐBSCL); rất phì nhiêu, thích hợp trồng lúa",
+                      "node_ref":  "dat phu sa mau mo o cac dong bang"
                   }
               ]
 }
