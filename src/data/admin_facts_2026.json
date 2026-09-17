@@ -3721,6 +3721,484 @@
       "lesson": "Chuyên đề HSG: Sông ngòi Việt Nam",
       "source": "HSG Slider PPTX",
       "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt24_dien_tich",
+      "indicator": "Diện tích Trung du và miền núi Bắc Bộ",
+      "value": "92,5",
+      "unit": "nghìn km²",
+      "lesson": "Bài 24. Trung du và miền núi Bắc Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt24_dan_so",
+      "indicator": "Dân số Trung du và miền núi Bắc Bộ",
+      "value": "12,6",
+      "unit": "triệu người",
+      "lesson": "Bài 24. Trung du và miền núi Bắc Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt24_tang_dan_so",
+      "indicator": "Tỉ lệ tăng dân số",
+      "value": "1,21",
+      "unit": "%",
+      "lesson": "Bài 24. Trung du và miền núi Bắc Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt24_dan_thanh_thi",
+      "indicator": "Tỉ lệ dân thành thị",
+      "value": "23,9",
+      "unit": "%",
+      "lesson": "Bài 24. Trung du và miền núi Bắc Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt24_thuy_nang_song_hong",
+      "indicator": "Hệ thống sông Hồng chiếm trữ lượng thủy năng cả nước",
+      "value": "gần 30",
+      "unit": "%",
+      "lesson": "Bài 24. Trung du và miền núi Bắc Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt25_dien_tich",
+      "indicator": "Diện tích Đồng bằng sông Hồng",
+      "value": "23,94",
+      "unit": "nghìn km²",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt25_dan_so",
+      "indicator": "Dân số Đồng bằng sông Hồng",
+      "value": "24,75",
+      "unit": "triệu người",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Đông nhất cả nước, năm 2024."
+    },
+    {
+      "id": "fact_kt25_dan_thanh_thi",
+      "indicator": "Tỉ lệ dân thành thị",
+      "value": "38,1",
+      "unit": "%",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt25_tang_dan_so",
+      "indicator": "Tỉ lệ tăng dân số",
+      "value": "1,77",
+      "unit": "%",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt25_mat_do",
+      "indicator": "Mật độ dân số (cao nhất cả nước)",
+      "value": "1034",
+      "unit": "người/km²",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt25_cn_ty_trong",
+      "indicator": "Giá trị sản xuất công nghiệp chiếm cả nước",
+      "value": "36,5",
+      "unit": "%",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024, đứng đầu cả nước."
+    },
+    {
+      "id": "fact_kt25_dich_vu_grdp",
+      "indicator": "Dịch vụ đóng góp vào GRDP vùng",
+      "value": "44,7",
+      "unit": "%",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt25_noi_thuong",
+      "indicator": "Tỉ trọng tổng mức bán lẻ cả nước",
+      "value": "24,9",
+      "unit": "%",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt25_xuat_khau",
+      "indicator": "Tỉ trọng trị giá xuất khẩu cả nước",
+      "value": "39,6",
+      "unit": "%",
+      "lesson": "Bài 25. Đồng bằng sông Hồng (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt27_dien_tich",
+      "indicator": "Diện tích Bắc Trung Bộ",
+      "value": "51,2",
+      "unit": "nghìn km²",
+      "lesson": "Bài 27. Bắc Trung Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt27_dan_so",
+      "indicator": "Dân số Bắc Trung Bộ",
+      "value": "11,3",
+      "unit": "triệu người",
+      "lesson": "Bài 27. Bắc Trung Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt27_tang_dan_so",
+      "indicator": "Tỉ lệ tăng dân số",
+      "value": "0,75",
+      "unit": "%",
+      "lesson": "Bài 27. Bắc Trung Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt27_dan_thanh_thi",
+      "indicator": "Tỉ lệ dân thành thị",
+      "value": "26,1",
+      "unit": "%",
+      "lesson": "Bài 27. Bắc Trung Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt27_trong_trot",
+      "indicator": "Trồng trọt chiếm giá trị sản xuất nông nghiệp",
+      "value": "74,5",
+      "unit": "%",
+      "lesson": "Bài 27. Bắc Trung Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt27_thuy_san",
+      "indicator": "Thủy sản chiếm giá trị sản xuất nông – lâm – thủy sản",
+      "value": "19,4",
+      "unit": "%",
+      "lesson": "Bài 27. Bắc Trung Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt28_dien_tich",
+      "indicator": "Diện tích Duyên hải Nam Trung Bộ và Tây Nguyên",
+      "value": "99,2",
+      "unit": "nghìn km²",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt28_dan_so",
+      "indicator": "Dân số Duyên hải Nam Trung Bộ và Tây Nguyên",
+      "value": "15,9",
+      "unit": "triệu người",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt28_tang_dan_so",
+      "indicator": "Tỉ lệ tăng dân số",
+      "value": "1,18",
+      "unit": "%",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt28_dan_thanh_thi",
+      "indicator": "Tỉ lệ dân thành thị",
+      "value": "37,1",
+      "unit": "%",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt28_hai_san_khai_thac",
+      "indicator": "Khai thác hải sản chiếm sản lượng (đứng thứ hai cả nước)",
+      "value": "trên 90",
+      "unit": "%",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt28_du_lich_doanh_thu",
+      "indicator": "Doanh thu du lịch lữ hành vùng",
+      "value": "11670,1",
+      "unit": "tỷ đồng",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt28_bo_xit",
+      "indicator": "Bô-xít chiếm trữ lượng cả nước",
+      "value": "khoảng 90",
+      "unit": "%",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Tập trung ở Lâm Đồng."
+    },
+    {
+      "id": "fact_kt28_cay_cn_lau_nam",
+      "indicator": "Cây công nghiệp lâu năm chiếm diện tích cả nước",
+      "value": "trên 50",
+      "unit": "%",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Lớn nhất cả nước, năm 2024."
+    },
+    {
+      "id": "fact_kt28_san_luong_go",
+      "indicator": "Sản lượng gỗ khai thác",
+      "value": "8190,9",
+      "unit": "nghìn m³",
+      "lesson": "Bài 28. Duyên hải Nam Trung Bộ và Tây Nguyên (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt30_dien_tich",
+      "indicator": "Diện tích Đông Nam Bộ",
+      "value": "trên 28",
+      "unit": "nghìn km²",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt30_dan_so",
+      "indicator": "Dân số Đông Nam Bộ",
+      "value": "gần 21",
+      "unit": "triệu người",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt30_tang_dan_so",
+      "indicator": "Tỉ lệ tăng dân số",
+      "value": "1,12",
+      "unit": "%",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt30_mat_do",
+      "indicator": "Mật độ dân số",
+      "value": "749",
+      "unit": "người/km²",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt30_dan_thanh_thi",
+      "indicator": "Tỉ lệ dân thành thị (cao nhất cả nước)",
+      "value": "62,8",
+      "unit": "%",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt30_grdp",
+      "indicator": "GRDP chiếm GDP cả nước",
+      "value": "31,5",
+      "unit": "%",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024, lớn nhất cả nước."
+    },
+    {
+      "id": "fact_kt30_cn_xd",
+      "indicator": "Công nghiệp và xây dựng chiếm GRDP vùng",
+      "value": "38,1",
+      "unit": "%",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt30_gtsx_cn",
+      "indicator": "Tỉ trọng giá trị sản xuất công nghiệp cả nước",
+      "value": "34,9",
+      "unit": "%",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt30_xuat_khau",
+      "indicator": "Trị giá xuất khẩu chiếm cả nước",
+      "value": "33,3",
+      "unit": "%",
+      "lesson": "Bài 30. Đông Nam Bộ (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt31_dien_tich",
+      "indicator": "Diện tích Đồng bằng sông Cửu Long",
+      "value": "36,4",
+      "unit": "nghìn km²",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt31_dan_so",
+      "indicator": "Dân số Đồng bằng sông Cửu Long",
+      "value": "15,8",
+      "unit": "triệu người",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt31_dan_so_ty_le",
+      "indicator": "Dân số chiếm cả nước",
+      "value": "15,6",
+      "unit": "%",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt31_tang_dan_so",
+      "indicator": "Tỉ lệ tăng dân số (thấp nhất cả nước)",
+      "value": "0,46",
+      "unit": "%",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt31_mat_do",
+      "indicator": "Mật độ dân số",
+      "value": "434",
+      "unit": "người/km²",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt31_dan_thanh_thi",
+      "indicator": "Tỉ lệ dân thành thị",
+      "value": "28,6",
+      "unit": "%",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt31_dt_luong_thuc",
+      "indicator": "Diện tích lương thực chiếm cả nước",
+      "value": "41,8",
+      "unit": "%",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt31_sl_luong_thuc",
+      "indicator": "Sản lượng lương thực có hạt chiếm cả nước",
+      "value": "44,8",
+      "unit": "%",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt31_lua_ty_le",
+      "indicator": "Lúa chiếm diện tích và sản lượng lương thực",
+      "value": "trên 99",
+      "unit": "%",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_kt31_nang_suat_lua",
+      "indicator": "Năng suất lúa (cao nhất cả nước)",
+      "value": "64,2",
+      "unit": "tạ/ha",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Năm 2024."
+    },
+    {
+      "id": "fact_kt31_thuy_san",
+      "indicator": "Thủy sản chiếm sản lượng cả nước",
+      "value": "trên 50",
+      "unit": "%",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Vùng trọng điểm thủy sản số một."
+    },
+    {
+      "id": "fact_kt31_cay_an_qua",
+      "indicator": "Diện tích cây ăn quả",
+      "value": "386,8",
+      "unit": "nghìn ha",
+      "lesson": "Bài 31. Đồng bằng sông Cửu Long (vùng kinh tế)",
+      "source": "HSG Slider PPTX",
+      "status": "approved_kntt",
+      "note": "Lớn nhất cả nước, năm 2024."
     }
   ]
 }
