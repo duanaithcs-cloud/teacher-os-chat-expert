@@ -16,3 +16,7 @@ html { scroll-behavior: smooth; }
 .chat-scroll::-webkit-scrollbar { width: 5px; }
 .chat-scroll::-webkit-scrollbar-track { background: transparent; }
 .chat-scroll::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 9999px; }
+
+/* Ẩn scrollbar cho thanh tab / segmented control */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
