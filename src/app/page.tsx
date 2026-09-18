@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { SendHorizontal, Bot, User, BookOpen, BarChart3, Loader2, ChevronRight, Brain, Copy, Check } from "lucide-react";
+import { SendHorizontal, Bot, User, BookOpen, BarChart3, Loader2, ChevronRight, Brain, Copy, Check, Library } from "lucide-react";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import QAExplorerModal from "@/components/QAExplorerModal";
 
 interface Message {
   role: "user" | "assistant";
@@ -25,10 +26,10 @@ const SAMPLE_QUESTIONS = [
 ];
 
 const KG_STATS = [
-  { label: "Nodes", value: "316", icon: Brain },
-  { label: "Edges", value: "388", icon: ChevronRight },
-  { label: "Bridge L8→L9", value: "104", icon: BookOpen },
-  { label: "Facts 2024–26", value: "254", icon: BarChart3 },
+  { label: "Nodes", value: "371", icon: Brain },
+  { label: "Edges", value: "426", icon: ChevronRight },
+  { label: "Bridge L8→L9", value: "84", icon: BookOpen },
+  { label: "Facts 2024–26", value: "429", icon: BarChart3 },
 ];
 
 export default function HomePage() {
@@ -37,6 +38,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState<ChatStats | null>(null);
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
+  const [qaOpen, setQaOpen] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -196,8 +198,17 @@ export default function HomePage() {
             <p className="text-xs text-gray-500 hidden sm:block">Graph-RAG + MCP · Địa lí 8 &amp; 9 · ThS. Phùng Văn Tiến</p>
           </div>
           <span className="shrink-0 text-xs bg-indigo-100 text-indigo-700 font-semibold px-2 py-0.5 rounded-full">
-            KG v1.0 | 316 nodes
+            KG v1.0 | 371 nodes
           </span>
+          <button
+            onClick={() => setQaOpen(true)}
+            className="shrink-0 flex items-center gap-1.5 text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded-lg transition-colors"
+            aria-label="Mở ngân hàng câu hỏi chuẩn barem"
+          >
+            <Library className="w-4 h-4" />
+            <span className="hidden sm:inline">📚 Ngân hàng câu hỏi</span>
+            <span className="bg-white/20 text-white text-[10px] px-1.5 py-0.5 rounded-full">388</span>
+          </button>
         </header>
 
         {/* Messages */}
@@ -320,6 +331,9 @@ export default function HomePage() {
           </p>
         </div>
       </div>
+
+      {/* Bảng tra cứu Q&A chuẩn Barem */}
+      {qaOpen && <QAExplorerModal onClose={() => setQaOpen(false)} />}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { enrichQuery } from "@/lib/mcp_runtime";
+import { lookupQuestion, getQARecord } from "@/lib/cache/semanticCache";
 
 export const runtime = "nodejs";
 // Vercel Hobby giới hạn 60s/function — giữ đúng trần này để không bị cắt giữa chừng.
@@ -208,6 +209,24 @@ export async function POST(req: NextRequest) {
     }
 
     const ctx = safeEnrich(question);
+
+    // ── Semantic Cache: trả 0-token khi khớp chuẩn barem ──
+    const cache = lookupQuestion(question);
+    if (cache.tier === "exact" && cache.record) {
+      return NextResponse.json({
+        answer: cache.record.answer,
+        entities: ctx.entityLabels,
+        facts_count: ctx.facts.length,
+        paths_count: ctx.causalPaths.length,
+        model_used: "qa-cache-exact",
+        model_attempted: [],
+        cache_tier: "exact",
+        cache_score: cache.score,
+        cache_source: cache.record.id,
+        degraded: false,
+      });
+    }
+
     const apiKey = process.env.LLM_API_KEY?.trim();
     const baseUrl = (process.env.LLM_BASE_URL ?? "https://api.apivn.tech/v1").replace(/\/+$/, "");
 
@@ -225,8 +244,15 @@ export async function POST(req: NextRequest) {
     }
 
     const systemPrompt = buildSystemPrompt(question);
+
+    // ── Cache tầng "context": bơm lời giải gốc làm context ngắn (~200 tokens) ──
+    let contextPrompt = systemPrompt;
+    if (cache.tier === "context" && cache.record) {
+      contextPrompt = `${systemPrompt}\n\n[GỢI Ý ĐÁP ÁN CHUẨN (context ngắn)]\n${cache.record.answer.slice(0, 1200)}`;
+    }
+
     const messages = [
-      { role: "system", content: systemPrompt },
+      { role: "system", content: contextPrompt },
       ...(body.messages?.filter((m) => m.role !== "system").slice(-8) ?? []),
       ...(body.messages ? [] : [{ role: "user", content: question }]),
     ];
@@ -263,6 +289,9 @@ export async function POST(req: NextRequest) {
       paths_count: ctx.causalPaths.length,
       model_used: result.model,
       model_attempted: result.attempted,
+      cache_tier: cache.tier,
+      cache_score: cache.score,
+      cache_source: cache.record?.id ?? null,
       degraded: false,
     });
   } catch (err) {
