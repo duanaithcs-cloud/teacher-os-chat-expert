@@ -3857,6 +3857,97 @@
       "grade": "L9",
       "category": "Kinh tế",
       "status": "approved_kntt"
+    },
+    "chau_tho_song_hong": {
+      "label": "Châu thổ sông Hồng",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "chau_tho_song_cuu_long": {
+      "label": "Châu thổ sông Cửu Long",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "he_thong_song_thai_binh": {
+      "label": "Hệ thống sông Thái Bình",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "he_thong_song_me_cong": {
+      "label": "Hệ thống sông Mê Công",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "van_minh_song_hong": {
+      "label": "Nền văn minh sông Hồng",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "van_minh_oc_eo": {
+      "label": "Văn hóa Óc Eo",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "de_dieu_chau_tho_song_hong": {
+      "label": "Hệ thống đê điều châu thổ sông Hồng",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "lanh_hai": {
+      "label": "Lãnh hải",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "vung_tiep_giap_lanh_hai": {
+      "label": "Vùng tiếp giáp lãnh hải",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "them_luc_dia": {
+      "label": "Thềm lục địa",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "luat_bien_viet_nam_2012": {
+      "label": "Luật Biển Việt Nam 2012",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "cong_uoc_luat_bien_1982": {
+      "label": "Công ước Liên hợp quốc về Luật biển 1982",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
+    },
+    "doi_hoang_sa_bac_hai": {
+      "label": "Đội Hoàng Sa, Bắc Hải",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "grade": "L8",
+      "category": "Chủ đề chung",
+      "status": "approved_kntt"
     }
   },
   "edges": [
@@ -7654,6 +7745,146 @@
       "level": null,
       "note": "Mùa khô sâu sắc gây thiếu nước ngọt, nguy cơ cháy rừng, tăng đất phèn, đất mặn.",
       "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "he_thong_song_hong",
+      "target": "chau_tho_song_hong",
+      "relation": "bồi đắp",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "level": null,
+      "note": "Châu thổ sông Hồng do hệ thống sông Hồng và sông Thái Bình bồi đắp.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "he_thong_song_thai_binh",
+      "target": "chau_tho_song_hong",
+      "relation": "bồi đắp",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "level": null,
+      "note": null,
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "he_thong_song_me_cong",
+      "target": "chau_tho_song_cuu_long",
+      "relation": "bồi đắp",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "level": null,
+      "note": "Đoạn sông Mê Công chảy qua VN (sông Cửu Long) bồi đắp nên châu thổ lớn nhất nước ta.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "chau_tho_song_hong",
+      "target": "van_minh_song_hong",
+      "relation": "hình thành",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "level": null,
+      "note": "Sông Hồng cung cấp thức ăn, giao thông, gắn đời sống tinh thần → nền văn minh sông Hồng.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "chau_tho_song_cuu_long",
+      "target": "van_minh_oc_eo",
+      "relation": "hình thành",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "level": null,
+      "note": "Vương quốc Phù Nam khai phá châu thổ, hình thành văn minh gắn văn hóa Óc Eo.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "he_thong_song_hong",
+      "target": "de_dieu_chau_tho_song_hong",
+      "relation": "thúc đẩy xây dựng",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "level": null,
+      "note": "Mạng lưới dạng nan quạt, lũ lên nhanh đột ngột buộc con người sớm đắp đê trị thủy.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "de_dieu_chau_tho_song_hong",
+      "target": "chau_tho_song_hong",
+      "relation": "chia cắt bề mặt",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "level": null,
+      "note": "Đê chia cắt bề mặt châu thổ, vùng trong đê không được bồi đắp phù sa thường xuyên.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "cong_uoc_luat_bien_1982",
+      "target": "luat_bien_viet_nam_2012",
+      "relation": "là cơ sở xây dựng",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "level": null,
+      "note": "Trên cơ sở Công ước LHQ về Luật biển 1982, VN xây dựng Luật Biển 2012.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "luat_bien_viet_nam_2012",
+      "target": "vung bien viet nam",
+      "relation": "phân định",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "level": null,
+      "note": "Luật Biển 2012 phân định 5 bộ phận vùng biển VN.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "luat_bien_viet_nam_2012",
+      "target": "lanh_hai",
+      "relation": "quy định",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "level": null,
+      "note": "Lãnh hải rộng 12 hải lí tính từ đường cơ sở.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "luat_bien_viet_nam_2012",
+      "target": "vung_tiep_giap_lanh_hai",
+      "relation": "quy định",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "level": null,
+      "note": "Vùng tiếp giáp lãnh hải rộng 12 hải lí tính từ ranh giới ngoài lãnh hải.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "luat_bien_viet_nam_2012",
+      "target": "them_luc_dia",
+      "relation": "quy định",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "level": null,
+      "note": "Thềm lục địa là đáy biển và lòng đất dưới đáy biển kéo dài tự nhiên từ lãnh thổ đất liền.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "doi_hoang_sa_bac_hai",
+      "target": "quan_dao_hoang_sa",
+      "relation": "xác lập chủ quyền",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "level": null,
+      "note": "Đội Hoàng Sa, Bắc Hải hằng năm ra khai thác sản vật, quản lí biển đảo Hoàng Sa.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "doi_hoang_sa_bac_hai",
+      "target": "quan_dao_truong_sa",
+      "relation": "xác lập chủ quyền",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "level": null,
+      "note": "Chính quyền các chúa Nguyễn thực thi chủ quyền tại Hoàng Sa và Trường Sa.",
+      "grade": "L8",
       "status": "approved"
     }
   ]

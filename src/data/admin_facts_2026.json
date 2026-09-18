@@ -4199,6 +4199,268 @@
       "source": "HSG Slider PPTX",
       "status": "approved_kntt",
       "note": "Lớn nhất cả nước, năm 2024."
+    },
+    {
+      "id": "fact_cdc81_chau_tho_sh_dien_tich",
+      "indicator": "Diện tích châu thổ sông Hồng",
+      "value": "khoảng 15000",
+      "unit": "km²",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "chau_tho_song_hong"
+    },
+    {
+      "id": "fact_cdc81_song_hong_tong_luong",
+      "indicator": "Tổng lượng dòng chảy hệ thống sông Hồng",
+      "value": "112",
+      "unit": "tỉ m³/năm",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "he_thong_song_hong"
+    },
+    {
+      "id": "fact_cdc81_de_dau_tien",
+      "indicator": "Tuyến đê đầu tiên sông Hồng được xây",
+      "value": "năm 1108 (thời Lý Nhân Tông)",
+      "unit": "",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "de_dieu_chau_tho_song_hong"
+    },
+    {
+      "id": "fact_cdc81_chau_tho_scl_dien_tich",
+      "indicator": "Diện tích châu thổ sông Cửu Long",
+      "value": "hơn 40 nghìn",
+      "unit": "km²",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "chau_tho_song_cuu_long"
+    },
+    {
+      "id": "fact_cdc81_song_cuu_long_chieu_dai",
+      "indicator": "Chiều dài sông Cửu Long trên lãnh thổ Việt Nam",
+      "value": "hơn 230",
+      "unit": "km",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "he_thong_song_me_cong"
+    },
+    {
+      "id": "fact_cdc81_me_cong_tong_luong",
+      "indicator": "Tổng lượng dòng chảy hệ thống sông Mê Công",
+      "value": "507",
+      "unit": "tỉ m³/năm",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "he_thong_song_me_cong"
+    },
+    {
+      "id": "fact_cdc81_me_cong_ty_le",
+      "indicator": "Tỉ lệ lượng nước Mê Công so với tổng sông ngòi VN",
+      "value": "60,4",
+      "unit": "%",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "he_thong_song_me_cong"
+    },
+    {
+      "id": "fact_cdc81_scl_mua_lu",
+      "indicator": "Mùa lũ sông Cửu Long: thời gian / tỉ lệ lưu lượng",
+      "value": "5 tháng (tháng 7–11) / khoảng 80%",
+      "unit": "",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "chau_tho_song_cuu_long"
+    },
+    {
+      "id": "fact_cdc81_scl_mua_can",
+      "indicator": "Mùa cạn sông Cửu Long: thời gian / tỉ lệ lưu lượng",
+      "value": "7 tháng (tháng 12–6) / khoảng 20%",
+      "unit": "",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "chau_tho_song_cuu_long"
+    },
+    {
+      "id": "fact_cdc81_scl_ngap_lut",
+      "indicator": "Diện tích ngập lụt mùa lũ ĐBSCL",
+      "value": "khoảng 10000",
+      "unit": "km²",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "chau_tho_song_cuu_long",
+      "note": "Chủ yếu Đồng Tháp Mười và Tứ giác Long Xuyên."
+    },
+    {
+      "id": "fact_cdc81_phu_nam",
+      "indicator": "Thời kì vương quốc Phù Nam",
+      "value": "thế kỉ I - đầu thế kỉ VII",
+      "unit": "",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "van_minh_oc_eo"
+    },
+    {
+      "id": "fact_cdc81_bien_tien_nam_bo",
+      "indicator": "Biển tiến cục bộ ở Nam Bộ",
+      "value": "thế kỉ IV",
+      "unit": "",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_cdc81_khai_hoang_dbscl",
+      "indicator": "Khai hoang ĐBSCL đẩy mạnh",
+      "value": "từ khoảng thế kỉ XVII",
+      "unit": "",
+      "lesson": "Chủ đề chung L8: Văn minh châu thổ sông Hồng và sông Cửu Long",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_cdc82_lanh_hai",
+      "indicator": "Chiều rộng lãnh hải",
+      "value": "12",
+      "unit": "hải lí",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "lanh_hai"
+    },
+    {
+      "id": "fact_cdc82_tiep_giap_lanh_hai",
+      "indicator": "Chiều rộng vùng tiếp giáp lãnh hải",
+      "value": "12",
+      "unit": "hải lí",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "vung_tiep_giap_lanh_hai"
+    },
+    {
+      "id": "fact_cdc82_dac_quyen_kinh_te",
+      "indicator": "Vùng đặc quyền kinh tế rộng",
+      "value": "200",
+      "unit": "hải lí",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "vung dac quyen kinh te"
+    },
+    {
+      "id": "fact_cdc82_so_bo_phan_vung_bien",
+      "indicator": "Số bộ phận vùng biển VN theo Luật Biển 2012",
+      "value": "5",
+      "unit": "bộ phận",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "luat_bien_viet_nam_2012"
+    },
+    {
+      "id": "fact_cdc82_ngu_truong",
+      "indicator": "Số ngư trường lớn",
+      "value": "4",
+      "unit": "ngư trường",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "note": "Vịnh Bắc Bộ; Hoàng Sa - Trường Sa; Ninh Thuận - Bình Thuận - Bà Rịa - Vũng Tàu; Cà Mau - Kiên Giang."
+    },
+    {
+      "id": "fact_cdc82_khai_thac_ca",
+      "indicator": "Khả năng khai thác cá hàng năm",
+      "value": "1,6 - 1,7",
+      "unit": "triệu tấn",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_cdc82_khai_thac_tom",
+      "indicator": "Khả năng khai thác tôm hàng năm",
+      "value": "60 - 70",
+      "unit": "nghìn tấn",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_cdc82_canh_dong_muoi",
+      "indicator": "Số cánh đồng muối lớn",
+      "value": "2 (Cà Ná, Sa Huỳnh)",
+      "unit": "",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_cdc82_cong_uoc_luat_bien",
+      "indicator": "Công ước Liên hợp quốc về Luật biển",
+      "value": "1982",
+      "unit": "năm",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "cong_uoc_luat_bien_1982"
+    },
+    {
+      "id": "fact_cdc82_luat_bien_vn",
+      "indicator": "Luật Biển Việt Nam",
+      "value": "2012",
+      "unit": "năm",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt",
+      "node_ref": "luat_bien_viet_nam_2012"
+    },
+    {
+      "id": "fact_cdc82_luat_bien_gioi_quoc_gia",
+      "indicator": "Luật Biên giới Quốc gia",
+      "value": "2023",
+      "unit": "năm",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_cdc82_hiep_dinh_phan_dinh_indo",
+      "indicator": "Hiệp định phân định thềm lục địa với In-đô-nê-xi-a",
+      "value": "2023",
+      "unit": "năm",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_cdc82_thoa_thuan_malaysia",
+      "indicator": "Thỏa thuận hợp tác khai thác chung thềm lục địa với Ma-lai-xi-a",
+      "value": "1992",
+      "unit": "năm",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
+    },
+    {
+      "id": "fact_cdc82_van_don",
+      "indicator": "Thương cảng Vân Đồn (Quảng Ninh) trở thành thương cảng quốc tế",
+      "value": "thời Lý - Trần (thế kỉ XI - XIV)",
+      "unit": "",
+      "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
+      "source": "HSG Chuyên đề chung L8",
+      "status": "approved_kntt"
     }
   ]
 }
