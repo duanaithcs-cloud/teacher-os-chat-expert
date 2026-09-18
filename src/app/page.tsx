@@ -185,29 +185,18 @@ export default function HomePage() {
       </aside>
 
       {/* ── Main ── */}
-      <div className="flex flex-col flex-1 min-w-0">
-        {/* Header */}
-        <header className="sticky top-0 z-40 shrink-0 bg-white/80 backdrop-blur-md border-b border-slate-200/60 pt-[env(safe-area-inset-top,0px)]">
-          <div className="flex items-center gap-2 px-3 h-12">
-            <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center shrink-0">
-              <Brain className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-semibold text-slate-900 text-[15px] truncate">
-              Trợ lý HSG Địa lí
-            </span>
-            <div className="flex-1" />
-            <button
-              onClick={() => setQaOpen(true)}
-              className="shrink-0 flex items-center gap-1.5 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-[0.98] px-2.5 py-1.5 text-[11px] font-medium text-slate-700 transition-all whitespace-nowrap"
-              aria-label="Mở ngân hàng câu hỏi chuẩn barem"
-            >
-              <Library className="w-3.5 h-3.5" />
-              <span>Ngân hàng câu hỏi</span>
-              <span className="text-slate-400">·</span>
-              <span className="font-semibold text-slate-900">{QA_COUNT}</span>
-            </button>
-          </div>
-        </header>
+      <div className="relative flex flex-col flex-1 min-w-0">
+        {/* Nút ngân hàng câu hỏi — pill thu gọn, chỉ hiện khi đã vào chat */}
+        {messages.length > 0 && (
+          <button
+            onClick={() => setQaOpen(true)}
+            className="absolute top-3 right-3 z-30 flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md border border-slate-200/70 shadow-sm hover:bg-slate-50 active:scale-[0.98] px-2.5 py-1.5 text-[11px] font-medium text-slate-600 transition-all"
+            aria-label="Mở ngân hàng câu hỏi chuẩn barem"
+          >
+            <Library className="w-3.5 h-3.5" />
+            <span className="font-semibold text-slate-900">{QA_COUNT}</span>
+          </button>
+        )}
 
         {/* Messages */}
         <div className="flex-1 overflow-y-auto chat-scroll px-4 pt-4 pb-28 md:pb-4 space-y-4">
@@ -220,6 +209,16 @@ export default function HomePage() {
                   Phân tích chuẩn Barem &amp; số liệu chuyên sâu Lớp 8 – 9.
                 </p>
               </div>
+              <button
+                onClick={() => setQaOpen(true)}
+                className="flex items-center gap-2 rounded-full border border-slate-200/70 bg-white hover:bg-indigo-50/60 active:scale-[0.98] px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-all"
+                aria-label="Mở ngân hàng câu hỏi chuẩn barem"
+              >
+                <Library className="w-4 h-4 text-indigo-500" />
+                <span>Ngân hàng câu hỏi</span>
+                <span className="text-slate-300">·</span>
+                <span className="font-semibold text-slate-900">{QA_COUNT}</span>
+              </button>
               <div className="flex flex-col gap-2.5 w-full">
                 {SAMPLE_QUESTIONS.map((q) => (
                   <button
