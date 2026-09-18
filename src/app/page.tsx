@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { SendHorizontal, Bot, User, BookOpen, BarChart3, Loader2, ChevronRight, Brain } from "lucide-react";
+import { SendHorizontal, Bot, User, BookOpen, BarChart3, Loader2, ChevronRight, Brain, Copy, Check } from "lucide-react";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
@@ -36,6 +36,7 @@ export default function HomePage() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState<ChatStats | null>(null);
+  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -91,6 +92,28 @@ export default function HomePage() {
       sendMessage(input);
     }
   };
+
+  const copyAnswer = useCallback(async (text: string, idx: number) => {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+      setCopiedIdx(idx);
+      setTimeout(() => setCopiedIdx((cur) => (cur === idx ? null : cur)), 2000);
+    } catch {
+      // clipboard bị chặn — bỏ qua, không crash UI
+    }
+  }, []);
 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-50">
@@ -221,9 +244,22 @@ export default function HomePage() {
               }`}>
                 {msg.role === "assistant"
                   ? (
-                    <ErrorBoundary fallbackText={msg.content}>
-                      <MarkdownRenderer content={msg.content} />
-                    </ErrorBoundary>
+                    <div className="relative">
+                      <button
+                        onClick={() => copyAnswer(msg.content, i)}
+                        aria-label="Copy toàn bộ câu trả lời"
+                        title="Copy toàn bộ câu trả lời"
+                        className="absolute -top-1 -right-1 z-10 flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-2 py-1 text-[11px] font-medium text-gray-500 shadow-sm hover:text-indigo-600 hover:border-indigo-200 transition-colors"
+                      >
+                        {copiedIdx === i
+                          ? <><Check className="w-3.5 h-3.5 text-green-600" /> Đã copy</>
+                          : <><Copy className="w-3.5 h-3.5" /> Copy</>
+                        }
+                      </button>
+                      <ErrorBoundary fallbackText={msg.content}>
+                        <MarkdownRenderer content={msg.content} />
+                      </ErrorBoundary>
+                    </div>
                   )
                   : <p className="whitespace-pre-wrap">{msg.content}</p>
                 }
