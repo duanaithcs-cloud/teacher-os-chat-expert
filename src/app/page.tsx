@@ -333,7 +333,16 @@ export default function HomePage() {
       </div>
 
       {/* Bảng tra cứu Q&A chuẩn Barem */}
-      {qaOpen && <QAExplorerModal onClose={() => setQaOpen(false)} />}
+      {qaOpen && (
+        <QAExplorerModal
+          onClose={() => setQaOpen(false)}
+          onInsertQuestion={(q) => {
+            setInput(q);
+            setQaOpen(false);
+            setTimeout(() => textareaRef.current?.focus(), 50);
+          }}
+        />
+      )}
     </div>
   );
 }

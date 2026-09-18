@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { X, Search, BookOpen, ChevronRight, Library, Copy, Check } from "lucide-react";
+import { X, Search, BookOpen, ChevronRight, Library, Copy, Check, MessageSquarePlus } from "lucide-react";
 
 interface QARecord {
   id: string;
@@ -22,25 +22,31 @@ interface QAResponse {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
-  CHUYEN_DE_TU_NHIEN_L8: "Tự nhiên L8",
-  CHUYEN_DE_KINH_TE_L9: "Kinh tế – xã hội L9",
-  KY_NANG_DIA_LI: "Kỹ năng Địa lí",
-  PHUONG_PHAP_ON_HSG: "Phương pháp ôn HSG",
+  CHUYEN_DE_TU_NHIEN_L8: "33 chuyên đề Tự nhiên Việt Nam L8",
+  CHUYEN_DE_KINH_TE_L9: "20 chuyên đề Kinh tế – xã hội Việt Nam L9",
+  KY_NANG_DIA_LI: "Kỹ năng & Số liệu",
+  PHUONG_PHAP_ON_HSG: "Chiến thuật HSG",
 };
 
 const CATEGORY_OPTIONS = [
-  { value: "", label: "Tất cả chuyên đề" },
-  { value: "CHUYEN_DE_TU_NHIEN_L8", label: "Tự nhiên L8" },
-  { value: "CHUYEN_DE_KINH_TE_L9", label: "Kinh tế – xã hội L9" },
-  { value: "KY_NANG_DIA_LI", label: "Kỹ năng Địa lí" },
-  { value: "PHUONG_PHAP_ON_HSG", label: "Phương pháp ôn HSG" },
+  { value: "", label: "Tất cả" },
+  { value: "CHUYEN_DE_TU_NHIEN_L8", label: "33 chuyên đề Tự nhiên Việt Nam L8" },
+  { value: "CHUYEN_DE_KINH_TE_L9", label: "20 chuyên đề Kinh tế – xã hội Việt Nam L9" },
+  { value: "KY_NANG_DIA_LI", label: "Kỹ năng & Số liệu" },
+  { value: "PHUONG_PHAP_ON_HSG", label: "Chiến thuật HSG" },
 ];
 
 function categoryLabel(cat: string): string {
   return CATEGORY_LABELS[cat] ?? cat;
 }
 
-export default function QAExplorerModal({ onClose }: { onClose: () => void }) {
+export default function QAExplorerModal({
+  onClose,
+  onInsertQuestion,
+}: {
+  onClose: () => void;
+  onInsertQuestion: (question: string) => void;
+}) {
   const [q, setQ] = useState("");
   const [category, setCategory] = useState("");
   const [items, setItems] = useState<QARecord[]>([]);
@@ -191,21 +197,31 @@ export default function QAExplorerModal({ onClose }: { onClose: () => void }) {
             const isOpen = expanded === r.id;
             return (
               <div key={r.id} className="border border-gray-200 rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setExpanded(isOpen ? null : r.id)}
-                  className="w-full text-left px-3 py-2.5 flex items-start gap-2 hover:bg-gray-50 transition-colors"
-                >
-                  <ChevronRight className={`w-4 h-4 mt-0.5 shrink-0 text-indigo-400 transition-transform ${isOpen ? "rotate-90" : ""}`} />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm text-gray-800 font-medium leading-snug">{r.question}</p>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="text-[11px] bg-indigo-50 text-indigo-700 px-1.5 py-0.5 rounded">
-                        {categoryLabel(r.category)}
-                      </span>
-                      <span className="text-[11px] text-gray-400">{r.source_module}</span>
+                <div className="flex items-start gap-1 hover:bg-gray-50 transition-colors">
+                  <button
+                    onClick={() => setExpanded(isOpen ? null : r.id)}
+                    className="flex-1 min-w-0 text-left px-3 py-2.5 flex items-start gap-2"
+                  >
+                    <ChevronRight className={`w-4 h-4 mt-0.5 shrink-0 text-indigo-400 transition-transform ${isOpen ? "rotate-90" : ""}`} />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm text-gray-800 font-medium leading-snug">{r.question}</p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-[11px] bg-indigo-50 text-indigo-700 px-1.5 py-0.5 rounded">
+                          {categoryLabel(r.category)}
+                        </span>
+                        <span className="text-[11px] text-gray-400">{r.source_module}</span>
+                      </div>
                     </div>
-                  </div>
-                </button>
+                  </button>
+                  <button
+                    onClick={() => onInsertQuestion(r.question)}
+                    title="Đưa vào khung Chat"
+                    className="shrink-0 self-center mr-2 flex items-center gap-1 text-[11px] font-medium text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-2 py-1.5 rounded-lg transition-colors"
+                  >
+                    <MessageSquarePlus className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Đưa vào khung Chat</span>
+                  </button>
+                </div>
 
                 {isOpen && (
                   <div className="border-t border-gray-100 bg-gray-50 px-3 py-2.5">
