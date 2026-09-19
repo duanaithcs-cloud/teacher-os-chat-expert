@@ -15,6 +15,7 @@ import {
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import QAExplorerModal from "@/components/QAExplorerModal";
+import MeshActionBar from "@/components/MeshActionBar";
 
 interface Message {
   role: "user" | "assistant";
@@ -280,6 +281,7 @@ export default function HomePage() {
                     <ErrorBoundary fallbackText={msg.content}>
                       <MarkdownRenderer content={msg.content} />
                     </ErrorBoundary>
+                    <MeshActionBar content={msg.content} />
                   </div>
                 ) : (
                   <p className="whitespace-pre-wrap">{msg.content}</p>
