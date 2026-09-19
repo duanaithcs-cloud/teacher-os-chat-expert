@@ -65,11 +65,12 @@ export default function MeshActionBar({ content }: { content: string }) {
   if (!topic) return null;
 
   const handleLocate = () => {
+    // Nút "Định vị trên Bản đồ" luôn trỏ tới tab Bản đồ (bando), không phải dia8/dia9.
     dispatchMeshEvent("NAVIGATE_TOPIC", {
       topicId: topic.topicId,
       category: topic.category,
       title: topic.title,
-      targetModule: topic.targetModule,
+      targetModule: "bando",
       metadata: topic.layerId ? { layerId: topic.layerId } : undefined,
     });
   };
