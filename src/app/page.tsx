@@ -132,7 +132,7 @@ export default function HomePage() {
       <aside className="hidden md:flex flex-col w-60 shrink-0 bg-slate-900 text-white p-4 gap-6 overflow-y-auto">
         <div className="flex items-center gap-2">
           <Brain className="w-5 h-5 text-indigo-300" />
-          <span className="font-semibold text-sm leading-tight">Trợ lý HSG Địa lí</span>
+          <span className="font-semibold text-sm leading-tight">Địa lí Việt Nam</span>
         </div>
 
         <div>
@@ -204,7 +204,7 @@ export default function HomePage() {
             <div className="flex flex-col items-center justify-center h-full gap-5 text-center max-w-2xl mx-auto w-full">
               <Brain className="w-12 h-12 text-indigo-300" />
               <div className="space-y-1.5">
-                <h1 className="text-xl font-semibold text-slate-900">Trợ lý HSG Địa lí</h1>
+                <h1 className="text-xl font-semibold text-slate-900">Địa lí Việt Nam</h1>
                 <p className="text-sm text-slate-500">
                   Phân tích chuẩn Barem &amp; số liệu chuyên sâu Lớp 8 – 9.
                 </p>
