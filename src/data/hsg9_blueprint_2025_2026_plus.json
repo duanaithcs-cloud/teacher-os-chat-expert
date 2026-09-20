@@ -1,0 +1,77 @@
+{
+  "id": "hsg9_blueprint_2025_2026_plus",
+  "title": "HUB HSG9 - Blueprint ôn thi HSG Địa lí 9 theo ma trận Sở 2025-2026+",
+  "scope_rule": "Không bỏ dữ liệu lớp 8. Lớp 8 là nền tự nhiên Việt Nam và là cầu nhân quả để giải tự luận lớp 9.",
+  "total_points": 20,
+  "matrix": [
+    {
+      "section": "A",
+      "type": "Trắc nghiệm",
+      "points": 4.0,
+      "topics": [
+        {
+          "name": "Chủ đề chung lớp 8",
+          "points": 1.0
+        },
+        {
+          "name": "Phân môn Địa lí 4 - Tự nhiên Việt Nam",
+          "points": 3.0
+        }
+      ]
+    },
+    {
+      "section": "B.I",
+      "type": "Tự luận",
+      "topic": "Tự nhiên Việt Nam",
+      "points": 3.5,
+      "cognitive": {
+        "NB": 1.0,
+        "TH": 2.0,
+        "VD": 0.5
+      }
+    },
+    {
+      "section": "B.II",
+      "type": "Tự luận",
+      "topic": "Dân cư + ngành kinh tế",
+      "points": 4.5,
+      "cognitive": {
+        "NB": 1.0,
+        "TH": 2.0,
+        "VD": 1.5
+      }
+    },
+    {
+      "section": "B.III",
+      "type": "Tự luận",
+      "topic": "Vùng kinh tế: Trung du miền núi phía Bắc và Đồng bằng sông Hồng",
+      "points": 4.0,
+      "cognitive": {
+        "NB": 0.5,
+        "TH": 2.0,
+        "VD": 1.5
+      }
+    },
+    {
+      "section": "B.IV",
+      "type": "Kĩ năng",
+      "topic": "Vẽ và nhận xét biểu đồ",
+      "points": 4.0,
+      "cognitive": {
+        "NB": 0.0,
+        "TH": 1.0,
+        "VD": 3.0
+      }
+    }
+  ],
+  "target_accuracy": {
+    "threshold": 0.95,
+    "metric": "Tỉ lệ ý đúng theo rubric/HDC, đúng phạm vi ma trận, không bịa số liệu, không lan vùng ngoài ma trận."
+  },
+  "loss_if_drop_grade8": [
+    "Mất nền tự nhiên Việt Nam cho phần trắc nghiệm riêng 1 điểm và tự luận 3,5 điểm.",
+    "Mất chuỗi nhân quả vị trí - khí hậu - địa hình - sông ngòi - đất - sinh vật dùng để giải thích dân cư, kinh tế, vùng.",
+    "Mất cầu nối từ tự nhiên lớp 8 sang phát triển công nghiệp, nông nghiệp, du lịch và phân hóa vùng lớp 9.",
+    "Dễ sinh đáp án học thuộc lớp 9 nhưng thiếu cơ chế tự nhiên, làm tụt điểm ở câu phân tích/chứng minh HSG."
+  ]
+}

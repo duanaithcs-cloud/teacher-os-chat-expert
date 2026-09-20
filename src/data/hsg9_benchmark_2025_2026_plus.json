@@ -1,0 +1,309 @@
+{
+  "id": "hsg9_benchmark_2025_2026_plus",
+  "title": "Benchmark chấm thật HUB HSG9 theo ma trận HSG Địa lí 9 2025-2026+",
+  "basis": [
+    "Ma trận HSG 2025-2026: TN 4 điểm, tự luận 16 điểm, NB 20%, TH 45%, VD 35%",
+    "Đề/HDC HSG lớp 9 Sở Hà Nội 2025-2026 đã bóc tách",
+    "Blueprint HUB HSG9 đã nạp vào KG"
+  ],
+  "pass_threshold": 0.95,
+  "rubric": {
+    "coverage": "Có node/QA/fact chứa đúng khái niệm trọng tâm",
+    "reasoning": "Có edge/chuỗi quan hệ phù hợp cho câu phân tích, giải thích, chứng minh",
+    "answer_key_alignment": "Có đủ ý ăn điểm tối thiểu theo HDC",
+    "skill_alignment": "Với biểu đồ/số liệu: có đúng dạng, công thức, quy trình nhận xét",
+    "no_grade8_loss": "Các câu dùng tự nhiên Việt Nam phải truy được dữ liệu L8 hoặc bridge L8->L9"
+  },
+  "cases": [
+    {
+      "id": "TN_L8_01",
+      "section": "A",
+      "topic": "Chủ đề chung lớp 8",
+      "points": 0.25,
+      "level": "NB",
+      "prompt": "Nhận biết vị trí nội chí tuyến và hệ quả nền nhiệt cao của Việt Nam.",
+      "required_terms": ["vị trí nội chí tuyến", "nền nhiệt cao", "bức xạ"],
+      "required_edges": [["vi tri noi chi tuyen bac ban cau", "nen_nhiet_cao_can_can_buc_xa_quanh_nam_duong"]]
+    },
+    {
+      "id": "TN_L8_02",
+      "section": "A",
+      "topic": "Chủ đề chung lớp 8",
+      "points": 0.25,
+      "level": "TH",
+      "prompt": "Hiểu quan hệ khí hậu ẩm và quá trình feralit hóa.",
+      "required_terms": ["đất feralit", "rửa trôi", "tích tụ oxit sắt nhôm"],
+      "required_edges": [["tính chất nhiệt đới ẩm gió mùa", "đất feralit"]]
+    },
+    {
+      "id": "TN_L8_03",
+      "section": "A",
+      "topic": "Chủ đề chung lớp 8",
+      "points": 0.25,
+      "level": "NB",
+      "prompt": "Nhận biết vai trò hồ, đầm trong tự nhiên và đời sống.",
+      "required_terms": ["hồ", "đầm", "điều hòa nước", "thủy sản", "du lịch"],
+      "required_edges": [["ho_dam_va_gia_tri_su_dung", "he_qua_tu_nhien_cua_vi_tri_dia_li"]]
+    },
+    {
+      "id": "TN_L8_04",
+      "section": "A",
+      "topic": "Chủ đề chung lớp 8",
+      "points": 0.25,
+      "level": "TH",
+      "prompt": "Hiểu tác động của lãnh thổ kéo dài Bắc - Nam đến phân hóa tự nhiên.",
+      "required_terms": ["kéo dài Bắc - Nam", "phân hóa", "khí hậu", "sinh vật", "cảnh quan"],
+      "required_edges": [["vi_tri_dia_li_viet_nam_hsg", "he_qua_tu_nhien_cua_vi_tri_dia_li"]]
+    },
+    {
+      "id": "TN_DIA4_01",
+      "section": "A",
+      "topic": "Tự nhiên Việt Nam",
+      "points": 0.5,
+      "level": "NB",
+      "prompt": "Nhận biết khí hậu nhiệt đới ẩm gió mùa.",
+      "required_terms": ["khí hậu nhiệt đới ẩm gió mùa", "nhiệt", "ẩm", "gió mùa"],
+      "required_edges": [["Vị trí địa lí Việt Nam", "Khí hậu nhiệt đới ẩm gió mùa, thiên nhiên chịu ảnh hưởng biển và phân hóa Bắc - Nam"]]
+    },
+    {
+      "id": "TN_DIA4_02",
+      "section": "A",
+      "topic": "Tự nhiên Việt Nam",
+      "points": 0.5,
+      "level": "TH",
+      "prompt": "Hiểu ảnh hưởng biển đến thiên nhiên Việt Nam.",
+      "required_terms": ["giáp biển", "ảnh hưởng biển", "độ ẩm", "mưa", "sinh vật"],
+      "required_edges": [["vi_tri_dia_li_viet_nam_hsg", "khí hậu nhiệt đới ẩm gió mùa có sự phân hóa theo độ cao và theo mùa"]]
+    },
+    {
+      "id": "TL_I_01",
+      "section": "B.I",
+      "topic": "Tự nhiên Việt Nam",
+      "points": 0.75,
+      "level": "TH",
+      "prompt": "Phân tích ảnh hưởng của vị trí địa lí và phạm vi lãnh thổ đến khí hậu Việt Nam.",
+      "required_terms": ["vị trí địa lí", "nội chí tuyến", "giáp biển", "gió mùa", "phân hóa Bắc - Nam"],
+      "required_edges": [["Vị trí địa lí Việt Nam", "Khí hậu nhiệt đới ẩm gió mùa, thiên nhiên chịu ảnh hưởng biển và phân hóa Bắc - Nam"]]
+    },
+    {
+      "id": "TL_I_02",
+      "section": "B.I",
+      "topic": "Tự nhiên Việt Nam",
+      "points": 0.75,
+      "level": "TH",
+      "prompt": "Phân tích ảnh hưởng của vị trí địa lí và lãnh thổ đến sinh vật, đất và cảnh quan.",
+      "required_terms": ["giao thoa sinh vật", "đất feralit", "phân hóa cảnh quan", "Bắc - Nam", "đai cao"],
+      "required_edges": [["he_qua_tu_nhien_cua_vi_tri_dia_li", "nhan_to_tu_nhien_anh_huong_cong_nghiep"]]
+    },
+    {
+      "id": "TL_I_03",
+      "section": "B.I",
+      "topic": "Tự nhiên Việt Nam",
+      "points": 0.5,
+      "level": "VD",
+      "prompt": "Nêu vai trò của hồ, đầm đối với sản xuất và sinh hoạt.",
+      "required_terms": ["điều hòa nước", "cấp nước", "thủy sản", "du lịch", "giao thông", "sinh hoạt"],
+      "required_edges": [["ho_dam_va_gia_tri_su_dung", "he_qua_tu_nhien_cua_vi_tri_dia_li"]]
+    },
+    {
+      "id": "TL_I_04",
+      "section": "B.I",
+      "topic": "Tự nhiên Việt Nam",
+      "points": 0.75,
+      "level": "TH",
+      "prompt": "Giải thích vì sao tự nhiên Việt Nam có tính nhiệt đới ẩm gió mùa.",
+      "required_terms": ["nội chí tuyến", "gió mùa", "biển Đông", "độ ẩm", "mưa"],
+      "required_edges": [["Vị trí địa lí Việt Nam", "Khí hậu nhiệt đới ẩm gió mùa, thiên nhiên chịu ảnh hưởng biển và phân hóa Bắc - Nam"]]
+    },
+    {
+      "id": "TL_II_01",
+      "section": "B.II",
+      "topic": "Dân cư + ngành kinh tế",
+      "points": 0.75,
+      "level": "NB",
+      "prompt": "Trình bày đặc điểm quần cư thành thị.",
+      "required_terms": ["quần cư thành thị", "mật độ dân số", "phi nông nghiệp", "cơ sở hạ tầng", "lối sống đô thị"],
+      "required_edges": [["Đô thị hoá", "dan_cu_dong_bang_song_hong_hsg"]]
+    },
+    {
+      "id": "TL_II_02",
+      "section": "B.II",
+      "topic": "Dân cư + ngành kinh tế",
+      "points": 0.75,
+      "level": "TH",
+      "prompt": "Giải thích tỉ lệ dân cư thành thị tăng.",
+      "required_terms": ["đô thị hóa", "công nghiệp hóa", "dịch vụ", "di cư", "mở rộng đô thị"],
+      "required_edges": [["Đô thị hoá", "Tỉ lệ dân thành thị tăng"]]
+    },
+    {
+      "id": "TL_II_03",
+      "section": "B.II",
+      "topic": "Dân cư + ngành kinh tế",
+      "points": 1.0,
+      "level": "TH",
+      "prompt": "Phân tích tác động thuận lợi của nhân tố tự nhiên đến công nghiệp.",
+      "required_terms": ["khoáng sản", "nguồn nước", "địa hình", "khí hậu", "biển", "tài nguyên sinh vật"],
+      "required_edges": [["Nhân tố tự nhiên ảnh hưởng đến công nghiệp", "Phát triển và phân bố công nghiệp Việt Nam"]]
+    },
+    {
+      "id": "TL_II_04",
+      "section": "B.II",
+      "topic": "Dân cư + ngành kinh tế",
+      "points": 0.75,
+      "level": "VD",
+      "prompt": "Phân tích khó khăn của nhân tố tự nhiên đối với công nghiệp.",
+      "required_terms": ["thiên tai", "bão", "lũ", "hạn hán", "cạn kiệt tài nguyên", "ô nhiễm"],
+      "required_edges": [["nhan_to_tu_nhien_anh_huong_den_cong_nghiep", "phat_trien_va_phan_bo_cong_nghiep_viet_nam"]]
+    },
+    {
+      "id": "TL_II_05",
+      "section": "B.II",
+      "topic": "Dân cư + ngành kinh tế",
+      "points": 0.75,
+      "level": "VD",
+      "prompt": "Liên hệ nhân tố tự nhiên với một ngành công nghiệp cụ thể.",
+      "required_terms": ["công nghiệp năng lượng", "thủy điện", "nhiệt điện", "khai khoáng", "chế biến"],
+      "required_edges": [["tu_nhien_td_mn_bac_bo_hsg", "nhan_to_tu_nhien_anh_huong_cong_nghiep"]]
+    },
+    {
+      "id": "TL_III_01",
+      "section": "B.III",
+      "topic": "TDMNPB",
+      "points": 0.75,
+      "level": "TH",
+      "prompt": "Chứng minh điều kiện tự nhiên TDMNPB thuận lợi cho nông nghiệp.",
+      "required_terms": ["địa hình", "khí hậu phân hóa", "đất feralit", "cây công nghiệp", "chăn nuôi gia súc"],
+      "required_edges": [["Điều kiện tự nhiên Trung du và miền núi Bắc Bộ", "Nông nghiệp hàng hóa, du lịch, thủy điện và khai khoáng Trung du miền núi Bắc Bộ"]]
+    },
+    {
+      "id": "TL_III_02",
+      "section": "B.III",
+      "topic": "TDMNPB",
+      "points": 0.75,
+      "level": "TH",
+      "prompt": "Chứng minh điều kiện tự nhiên TDMNPB thuận lợi cho du lịch.",
+      "required_terms": ["cảnh quan", "địa hình núi", "khí hậu mát", "bản sắc dân tộc", "du lịch sinh thái"],
+      "required_edges": [["tu_nhien_td_mn_bac_bo_hsg", "nong_nghiep_du_lich_td_mn_bac_bo"]]
+    },
+    {
+      "id": "TL_III_03",
+      "section": "B.III",
+      "topic": "TDMNPB",
+      "points": 0.5,
+      "level": "VD",
+      "prompt": "Phân tích hạn chế tự nhiên của TDMNPB.",
+      "required_terms": ["địa hình chia cắt", "giao thông khó khăn", "thiên tai", "sạt lở", "rét đậm"],
+      "required_edges": [["tu_nhien_td_mn_bac_bo_hsg", "nong_nghiep_du_lich_td_mn_bac_bo"]]
+    },
+    {
+      "id": "TL_III_04",
+      "section": "B.III",
+      "topic": "ĐBSH",
+      "points": 0.75,
+      "level": "TH",
+      "prompt": "Phân tích đặc điểm dân cư Đồng bằng sông Hồng.",
+      "required_terms": ["dân cư đông", "mật độ cao", "lao động dồi dào", "trình độ", "đô thị hóa"],
+      "required_edges": [["Dân cư Đồng bằng sông Hồng", "Phát triển kinh tế - xã hội Đồng bằng sông Hồng"]]
+    },
+    {
+      "id": "TL_III_05",
+      "section": "B.III",
+      "topic": "ĐBSH",
+      "points": 0.75,
+      "level": "VD",
+      "prompt": "Phân tích sức ép dân cư ở Đồng bằng sông Hồng.",
+      "required_terms": ["đất đai", "việc làm", "hạ tầng", "môi trường", "chất lượng sống"],
+      "required_edges": [["dan_cu_dong_bang_song_hong", "phat_trien_kinh_te_xa_hoi_dong_bang_song_hong"]]
+    },
+    {
+      "id": "TL_III_06",
+      "section": "B.III",
+      "topic": "Liên kết vùng",
+      "points": 0.5,
+      "level": "VD",
+      "prompt": "Giải thích liên kết TDMNPB và ĐBSH.",
+      "required_terms": ["nguyên liệu", "năng lượng", "thị trường", "lao động", "công nghệ", "liên kết kinh tế"],
+      "required_edges": [["Sự đối lập về tài nguyên thiên nhiên và nguồn lực khoa học, lao động giữa vùng phụ cận", "Liên kết kinh tế mật thiết giữa Đồng bằng sông Hồng và Trung du miền núi Bắc Bộ"]]
+    },
+    {
+      "id": "SKILL_IV_01",
+      "section": "B.IV",
+      "topic": "Biểu đồ",
+      "points": 0.75,
+      "level": "TH",
+      "prompt": "Nhận diện biểu đồ kết hợp cho bảng GDP và tốc độ tăng trưởng.",
+      "required_terms": ["biểu đồ kết hợp", "cột", "đường", "hai đơn vị", "GDP", "tốc độ tăng trưởng"],
+      "required_edges": [["Kĩ năng biểu đồ kết hợp HSG", "Vẽ biểu đồ kết hợp và nhận xét GDP - tốc độ tăng trưởng theo khái quát, xu hướng, chênh lệch, dẫn số liệu"]]
+    },
+    {
+      "id": "SKILL_IV_02",
+      "section": "B.IV",
+      "topic": "Biểu đồ",
+      "points": 0.75,
+      "level": "VD",
+      "prompt": "Nêu yêu cầu kĩ thuật khi vẽ biểu đồ kết hợp.",
+      "required_terms": ["tên biểu đồ", "chú giải", "đơn vị", "trục tung", "trục hoành", "khoảng cách năm"],
+      "required_edges": [["ki_nang_bieu_do_ket_hop_hsg", "quy_trinh_nhan_xet_bang_so_lieu_hsg"]]
+    },
+    {
+      "id": "SKILL_IV_03",
+      "section": "B.IV",
+      "topic": "Nhận xét số liệu",
+      "points": 0.75,
+      "level": "VD",
+      "prompt": "Nhận xét GDP và tốc độ tăng trưởng theo quy trình HSG.",
+      "required_terms": ["khái quát", "tăng", "giảm", "nhanh", "chậm", "chênh lệch", "dẫn số liệu"],
+      "required_edges": [["ki_nang_bieu_do_ket_hop_hsg", "ve_bieu_do_ket_hop_va_nhan_xet_gdp_toc_do_tang_truong_theo_khai_quat_xu_huong_chenh_lech_dan_so_lieu"]]
+    },
+    {
+      "id": "SKILL_IV_04",
+      "section": "B.IV",
+      "topic": "Tính toán",
+      "points": 0.75,
+      "level": "VD",
+      "prompt": "Tính tốc độ tăng trưởng và chỉ số phát triển.",
+      "required_terms": ["tốc độ tăng trưởng", "năm gốc", "phần trăm", "công thức", "chỉ số phát triển"],
+      "required_edges": [["Kĩ năng biểu đồ kết hợp HSG", "Vẽ biểu đồ kết hợp và nhận xét GDP - tốc độ tăng trưởng theo khái quát, xu hướng, chênh lệch, dẫn số liệu"]]
+    },
+    {
+      "id": "QA_ALIGN_01",
+      "section": "ALL",
+      "topic": "Template HSG",
+      "points": 0.5,
+      "level": "VD",
+      "prompt": "Có template trả lời câu phân tích theo barem HSG.",
+      "required_terms": ["phân tích", "luận điểm", "luận cứ", "dẫn chứng", "kết luận"],
+      "required_edges": []
+    },
+    {
+      "id": "QA_ALIGN_02",
+      "section": "ALL",
+      "topic": "Template HSG",
+      "points": 0.5,
+      "level": "VD",
+      "prompt": "Có template trả lời câu chứng minh theo barem HSG.",
+      "required_terms": ["chứng minh", "chia ý", "dẫn chứng", "số liệu", "kết luận"],
+      "required_edges": []
+    },
+    {
+      "id": "QA_ALIGN_03",
+      "section": "ALL",
+      "topic": "No grade 8 loss",
+      "points": 0.5,
+      "level": "VD",
+      "prompt": "Blueprint ghi rõ không bỏ dữ liệu lớp 8.",
+      "required_terms": ["Không bỏ dữ liệu lớp 8", "Tự nhiên Việt Nam", "L8", "L9", "bridge"],
+      "required_edges": [["hsg9_blueprint", "vi_tri_dia_li_viet_nam_hsg"]]
+    },
+    {
+      "id": "QA_ALIGN_04",
+      "section": "ALL",
+      "topic": "No hallucination",
+      "points": 0.5,
+      "level": "VD",
+      "prompt": "Có ràng buộc không bịa số liệu khi giải đề HSG.",
+      "required_terms": ["không bịa số liệu", "nguồn", "SGK", "niên giám", "dẫn chứng"],
+      "required_edges": []
+    }
+  ]
+}

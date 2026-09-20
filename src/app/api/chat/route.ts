@@ -1,10 +1,46 @@
 import { NextRequest, NextResponse } from "next/server";
 import { enrichQuery } from "@/lib/mcp_runtime";
 import { lookupQuestion, getQARecord } from "@/lib/cache/semanticCache";
+import hsgSkillModules from "@/data/hsg_skill_modules.json";
 
 export const runtime = "nodejs";
 // Vercel Hobby giới hạn 60s/function — giữ đúng trần này để không bị cắt giữa chừng.
 export const maxDuration = 60;
+
+function buildHsgSkillModuleBlock(): string {
+  const data = hsgSkillModules as {
+    display_name: string;
+    source_anchor: string;
+    modules: { name: string; triggers: string[]; must_do: string[] }[];
+    yccd_upgrade_modes: string[];
+    geography_material_rule: string[];
+    docx_audit: string[];
+  };
+
+  const moduleLines = data.modules.map((module, index) => {
+    const rules = module.must_do.map((rule) => `   - ${rule}`).join("\n");
+    return `${index + 1}. ${module.name}\n   Trigger: ${module.triggers.join(", ")}\n${rules}`;
+  }).join("\n\n");
+
+  return `
+
+━━━━━━━━━━━━━━━ HSG9 SKILL MODULES TRONG HUB ━━━━━━━━━━━━━━━
+Nguồn neo: ${data.source_anchor}
+
+Khi người dùng hỏi về ra đề HSG, luyện tư duy HSG, HDC, barem hoặc chấm lỗi HSG, phải vận hành theo 3 module sau:
+
+${moduleLines}
+
+Cách nâng YCCĐ thành câu HSG:
+- ${data.yccd_upgrade_modes.join("\n- ")}
+
+Quy tắc ngữ liệu Địa lí:
+- ${data.geography_material_rule.join("\n- ")}
+
+Audit trước khi xuất đề/DOCX:
+- ${data.docx_audit.join("\n- ")}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+}
 
 // ─────────────── System Prompt khóa cứng ───────────────
 const BASE_SYSTEM_PROMPT = `Bạn là "Trợ lý AI Bồi dưỡng Học sinh giỏi Địa lí" của ThS. Phùng Văn Tiến.
@@ -79,7 +115,7 @@ function buildSystemPrompt(question: string): string {
     ? ctx.entityLabels.join(" | ")
     : "(chưa nhận diện thực thể cụ thể)";
 
-  return `${BASE_SYSTEM_PROMPT}
+  return `${BASE_SYSTEM_PROMPT}${buildHsgSkillModuleBlock()}
 
 ━━━━━━━━━━━━━━━ CONTEXT TỪ KNOWLEDGE GRAPH ━━━━━━━━━━━━━━━
 
@@ -107,14 +143,16 @@ interface ModelAttempt {
   label: string;
 }
 
-function buildModelChain(): ModelAttempt[] {
+function buildModelChain(needsVision = false): ModelAttempt[] {
   const chain: ModelAttempt[] = [];
+  const vision = process.env.LLM_VISION_MODEL?.trim();
   const primary = process.env.LLM_PRIMARY_MODEL?.trim();
   const fb1 = process.env.LLM_FALLBACK_MODEL_1?.trim();
   const fb2 = process.env.LLM_FALLBACK_MODEL_2?.trim();
   // LLM_MODEL là alias cũ — dùng làm mặc định cuối nếu không cấu hình chain
   const legacy = process.env.LLM_MODEL?.trim();
 
+  if (needsVision && vision) chain.push({ model: vision, label: "Vision" });
   if (primary) chain.push({ model: primary, label: "Primary" });
   if (fb1) chain.push({ model: fb1, label: "Fallback-1" });
   if (fb2) chain.push({ model: fb2, label: "Fallback-2" });
@@ -132,12 +170,32 @@ interface LLMResult {
   degraded: boolean;
 }
 
+interface ChatAttachment {
+  name: string;
+  type: string;
+  size: number;
+  dataUrl: string;
+}
+
+type ChatMessageContent =
+  | string
+  | Array<
+      | { type: "text"; text: string }
+      | { type: "image_url"; image_url: { url: string } }
+    >;
+
+interface ChatMessage {
+  role: string;
+  content: ChatMessageContent;
+}
+
 async function callLLMSequence(
-  messages: { role: string; content: string }[],
+  messages: ChatMessage[],
   baseUrl: string,
-  apiKey: string
+  apiKey: string,
+  needsVision = false
 ): Promise<LLMResult> {
-  const chain = buildModelChain();
+  const chain = buildModelChain(needsVision);
   const attempted: string[] = [];
   let lastError = "";
 
@@ -201,18 +259,27 @@ async function callLLMSequence(
 // ─────────────── POST /api/chat ───────────────
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json() as { question?: string; messages?: { role: string; content: string }[] };
+    const body = await req.json() as {
+      question?: string;
+      messages?: { role: string; content: string }[];
+      attachments?: ChatAttachment[];
+    };
 
     const question = body.question?.trim() ?? body.messages?.findLast((m) => m.role === "user")?.content?.trim() ?? "";
     if (!question) {
       return NextResponse.json({ error: "Câu hỏi không được để trống." }, { status: 400 });
     }
 
+    const imageAttachments = (body.attachments ?? [])
+      .filter((file) => file.type?.startsWith("image/") && file.dataUrl?.startsWith("data:image/"))
+      .slice(0, 4);
+    const hasAttachments = imageAttachments.length > 0;
+
     const ctx = safeEnrich(question);
 
     // ── Semantic Cache: trả 0-token khi khớp chuẩn barem ──
     const cache = lookupQuestion(question);
-    if (cache.tier === "exact" && cache.record) {
+    if (!hasAttachments && cache.tier === "exact" && cache.record) {
       return NextResponse.json({
         answer: cache.record.answer,
         entities: ctx.entityLabels,
@@ -247,17 +314,30 @@ export async function POST(req: NextRequest) {
 
     // ── Cache tầng "context": bơm lời giải gốc làm context ngắn (~200 tokens) ──
     let contextPrompt = systemPrompt;
-    if (cache.tier === "context" && cache.record) {
+    if (!hasAttachments && cache.tier === "context" && cache.record) {
       contextPrompt = `${systemPrompt}\n\n[GỢI Ý ĐÁP ÁN CHUẨN (context ngắn)]\n${cache.record.answer.slice(0, 1200)}`;
     }
 
-    const messages = [
+    const attachmentInstruction = hasAttachments
+      ? `\n\n[FILE ẢNH ĐÍNH KÈM]\nNgười dùng đã ghim ${imageAttachments.length} ảnh. Hãy đọc chữ viết tay/nội dung ảnh trước, sau đó phân tích, chấm chữa bài theo barem HSG nếu phù hợp. Nếu ảnh mờ hoặc thiếu trang, nói rõ phần chưa đọc được.`
+      : "";
+    const userContent: ChatMessageContent = hasAttachments
+      ? [
+          { type: "text", text: `${question}${attachmentInstruction}` },
+          ...imageAttachments.map((file) => ({
+            type: "image_url" as const,
+            image_url: { url: file.dataUrl },
+          })),
+        ]
+      : question;
+
+    const messages: ChatMessage[] = [
       { role: "system", content: contextPrompt },
       ...(body.messages?.filter((m) => m.role !== "system").slice(-8) ?? []),
-      ...(body.messages ? [] : [{ role: "user", content: question }]),
+      { role: "user", content: userContent },
     ];
 
-    const result = await callLLMSequence(messages, baseUrl, apiKey);
+    const result = await callLLMSequence(messages, baseUrl, apiKey, hasAttachments);
 
     // ── Toàn bộ chain thất bại → trả context KG thay vì lỗi trắng ──
     if (result.degraded) {

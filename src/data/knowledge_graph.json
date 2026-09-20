@@ -3948,6 +3948,253 @@
       "grade": "L8",
       "category": "Chủ đề chung",
       "status": "approved_kntt"
+    },
+    "hsg9_blueprint": {
+      "label": "HUB HSG9 Blueprint",
+      "lesson": "HSG9 - Blueprint",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "vi_tri_dia_li_viet_nam_hsg": {
+      "label": "Vị trí địa lí Việt Nam - trục HSG",
+      "lesson": "Chuyên đề I: Vị trí & Lãnh thổ",
+      "grade": "L8",
+      "category": "Tự nhiên",
+      "status": "approved_hsg9",
+      "aliases": [
+        "Vị trí địa lí Việt Nam",
+        "vị trí lãnh thổ Việt Nam",
+        "ảnh hưởng của vị trí địa lí đến tự nhiên"
+      ]
+    },
+    "he_qua_tu_nhien_cua_vi_tri_dia_li": {
+      "label": "Hệ quả tự nhiên của vị trí địa lí Việt Nam",
+      "lesson": "Chuyên đề I: Vị trí & Lãnh thổ",
+      "grade": "L8",
+      "category": "Tự nhiên",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "ho_dam_va_gia_tri_su_dung": {
+      "label": "Hồ, đầm và giá trị sử dụng",
+      "lesson": "Tự nhiên Việt Nam",
+      "grade": "L8",
+      "category": "Tự nhiên",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "nhan_to_tu_nhien_anh_huong_cong_nghiep": {
+      "label": "Nhân tố tự nhiên ảnh hưởng đến công nghiệp",
+      "lesson": "CĐ03 - Công nghiệp",
+      "grade": "L9",
+      "category": "Kinh tế",
+      "status": "approved_hsg9",
+      "aliases": [
+        "nhân tố tự nhiên ảnh hưởng đến công nghiệp",
+        "tự nhiên tác động công nghiệp"
+      ]
+    },
+    "tu_nhien_td_mn_bac_bo_hsg": {
+      "label": "Điều kiện tự nhiên Trung du và miền núi Bắc Bộ - trục HSG",
+      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
+      "grade": "L9",
+      "category": "Vùng kinh tế",
+      "status": "approved_hsg9",
+      "aliases": [
+        "Điều kiện tự nhiên Trung du miền núi Bắc Bộ",
+        "TDMNPB tự nhiên",
+        "Trung du miền núi Bắc Bộ"
+      ]
+    },
+    "nong_nghiep_du_lich_td_mn_bac_bo": {
+      "label": "Nông nghiệp và du lịch Trung du miền núi Bắc Bộ",
+      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
+      "grade": "L9",
+      "category": "Vùng kinh tế",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "dan_cu_dong_bang_song_hong_hsg": {
+      "label": "Dân cư Đồng bằng sông Hồng - trục HSG",
+      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
+      "grade": "L9",
+      "category": "Dân cư",
+      "status": "approved_hsg9",
+      "aliases": [
+        "Dân cư Đồng bằng sông Hồng",
+        "ĐBSH dân cư",
+        "đặc điểm dân cư ĐBSH"
+      ]
+    },
+    "suc_ep_phat_trien_dbs_hong": {
+      "label": "Sức ép phát triển ở Đồng bằng sông Hồng",
+      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
+      "grade": "L9",
+      "category": "Vùng kinh tế",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "ki_nang_bieu_do_ket_hop_hsg": {
+      "label": "Kĩ năng biểu đồ kết hợp HSG",
+      "lesson": "HSG9 - Kĩ năng biểu đồ",
+      "grade": "L9",
+      "category": "Kĩ năng",
+      "status": "approved_hsg9",
+      "aliases": [
+        "biểu đồ kết hợp GDP tốc độ tăng trưởng",
+        "vẽ biểu đồ kết hợp",
+        "nhận xét biểu đồ HSG"
+      ]
+    },
+    "quy_trinh_nhan_xet_bang_so_lieu_hsg": {
+      "label": "Quy trình nhận xét bảng số liệu HSG",
+      "lesson": "HSG9 - Kĩ năng biểu đồ",
+      "grade": "L9",
+      "category": "Kĩ năng",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "vi tri dia li viet nam": {
+      "label": "V? tr? ??a l? Vi?t Nam",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "khi hau nhiet doi am gio mua thien nhien chiu anh huong bien va phan hoa bac nam": {
+      "label": "Kh? h?u nhi?t ??i ?m gi? m?a, thi?n nhi?n ch?u ?nh h??ng bi?n v? ph?n h?a B?c - Nam",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "dieu kien tu nhien trung du va mien nui bac bo": {
+      "label": "?i?u ki?n t? nhi?n Trung du v? mi?n n?i B?c B?",
+      "lesson": "HSG9 - V?ng kinh t?",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "nong nghiep hang hoa du lich thuy dien va khai khoang trung du mien nui bac bo": {
+      "label": "N?ng nghi?p h?ng h?a, du l?ch, th?y ?i?n v? khai kho?ng Trung du mi?n n?i B?c B?",
+      "lesson": "HSG9 - V?ng kinh t?",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "dan cu dong bang song hong": {
+      "label": "D?n c? ??ng b?ng s?ng H?ng",
+      "lesson": "HSG9 - V?ng kinh t?",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "phat trien kinh te xa hoi dong bang song hong": {
+      "label": "Ph?t tri?n kinh t? - x? h?i ??ng b?ng s?ng H?ng",
+      "lesson": "HSG9 - V?ng kinh t?",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "nhan to tu nhien anh huong den cong nghiep": {
+      "label": "Nh?n t? t? nhi?n ?nh h??ng ??n c?ng nghi?p",
+      "lesson": "HSG9 - D?n c? v? ng?nh kinh t?",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "phat trien va phan bo cong nghiep viet nam": {
+      "label": "Ph?t tri?n v? ph?n b? c?ng nghi?p Vi?t Nam",
+      "lesson": "HSG9 - D?n c? v? ng?nh kinh t?",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "ki nang bieu do ket hop hsg": {
+      "label": "K? n?ng bi?u ?? k?t h?p HSG",
+      "lesson": "HSG9 - K? n?ng bi?u ??",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "ve bieu do ket hop va nhan xet gdp toc do tang truong theo khai quat xu huong chenh lech dan so lieu": {
+      "label": "V? bi?u ?? k?t h?p v? nh?n x?t GDP - t?c ?? t?ng tr??ng theo kh?i qu?t, xu h??ng, ch?nh l?ch, d?n s? li?u",
+      "lesson": "HSG9 - K? n?ng bi?u ??",
+      "grade": "L9",
+      "category": "HSG9",
+      "status": "approved_hsg9",
+      "aliases": []
+    },
+    "tinh_chat_nhiet_doi_am_gio_mua": {
+      "label": "T?nh ch?t nhi?t ??i ?m gi? m?a",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "grade": "L8",
+      "category": "T? nhi?n",
+      "status": "approved_hsg9",
+      "aliases": [
+        "n?n nhi?t ?m cao"
+      ]
+    },
+    "dat_feralit": {
+      "label": "??t feralit",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "grade": "L8",
+      "category": "T? nhi?n",
+      "status": "approved_hsg9",
+      "aliases": [
+        "r?a tr?i, t?ch t? oxit s?t nh?m"
+      ]
+    },
+    "giao_thoa_sinh_vat_va_phan_hoa_canh_quan": {
+      "label": "Giao thoa sinh v?t v? ph?n h?a c?nh quan Vi?t Nam",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "grade": "L8",
+      "category": "T? nhi?n",
+      "status": "approved_hsg9",
+      "aliases": [
+        "giao thoa sinh v?t; ph?n h?a c?nh quan"
+      ]
+    },
+    "han_che_tu_nhien_td_mn_bac_bo": {
+      "label": "Hạn chế tự nhiên Trung du và miền núi Bắc Bộ",
+      "lesson": "HSG9 - Vùng kinh tế",
+      "grade": "L9",
+      "category": "Vùng kinh tế",
+      "status": "approved_hsg9",
+      "aliases": [
+        "địa hình chia cắt; giao thông khó khăn; thiên tai; sạt lở; rét đậm"
+      ]
+    },
+    "template_phan_tich_hsg": {
+      "label": "Template phân tích HSG: luận điểm - luận cứ - dẫn chứng - kết luận",
+      "lesson": "HSG9 - Phương pháp làm bài",
+      "grade": "L9",
+      "category": "Kĩ năng",
+      "status": "approved_hsg9",
+      "aliases": [
+        "phân tích; luận điểm; luận cứ; dẫn chứng; kết luận"
+      ]
+    },
+    "template_chung_minh_hsg": {
+      "label": "Template chứng minh HSG: chia ý - dẫn chứng - số liệu - kết luận",
+      "lesson": "HSG9 - Phương pháp làm bài",
+      "grade": "L9",
+      "category": "Kĩ năng",
+      "status": "approved_hsg9",
+      "aliases": [
+        "chứng minh; chia ý; dẫn chứng; số liệu; kết luận"
+      ]
     }
   },
   "edges": [
@@ -7885,6 +8132,250 @@
       "level": null,
       "note": "Chính quyền các chúa Nguyễn thực thi chủ quyền tại Hoàng Sa và Trường Sa.",
       "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "hsg9_blueprint",
+      "target": "vi_tri_dia_li_viet_nam_hsg",
+      "relation": "khóa phạm vi ôn tự nhiên Việt Nam từ lớp 8",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Ma trận có cả chủ đề chung lớp 8 và tự luận tự nhiên Việt Nam.",
+      "grade": "L9",
+      "status": "pending_audit",
+      "kind": "bridge"
+    },
+    {
+      "source": "hsg9_blueprint",
+      "target": "nhan_to_tu_nhien_anh_huong_cong_nghiep",
+      "relation": "khóa phạm vi dân cư và ngành kinh tế",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Tự luận 4,5 điểm yêu cầu dân cư + ngành kinh tế.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "hsg9_blueprint",
+      "target": "tu_nhien_td_mn_bac_bo_hsg",
+      "relation": "khóa phạm vi vùng kinh tế",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Ma trận cố định TDMNPB và ĐBSH.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "hsg9_blueprint",
+      "target": "ki_nang_bieu_do_ket_hop_hsg",
+      "relation": "khóa phạm vi kĩ năng biểu đồ",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Kĩ năng vẽ và nhận xét biểu đồ chiếm 4 điểm.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "vi_tri_dia_li_viet_nam_hsg",
+      "target": "he_qua_tu_nhien_cua_vi_tri_dia_li",
+      "relation": "quy định",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Vị trí nội chí tuyến, giáp biển, kéo dài Bắc - Nam và tiếp giáp lục địa - đại dương tạo hệ quả tổng hợp.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "vi_tri_dia_li_viet_nam_hsg",
+      "target": "cd05_khi hau nhiet doi am gio mua co su phan hoa theo do cao va theo mua",
+      "relation": "là cơ sở hình thành",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Cầu từ vị trí địa lí L8 sang khí hậu, phục vụ câu phân tích ảnh hưởng đến tự nhiên.",
+      "grade": null,
+      "status": "pending_audit",
+      "kind": "bridge"
+    },
+    {
+      "source": "he_qua_tu_nhien_cua_vi_tri_dia_li",
+      "target": "nhan_to_tu_nhien_anh_huong_cong_nghiep",
+      "relation": "tạo nền tảng tài nguyên và điều kiện tự nhiên cho",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Khí hậu, địa hình, khoáng sản, nước, biển và sinh vật chi phối phát triển công nghiệp.",
+      "grade": null,
+      "status": "pending_audit",
+      "kind": "bridge"
+    },
+    {
+      "source": "ho_dam_va_gia_tri_su_dung",
+      "target": "he_qua_tu_nhien_cua_vi_tri_dia_li",
+      "relation": "bổ sung minh chứng thủy văn cho",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Hồ, đầm có giá trị điều hòa nước, thủy sản, du lịch, sản xuất và sinh hoạt.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "nhan_to_tu_nhien_anh_huong_cong_nghiep",
+      "target": "cd03_chien luoc cong nghiep hoa hien dai hoa gan voi kinh te tri thuc",
+      "relation": "tác động hai mặt đến phát triển và phân bố",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Khoáng sản, nguồn nước, khí hậu, địa hình, biển, sinh vật vừa tạo thuận lợi vừa gây khó khăn.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "tu_nhien_td_mn_bac_bo_hsg",
+      "target": "nong_nghiep_du_lich_td_mn_bac_bo",
+      "relation": "tạo thế mạnh cho",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Địa hình, khí hậu phân hóa, đất feralit, khoáng sản, thủy năng và cảnh quan là căn cứ chứng minh.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "tu_nhien_td_mn_bac_bo_hsg",
+      "target": "nhan_to_tu_nhien_anh_huong_cong_nghiep",
+      "relation": "cung cấp ví dụ vùng cho",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Khoáng sản và thủy năng là lợi thế công nghiệp của TDMNPB.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "dan_cu_dong_bang_song_hong_hsg",
+      "target": "suc_ep_phat_trien_dbs_hong",
+      "relation": "đồng thời tạo động lực và sức ép",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Dân cư đông, mật độ cao, lao động dồi dào, chất lượng khá tạo lợi thế nhưng gây sức ép đất đai, việc làm, môi trường.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "do thi hoa",
+      "target": "dan_cu_dong_bang_song_hong_hsg",
+      "relation": "làm nổi bật đặc điểm dân cư",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Đô thị hóa và mạng lưới đô thị dày là đặc điểm cần dùng khi phân tích ĐBSH.",
+      "grade": null,
+      "status": "pending_audit",
+      "kind": "bridge"
+    },
+    {
+      "source": "ki_nang_bieu_do_ket_hop_hsg",
+      "target": "quy_trinh_nhan_xet_bang_so_lieu_hsg",
+      "relation": "yêu cầu sau khi vẽ phải",
+      "lesson": "HSG9 - Blueprint 2025-2026+",
+      "level": "VD",
+      "note": "Nhận xét theo khái quát, xu hướng, tốc độ, chênh lệch và dẫn số liệu.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "vi tri dia li viet nam",
+      "target": "khi hau nhiet doi am gio mua thien nhien chiu anh huong bien va phan hoa bac nam",
+      "relation": "quy ??nh h? qu? t? nhi?n",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "level": "VD",
+      "note": "B? sung HUB HSG9: v? tr? n?i ch? tuy?n, gi?p bi?n, k?o d?i B?c - Nam, ti?p gi?p l?c ??a - ??i d??ng l? c? ch? gi?i c?u ph?n t?ch ?nh h??ng ??n t? nhi?n.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "dieu kien tu nhien trung du va mien nui bac bo",
+      "target": "nong nghiep hang hoa du lich thuy dien va khai khoang trung du mien nui bac bo",
+      "relation": "t?o th? m?nh cho",
+      "lesson": "HSG9 - V?ng kinh t?",
+      "level": "VD",
+      "note": "B? sung HUB HSG9: ??a h?nh, kh? h?u ph?n h?a, ??t feralit, kho?ng s?n, th?y n?ng v? c?nh quan l? tr?c ch?ng minh v?ng.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "dan cu dong bang song hong",
+      "target": "phat trien kinh te xa hoi dong bang song hong",
+      "relation": "v?a t?o ??ng l?c v?a g?y s?c ?p",
+      "lesson": "HSG9 - V?ng kinh t?",
+      "level": "VD",
+      "note": "B? sung HUB HSG9: d?n c? ??ng, m?t ?? cao, lao ??ng d?i d?o/ch?t l??ng kh? t?o l?i th? nh?ng g?y s?c ?p ??t ?ai, vi?c l?m, h? t?ng, m?i tr??ng.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "nhan to tu nhien anh huong den cong nghiep",
+      "target": "phat trien va phan bo cong nghiep viet nam",
+      "relation": "t?c ??ng hai m?t ??n",
+      "lesson": "HSG9 - D?n c? v? ng?nh kinh t?",
+      "level": "VD",
+      "note": "B? sung HUB HSG9: kho?ng s?n, ngu?n n??c, ??a h?nh, kh? h?u, bi?n v? sinh v?t v?a t?o thu?n l?i v?a g?y kh? kh?n cho c?ng nghi?p.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "ki nang bieu do ket hop hsg",
+      "target": "ve bieu do ket hop va nhan xet gdp toc do tang truong theo khai quat xu huong chenh lech dan so lieu",
+      "relation": "y?u c?u th?c hi?n",
+      "lesson": "HSG9 - K? n?ng bi?u ??",
+      "level": "VD",
+      "note": "B? sung HUB HSG9: module ri?ng cho d?ng bi?u ?? 4 ?i?m, kh?ng ph? thu?c KG nh?n qu?.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "tinh_chat_nhiet_doi_am_gio_mua",
+      "target": "dat_feralit",
+      "relation": "th?c ??y qu? tr?nh feralit h?a h?nh th?nh",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "level": "TH",
+      "note": "Nhi?t ?m cao l?m phong h?a m?nh, m?a nhi?u r?a tr?i baz? v? t?ch t? oxit s?t nh?m, t?o ??t feralit.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "he_qua_tu_nhien_cua_vi_tri_dia_li",
+      "target": "giao_thoa_sinh_vat_va_phan_hoa_canh_quan",
+      "relation": "bao g?m",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "level": "TH",
+      "note": "V? tr? ti?p gi?p l?c ??a - ??i d??ng v? l?nh th? k?o d?i t?o giao thoa sinh v?t, ph?n h?a c?nh quan theo B?c - Nam v? ?ai cao.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "tu_nhien_td_mn_bac_bo_hsg",
+      "target": "han_che_tu_nhien_td_mn_bac_bo",
+      "relation": "đồng thời gây hạn chế",
+      "lesson": "HSG9 - Vùng kinh tế",
+      "level": "VD",
+      "note": "Địa hình chia cắt làm giao thông khó khăn; vùng núi chịu thiên tai, sạt lở, rét đậm, rét hại.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "hsg9_blueprint",
+      "target": "template_phan_tich_hsg",
+      "relation": "yêu cầu dùng khi trả lời câu phân tích",
+      "lesson": "HSG9 - Phương pháp làm bài",
+      "level": "VD",
+      "note": "Câu phân tích phải tách luận điểm, luận cứ, dẫn chứng và kết luận theo barem HSG.",
+      "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "hsg9_blueprint",
+      "target": "template_chung_minh_hsg",
+      "relation": "yêu cầu dùng khi trả lời câu chứng minh",
+      "lesson": "HSG9 - Phương pháp làm bài",
+      "level": "VD",
+      "note": "Câu chứng minh phải chia ý rõ, có dẫn chứng, số liệu và kết luận.",
+      "grade": "L9",
       "status": "approved"
     }
   ]

@@ -1,5 +1,156 @@
 [
   {
+    "id": "hsg-skill-cham-loi",
+    "question": "Dùng module chấm lỗi HSG như thế nào?",
+    "answer": "Module Chấm lỗi HSG không chỉ báo tổng điểm. HUB phải phân loại lỗi theo kiến thức nền lớp 8, kiến thức lớp 9, thao tác tư duy, khai thác ngữ liệu, trình bày barem và kĩ năng biểu đồ. Các lỗi cần bắt gồm thiếu luận điểm, thiếu dẫn chứng, sai cơ chế nhân quả, kể ý thay vì phân tích, nhận xét số liệu cảm tính, chọn sai biểu đồ, dùng số liệu ngoài bảng, lan ngoài ma trận, bỏ nền tự nhiên lớp 8 khi giải thích nội dung lớp 9. Sau khi chấm, HUB phải chỉ cách sửa và sinh câu luyện bù.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "teacher-os-ra-de-chuan-ho-so/HSG skill modules",
+    "tags": [
+      "chấm lỗi HSG",
+      "chữa lỗi",
+      "luyện bù",
+      "rubric"
+    ],
+    "similarity_hash": "4e059cf9ef14c930649dbe9c",
+    "hit_count": 0,
+    "created_at": "2026-09-20T18:31:50Z",
+    "doc_synced": false
+  },
+  {
+    "id": "hsg-skill-docx-audit",
+    "question": "Audit DOCX đề HSG9 trước khi gửi cần kiểm những gì?",
+    "answer": "Audit DOCX trước khi gửi gồm: tổng điểm 20, ma trận đúng, tỉ lệ NB 20% - TH 45% - VD 35%, cấu trúc 8 lựa chọn + 2 đúng/sai, phân bố A/B/C/D = 2/2/2/2, thang đúng/sai lũy tiến, đáp án-HDC đồng bộ, số liệu biểu đồ hợp lí, biểu đồ GDP + tốc độ tăng trưởng dùng cột - đường, font Times New Roman, UTF-8, DOCX mở được và đọc ngược không mojibake.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "teacher-os-ra-de-chuan-ho-so/HSG skill modules",
+    "tags": [
+      "DOCX",
+      "audit",
+      "font",
+      "ma trận"
+    ],
+    "similarity_hash": "881fef15d68f2c3ba094cbc4",
+    "hit_count": 0,
+    "created_at": "2026-09-20T18:31:50Z",
+    "doc_synced": false
+  },
+  {
+    "id": "hsg-skill-luyen-tu-duy",
+    "question": "Dùng module luyện thao tác tư duy HSG như thế nào?",
+    "answer": "Module Luyện thao tác tư duy HSG không tạo bộ câu học thuộc cố định. HUB phải rèn theo thao tác: phân tích quan hệ nhân quả, chứng minh bằng luận cứ, giải thích cơ chế, so sánh lãnh thổ, nhận xét số liệu/biểu đồ. Một bài luyện chuẩn gồm: nhận diện YCCĐ, xác định cách nâng HSG, chọn ngữ liệu, lập luận bằng luận điểm - luận cứ - dẫn chứng, viết câu trả lời ăn điểm, nêu lỗi hay gặp và tạo câu luyện bù.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "teacher-os-ra-de-chuan-ho-so/HSG skill modules",
+    "tags": [
+      "luyện tư duy HSG",
+      "phân tích",
+      "chứng minh",
+      "giải thích",
+      "nhận xét"
+    ],
+    "similarity_hash": "c0780e162cd1bea549bd1af7",
+    "hit_count": 0,
+    "created_at": "2026-09-20T18:31:50Z",
+    "doc_synced": false
+  },
+  {
+    "id": "hsg-skill-modules-overview",
+    "question": "HUB Teacher OS có những module nào để soạn đề HSG Địa lí 9?",
+    "answer": "HUB Teacher OS dùng 3 module HSG trong cùng một năng lực: Ra đề chuẩn Sở giáo dục, Luyện thao tác tư duy HSG, và Chấm lỗi HSG. Khi người dùng hỏi ra đề, HUB khóa ma trận Sở và tạo đề/HDC/audit. Khi hỏi luyện, HUB tạo bài luyện theo thao tác phân tích, chứng minh, giải thích, so sánh, nhận xét. Khi hỏi chấm lỗi, HUB phân tích lỗi theo kiến thức, thao tác tư duy, ngữ liệu, barem và kĩ năng biểu đồ.\n\n1. Ra đề chuẩn Sở giáo dục\nTrigger: ra đề HSG, đề HSG9, ma trận Sở, hướng dẫn chấm, audit đề\n- Khóa ma trận trước khi viết câu: tổng 20 điểm, thời gian 150 phút, NB 20%, TH 45%, VD 35%.\n- Phần A đúng 4 điểm: 8 câu lựa chọn và 2 câu đúng/sai.\n- 8 câu lựa chọn phải cân bằng đáp án đúng A/B/C/D = 2/2/2/2.\n- Mỗi câu đúng/sai gồm 4 ý a,b,c,d; mặc định 2 đúng + 2 sai nếu đề gốc không yêu cầu khác.\n- Chấm đúng/sai theo thang lũy tiến của HDC Sở: đúng 1 ý = 0,10; đúng 2 ý = 0,25; đúng 3 ý = 0,50; đúng 4 ý = 1,00.\n- Phần tự luận đúng 16 điểm: Tự nhiên Việt Nam 3,5; Dân cư + ngành kinh tế 4,5; TDMNPB + ĐBSH 4,0; biểu đồ 4,0.\n- Mỗi câu có vết audit: YCCĐ gốc -> cách nâng HSG -> thao tác tư duy -> ngữ liệu -> barem -> lỗi thường gặp.\n- Không bỏ lớp 8 vì lớp 8 là nền tự nhiên Việt Nam để giải thích câu HSG lớp 9.\n\n2. Luyện thao tác tư duy HSG\nTrigger: luyện tư duy, luyện phân tích, luyện chứng minh, luyện giải thích, luyện nhận xét biểu đồ\n- Không luyện bằng bộ câu hỏi - đáp án cố định.\n- Rèn theo thao tác: phân tích quan hệ nhân quả, chứng minh bằng luận cứ, giải thích cơ chế, so sánh lãnh thổ, nhận xét số liệu/biểu đồ.\n- Tổ chức bài luyện theo chuỗi: nhận diện YCCĐ -> xác định cách nâng HSG -> chọn ngữ liệu -> lập luận -> viết câu trả lời ăn điểm.\n- Với tự nhiên lớp 8, luôn tạo cầu nối sang HSG9: tự nhiên -> dân cư, nông nghiệp, công nghiệp, vùng, phát triển bền vững.\n- Mẫu bài luyện phải có câu hỏi, gợi ý/barem, lỗi hay gặp và câu luyện bù.\n\n3. Chấm lỗi HSG\nTrigger: chấm lỗi, chữa lỗi, phân tích bài làm, luyện bù, thiếu luận điểm\n- Không chỉ báo tổng điểm; phân loại lỗi theo kiến thức lớp 8, kiến thức lớp 9, thao tác tư duy, khai thác ngữ liệu, trình bày barem, kĩ năng biểu đồ.\n- Bắt các lỗi thường gặp: thiếu luận điểm, thiếu dẫn chứng, sai cơ chế nhân quả, kể ý thay vì phân tích, nhận xét số liệu cảm tính, chọn sai biểu đồ, lan ngoài ma trận, bỏ nền tự nhiên lớp 8.\n- Phản hồi theo mẫu: làm đúng gì, thiếu/sai gì, vì sao mất điểm, sửa bằng câu/ý nào, luyện bù bằng dạng nào.\n- Từ lỗi sinh câu luyện bù tương ứng: thiếu cơ chế -> câu giải thích; thiếu dẫn chứng -> câu chứng minh; nhận xét cảm tính -> xử lí số liệu; chọn sai biểu đồ -> nhận diện dạng biểu đồ.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "teacher-os-ra-de-chuan-ho-so/HSG skill modules",
+    "tags": [
+      "HSG9",
+      "skill soạn đề HSG",
+      "module HSG",
+      "Teacher OS HUB"
+    ],
+    "similarity_hash": "5e2ebaa4b27675840313de03",
+    "hit_count": 0,
+    "created_at": "2026-09-20T18:31:50Z",
+    "doc_synced": false
+  },
+  {
+    "id": "hsg-skill-ra-de-chuan-so",
+    "question": "Dùng module ra đề chuẩn Sở giáo dục như thế nào?",
+    "answer": "Khi dùng module Ra đề chuẩn Sở giáo dục, HUB phải khóa ma trận trước khi viết câu: tổng 20 điểm, thời gian 150 phút, NB 20%, TH 45%, VD 35%. Phần A gồm 8 câu lựa chọn và 2 câu đúng/sai; 8 câu lựa chọn cân bằng A/B/C/D = 2/2/2/2; câu đúng/sai chấm lũy tiến 1 ý = 0,10; 2 ý = 0,25; 3 ý = 0,50; 4 ý = 1,00. Tự luận gồm Tự nhiên Việt Nam 3,5 điểm; Dân cư + ngành kinh tế 4,5 điểm; TDMNPB + ĐBSH 4,0 điểm; biểu đồ 4,0 điểm. Mỗi câu phải có vết YCCĐ gốc -> cách nâng HSG -> thao tác tư duy -> ngữ liệu -> barem -> lỗi thường gặp.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "teacher-os-ra-de-chuan-ho-so/HSG skill modules",
+    "tags": [
+      "ra đề HSG",
+      "ma trận Sở",
+      "HDC",
+      "đúng sai lũy tiến"
+    ],
+    "similarity_hash": "6cf7d73416abc5c7ce51d17f",
+    "hit_count": 0,
+    "created_at": "2026-09-20T18:31:50Z",
+    "doc_synced": false
+  },
+  {
+    "id": "hsg-skill-true-false-scoring",
+    "question": "Câu đúng sai HSG9 Hà Nội chấm điểm như thế nào?",
+    "answer": "Theo nguồn neo Đề + HDC HSG lớp 9 cấp thành phố Hà Nội 2025-2026, câu đúng/sai không chấm 0,25 điểm mỗi ý đều. Mỗi câu đúng/sai có 4 ý và chấm lũy tiến: đúng 1 ý = 0,10 điểm; đúng 2 ý = 0,25 điểm; đúng 3 ý = 0,50 điểm; đúng 4 ý = 1,00 điểm. Khi sinh đề/HDC, HUB phải ghi rõ đáp án từng ý a,b,c,d và thang lũy tiến này.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "teacher-os-ra-de-chuan-ho-so/HSG skill modules",
+    "tags": [
+      "đúng sai",
+      "thang điểm",
+      "HDC Sở",
+      "HSG9 Hà Nội"
+    ],
+    "similarity_hash": "5f76170539acfc499a7fe93a",
+    "hit_count": 0,
+    "created_at": "2026-09-20T18:31:50Z",
+    "doc_synced": false
+  },
+  {
+    "id": "hsg-skill-yccd-upgrade",
+    "question": "Cách nâng YCCĐ thành câu hỏi HSG Địa lí là gì?",
+    "answer": "Có 3 cách nâng YCCĐ thành câu hỏi HSG: bám trực tiếp YCCĐ để kiểm nền; mở rộng phạm vi từ một yếu tố sang hệ yếu tố; nâng mức tư duy từ trình bày sang phân tích, chứng minh, giải thích, so sánh, nhận xét. Khi ra đề hoặc luyện HSG, mỗi câu phải audit được YCCĐ gốc -> cách nâng -> thao tác tư duy -> ngữ liệu/kiến thức huy động -> barem -> lỗi thường gặp.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "teacher-os-ra-de-chuan-ho-so/HSG skill modules",
+    "tags": [
+      "YCCĐ",
+      "cách nâng HSG",
+      "audit câu hỏi"
+    ],
+    "similarity_hash": "7d71970a0b66951e01e251e6",
+    "hit_count": 0,
+    "created_at": "2026-09-20T18:31:50Z",
+    "doc_synced": false
+  },
+  {
+    "id": "hsg9-template-chung-minh",
+    "question": "Template trả lời câu chứng minh HSG",
+    "answer": "Khi gặp câu chứng minh, cần chia ý theo nhóm luận điểm, mỗi ý có dẫn chứng hoặc số liệu, sau đó kết luận khẳng định vấn đề.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "HSG9 benchmark gapfix",
+    "tags": [
+      "HSG9",
+      "template",
+      "barem"
+    ],
+    "similarity_hash": "c323629f7d6e2e8d579c9f45",
+    "hit_count": 0,
+    "created_at": "2026-09-20T00:00:00Z",
+    "doc_synced": false
+  },
+  {
+    "id": "hsg9-template-phan-tich",
+    "question": "Template trả lời câu phân tích HSG",
+    "answer": "Khi gặp câu phân tích, trả lời theo khung: (1) nêu luận điểm; (2) trình bày luận cứ/cơ chế tác động; (3) đưa dẫn chứng/số liệu; (4) kết luận chiều tác động.",
+    "category": "PHUONG_PHAP_ON_HSG",
+    "source_module": "HSG9 benchmark gapfix",
+    "tags": [
+      "HSG9",
+      "template",
+      "barem"
+    ],
+    "similarity_hash": "8ea64d74e7ef2062a8c7b23b",
+    "hit_count": 0,
+    "created_at": "2026-09-20T00:00:00Z",
+    "doc_synced": false
+  },
+  {
     "id": "qa8-01-c1-tu-luan-01",
     "question": "Vị trí địa lí và lãnh thổ đã quy định đặc điểm cơ bản của thiên nhiên nước ta là?",
     "answer": "Vị trí địa lí và lãnh thổ đã quy định đặc điểm cơ bản của thiên nhiên nước ta mang tính chất nhiệt đới ẩm gió mùa, chịu ảnh hưởng sâu sắc của biển và phân hóa đa dạng.",

@@ -1,0 +1,62 @@
+{
+  "id": "teacher_os_hsg_skill_modules",
+  "source_skill": "teacher-os-ra-de-chuan-ho-so",
+  "display_name": "Skill soạn đề HSG trong HUB Teacher OS",
+  "scope": "Địa lí HSG lớp 9 Hà Nội, giữ nền Địa lí tự nhiên lớp 8",
+  "source_anchor": "Đề + HDC thi HSG lớp 9 cấp thành phố Hà Nội 2025-2026, phân môn Địa lí",
+  "modules": [
+    {
+      "id": "ra_de_chuan_so",
+      "name": "Ra đề chuẩn Sở giáo dục",
+      "triggers": ["ra đề HSG", "đề HSG9", "ma trận Sở", "hướng dẫn chấm", "audit đề"],
+      "must_do": [
+        "Khóa ma trận trước khi viết câu: tổng 20 điểm, thời gian 150 phút, NB 20%, TH 45%, VD 35%.",
+        "Phần A đúng 4 điểm: 8 câu lựa chọn và 2 câu đúng/sai.",
+        "8 câu lựa chọn phải cân bằng đáp án đúng A/B/C/D = 2/2/2/2.",
+        "Mỗi câu đúng/sai gồm 4 ý a,b,c,d; mặc định 2 đúng + 2 sai nếu đề gốc không yêu cầu khác.",
+        "Chấm đúng/sai theo thang lũy tiến của HDC Sở: đúng 1 ý = 0,10; đúng 2 ý = 0,25; đúng 3 ý = 0,50; đúng 4 ý = 1,00.",
+        "Phần tự luận đúng 16 điểm: Tự nhiên Việt Nam 3,5; Dân cư + ngành kinh tế 4,5; TDMNPB + ĐBSH 4,0; biểu đồ 4,0.",
+        "Mỗi câu có vết audit: YCCĐ gốc -> cách nâng HSG -> thao tác tư duy -> ngữ liệu -> barem -> lỗi thường gặp.",
+        "Không bỏ lớp 8 vì lớp 8 là nền tự nhiên Việt Nam để giải thích câu HSG lớp 9."
+      ]
+    },
+    {
+      "id": "luyen_thao_tac_tu_duy_hsg",
+      "name": "Luyện thao tác tư duy HSG",
+      "triggers": ["luyện tư duy", "luyện phân tích", "luyện chứng minh", "luyện giải thích", "luyện nhận xét biểu đồ"],
+      "must_do": [
+        "Không luyện bằng bộ câu hỏi - đáp án cố định.",
+        "Rèn theo thao tác: phân tích quan hệ nhân quả, chứng minh bằng luận cứ, giải thích cơ chế, so sánh lãnh thổ, nhận xét số liệu/biểu đồ.",
+        "Tổ chức bài luyện theo chuỗi: nhận diện YCCĐ -> xác định cách nâng HSG -> chọn ngữ liệu -> lập luận -> viết câu trả lời ăn điểm.",
+        "Với tự nhiên lớp 8, luôn tạo cầu nối sang HSG9: tự nhiên -> dân cư, nông nghiệp, công nghiệp, vùng, phát triển bền vững.",
+        "Mẫu bài luyện phải có câu hỏi, gợi ý/barem, lỗi hay gặp và câu luyện bù."
+      ]
+    },
+    {
+      "id": "cham_loi_hsg",
+      "name": "Chấm lỗi HSG",
+      "triggers": ["chấm lỗi", "chữa lỗi", "phân tích bài làm", "luyện bù", "thiếu luận điểm"],
+      "must_do": [
+        "Không chỉ báo tổng điểm; phân loại lỗi theo kiến thức lớp 8, kiến thức lớp 9, thao tác tư duy, khai thác ngữ liệu, trình bày barem, kĩ năng biểu đồ.",
+        "Bắt các lỗi thường gặp: thiếu luận điểm, thiếu dẫn chứng, sai cơ chế nhân quả, kể ý thay vì phân tích, nhận xét số liệu cảm tính, chọn sai biểu đồ, lan ngoài ma trận, bỏ nền tự nhiên lớp 8.",
+        "Phản hồi theo mẫu: làm đúng gì, thiếu/sai gì, vì sao mất điểm, sửa bằng câu/ý nào, luyện bù bằng dạng nào.",
+        "Từ lỗi sinh câu luyện bù tương ứng: thiếu cơ chế -> câu giải thích; thiếu dẫn chứng -> câu chứng minh; nhận xét cảm tính -> xử lí số liệu; chọn sai biểu đồ -> nhận diện dạng biểu đồ."
+      ]
+    }
+  ],
+  "yccd_upgrade_modes": [
+    "Bám trực tiếp YCCĐ để kiểm nền.",
+    "Mở rộng phạm vi từ một yếu tố sang hệ yếu tố.",
+    "Nâng mức tư duy từ trình bày sang phân tích, chứng minh, giải thích, so sánh, nhận xét."
+  ],
+  "geography_material_rule": [
+    "Bản đồ phải buộc đọc nền, xác định, nhận xét phân bố, đối chiếu, giải thích, kết luận.",
+    "Bảng số liệu/biểu đồ phải buộc đọc đơn vị-thời gian, xử lí, so sánh, nhận xét, giải thích.",
+    "Ngữ liệu không được dùng để trang trí; phải tạo thao tác địa lí nhìn thấy được."
+  ],
+  "docx_audit": [
+    "Tổng điểm, ma trận, tỉ lệ nhận thức, cấu trúc 8 lựa chọn + 2 đúng/sai.",
+    "Phân bố A/B/C/D, thang đúng/sai lũy tiến, đáp án-HDC, số liệu biểu đồ.",
+    "UTF-8, Times New Roman, DOCX mở được, đọc ngược không mojibake."
+  ]
+}

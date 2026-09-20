@@ -11,15 +11,25 @@ import {
   Copy,
   Check,
   Library,
+  Paperclip,
+  X,
 } from "lucide-react";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import QAExplorerModal from "@/components/QAExplorerModal";
 import MeshActionBar from "@/components/MeshActionBar";
+import qaRaw from "@/data/qa_knowledge_base.json";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
+}
+
+interface Attachment {
+  name: string;
+  type: string;
+  size: number;
+  dataUrl: string;
 }
 
 interface ChatStats {
@@ -28,23 +38,25 @@ interface ChatStats {
   paths_count: number;
 }
 
-const QA_COUNT = 533;
+const QA_COUNT = (qaRaw as unknown[]).length;
 
 const SAMPLE_QUESTIONS = [
-  "Tại sao gió phơn Tây Nam ở Bắc Trung Bộ hoạt động khốc liệt?",
-  "Vai trò đất feralit đối với cây công nghiệp lâu năm Tây Nguyên?",
-  "Chứng minh chế độ nước sông Hồng mang tính chất mùa.",
+  "Dùng module ra đề chuẩn Sở: tạo khung đề HSG9 theo ma trận Hà Nội.",
+  "Dùng module luyện thao tác tư duy HSG: luyện phân tích chuyên đề thổ nhưỡng lớp 8.",
+  "Dùng module chấm lỗi HSG: phân tích lỗi bài làm câu biểu đồ kết hợp.",
 ];
 
 export default function HomePage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [attachments, setAttachments] = useState<Attachment[]>([]);
   const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState<ChatStats | null>(null);
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [qaOpen, setQaOpen] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -53,17 +65,29 @@ export default function HomePage() {
   const sendMessage = useCallback(
     async (question: string) => {
       const q = question.trim();
-      if (!q || loading) return;
-      const userMsg: Message = { role: "user", content: q };
+      const outgoingAttachments = attachments;
+      if ((!q && outgoingAttachments.length === 0) || loading) return;
+      const attachmentNote = outgoingAttachments.length
+        ? `\n\n[Đính kèm: ${outgoingAttachments.map((file) => file.name).join(", ")}]`
+        : "";
+      const userMsg: Message = {
+        role: "user",
+        content: `${q || "Phân tích/chấm chữa file đính kèm."}${attachmentNote}`,
+      };
       setMessages((prev) => [...prev, userMsg]);
       setInput("");
+      setAttachments([]);
       setLoading(true);
 
       try {
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: q, messages: [...messages, userMsg] }),
+          body: JSON.stringify({
+            question: q || "Phân tích/chấm chữa file đính kèm.",
+            messages,
+            attachments: outgoingAttachments,
+          }),
         });
         const data = (await res.json()) as {
           answer?: string;
@@ -95,7 +119,7 @@ export default function HomePage() {
         setTimeout(() => textareaRef.current?.focus(), 50);
       }
     },
-    [loading, messages]
+    [attachments, loading, messages]
   );
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -104,6 +128,31 @@ export default function HomePage() {
       sendMessage(input);
     }
   };
+
+  const addAttachments = useCallback(async (files: FileList | null) => {
+    if (!files?.length) return;
+    const selected = Array.from(files).slice(0, 4 - attachments.length);
+    const valid = selected.filter((file) => file.type.startsWith("image/") && file.size <= 8 * 1024 * 1024);
+    const loaded = await Promise.all(
+      valid.map(
+        (file) =>
+          new Promise<Attachment>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () =>
+              resolve({
+                name: file.name,
+                type: file.type,
+                size: file.size,
+                dataUrl: String(reader.result),
+              });
+            reader.onerror = () => reject(reader.error);
+            reader.readAsDataURL(file);
+          })
+      )
+    );
+    setAttachments((prev) => [...prev, ...loaded].slice(0, 4));
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  }, [attachments.length]);
 
   const copyAnswer = useCallback(async (text: string, idx: number) => {
     try {
@@ -321,29 +370,70 @@ export default function HomePage() {
           }}
           className="fixed bottom-0 left-0 right-0 z-30 bg-white/90 backdrop-blur-lg border-t border-slate-200/80 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:static md:border-t md:bg-white/90"
         >
-          <div className="flex gap-2 items-end max-w-2xl mx-auto w-full">
-            <textarea
-              ref={textareaRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Hỏi bất kỳ điều gì..."
-              rows={1}
-              className="flex-1 resize-none rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none px-4 py-3 text-sm text-slate-800 placeholder-slate-400 max-h-32 overflow-y-auto"
-              style={{ minHeight: "46px" }}
-            />
-            <button
-              type="submit"
-              disabled={loading || !input.trim()}
-              className="shrink-0 w-11 h-11 rounded-2xl bg-brand-600 hover:bg-brand-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
-              aria-label="Gửi"
-            >
-              {loading ? (
-                <Loader2 className="w-5 h-5 text-white animate-spin" />
-              ) : (
-                <SendHorizontal className="w-5 h-5 text-white" />
-              )}
-            </button>
+          <div className="max-w-2xl mx-auto w-full space-y-2">
+            {attachments.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {attachments.map((file, index) => (
+                  <div
+                    key={`${file.name}-${index}`}
+                    className="flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs text-slate-700"
+                  >
+                    <Paperclip className="h-3.5 w-3.5 text-indigo-500" />
+                    <span className="max-w-[180px] truncate">{file.name}</span>
+                    <button
+                      type="button"
+                      onClick={() => setAttachments((prev) => prev.filter((_, i) => i !== index))}
+                      className="rounded-full p-0.5 text-slate-400 hover:bg-white hover:text-slate-700"
+                      aria-label={`Bỏ file ${file.name}`}
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="flex gap-2 items-end w-full">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                multiple
+                className="hidden"
+                onChange={(e) => addAttachments(e.target.files)}
+              />
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={loading || attachments.length >= 4}
+                className="shrink-0 w-11 h-11 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
+                aria-label="Ghim kẹp ảnh bài làm"
+                title="Ghim kẹp ảnh bài làm"
+              >
+                <Paperclip className="w-5 h-5 text-slate-600" />
+              </button>
+              <textarea
+                ref={textareaRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Hỏi bất kỳ điều gì hoặc ghim ảnh bài làm..."
+                rows={1}
+                className="flex-1 resize-none rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none px-4 py-3 text-sm text-slate-800 placeholder-slate-400 max-h-32 overflow-y-auto"
+                style={{ minHeight: "46px" }}
+              />
+              <button
+                type="submit"
+                disabled={loading || (!input.trim() && attachments.length === 0)}
+                className="shrink-0 w-11 h-11 rounded-2xl bg-brand-600 hover:bg-brand-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
+                aria-label="Gửi"
+              >
+                {loading ? (
+                  <Loader2 className="w-5 h-5 text-white animate-spin" />
+                ) : (
+                  <SendHorizontal className="w-5 h-5 text-white" />
+                )}
+              </button>
+            </div>
           </div>
         </form>
       </div>
