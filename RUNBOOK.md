@@ -12,10 +12,10 @@ Chatbot Graph-RAG bồi dưỡng HSG Địa lí (ThS. Phùng Văn Tiến). Next.
 
 ## Mô hình & runtime
 
-- Fallback 3 tầng: primary `deepseek-v4.1-flash`, fallback `gemini-3.7-flash`, `glm-5.3`
+- Fallback/load-spread tối đa 8 nấc: ưu tiên `LLM_MODEL_CHAIN` nếu có, sau đó `LLM_PRIMARY_MODEL`, `LLM_FALLBACK_MODEL_1..6`, `LLM_MODEL`; app tự bổ sung các model chịu tải mặc định `deepseek-v4.1-flash`, `glm-5.3`, `kimi-2.7`, `qwen-3.8` nếu chưa có trong chain.
 - APIVN base: `https://api.apivn.tech/v1`
-- 5 env var (đã cấu hình sẵn trên Vercel Dashboard): `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_PRIMARY_MODEL`, `LLM_FALLBACK_MODEL_1`, `LLM_FALLBACK_MODEL_2`
-- `src/app/api/chat/route.ts`: `max_tokens: 4096`; `TIMEOUTS_MS = [25000, 18000, 15000]` (tổng 58s < trần 60s Vercel Hobby)
+- Env khuyến nghị trên Vercel Dashboard: `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL_CHAIN=deepseek-v4.1-flash,glm-5.3,kimi-2.7,qwen-3.8`; vẫn tương thích env cũ `LLM_PRIMARY_MODEL`, `LLM_FALLBACK_MODEL_1..6`, `LLM_MODEL`.
+- `src/app/api/chat/route.ts`: `max_tokens: 4096`; timeout động giữ dưới trần 60s Vercel Hobby. Prompt HSG dài dùng `[34000,10000,6000,3000,2000,1500,1200,1000]`; prompt thường dùng `[22000,12000,8000,5000,3000,2000,1500,1000]`.
 
 ## Cấu trúc dữ liệu (append/merge, KHÔNG đè)
 

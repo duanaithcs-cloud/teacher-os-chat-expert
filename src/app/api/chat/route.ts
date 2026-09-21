@@ -143,24 +143,62 @@ interface ModelAttempt {
   label: string;
 }
 
+const DEFAULT_LOAD_SPREAD_MODELS = [
+  "deepseek-v4.1-flash",
+  "glm-5.3",
+  "kimi-2.7",
+  "qwen-3.8",
+];
+
+function parseModelList(value?: string): string[] {
+  return (value ?? "")
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function pushModel(chain: ModelAttempt[], seen: Set<string>, model: string | undefined, label: string) {
+  const normalized = model?.trim();
+  if (!normalized || seen.has(normalized)) return;
+  seen.add(normalized);
+  chain.push({ model: normalized, label });
+}
+
 function buildModelChain(needsVision = false): ModelAttempt[] {
   const chain: ModelAttempt[] = [];
+  const seen = new Set<string>();
   const vision = process.env.LLM_VISION_MODEL?.trim();
+  const configuredChain = parseModelList(process.env.LLM_MODEL_CHAIN);
   const primary = process.env.LLM_PRIMARY_MODEL?.trim();
   const fb1 = process.env.LLM_FALLBACK_MODEL_1?.trim();
   const fb2 = process.env.LLM_FALLBACK_MODEL_2?.trim();
+  const fb3 = process.env.LLM_FALLBACK_MODEL_3?.trim();
+  const fb4 = process.env.LLM_FALLBACK_MODEL_4?.trim();
+  const fb5 = process.env.LLM_FALLBACK_MODEL_5?.trim();
+  const fb6 = process.env.LLM_FALLBACK_MODEL_6?.trim();
   // LLM_MODEL là alias cũ — dùng làm mặc định cuối nếu không cấu hình chain
   const legacy = process.env.LLM_MODEL?.trim();
 
-  if (needsVision && vision) chain.push({ model: vision, label: "Vision" });
-  if (primary) chain.push({ model: primary, label: "Primary" });
-  if (fb1) chain.push({ model: fb1, label: "Fallback-1" });
-  if (fb2) chain.push({ model: fb2, label: "Fallback-2" });
+  pushModel(chain, seen, needsVision ? vision : undefined, "Vision");
+  configuredChain.forEach((model, index) => pushModel(chain, seen, model, `Chain-${index + 1}`));
+  pushModel(chain, seen, primary, "Primary");
+  pushModel(chain, seen, fb1, "Fallback-1");
+  pushModel(chain, seen, fb2, "Fallback-2");
+  pushModel(chain, seen, fb3, "Fallback-3");
+  pushModel(chain, seen, fb4, "Fallback-4");
+  pushModel(chain, seen, fb5, "Fallback-5");
+  pushModel(chain, seen, fb6, "Fallback-6");
+  pushModel(chain, seen, legacy, "Legacy");
+
+  DEFAULT_LOAD_SPREAD_MODELS.forEach((model, index) => {
+    pushModel(chain, seen, model, `Auto-${index + 1}`);
+  });
 
   if (chain.length === 0) {
-    chain.push({ model: legacy || "deepseek-v4.1-flash", label: "Default" });
+    chain.push({ model: "deepseek-v4.1-flash", label: "Default" });
   }
-  return chain;
+
+  return chain.slice(0, 8);
 }
 
 interface LLMResult {
@@ -284,7 +322,9 @@ function buildAttemptTimeouts(messages: ChatMessage[], needsVision: boolean): nu
     promptSize > 6000 ||
     /(hsg|hoc sinh gioi|học sinh giỏi|luyen|luyện|phan tich|phân tích|chuyen de|chuyên đề|de thi|đề thi|barem|tho nhuong|thổ nhưỡng)/i.test(text);
 
-  return longReasoningPrompt ? [42000, 12000, 4000] : [30000, 18000, 8000];
+  return longReasoningPrompt
+    ? [34000, 10000, 6000, 3000, 2000, 1500, 1200, 1000]
+    : [22000, 12000, 8000, 5000, 3000, 2000, 1500, 1000];
 }
 
 async function callLLMSequence(
