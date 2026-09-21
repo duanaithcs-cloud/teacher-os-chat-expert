@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { enrichQuery } from "@/lib/mcp_runtime";
 import { lookupQuestion, getQARecord } from "@/lib/cache/semanticCache";
 import hsgSkillModules from "@/data/hsg_skill_modules.json";
+import hsg9Blueprint from "@/data/hsg9_blueprint_2025_2026_plus.json";
 
 export const runtime = "nodejs";
 // Vercel Hobby giới hạn 60s/function — giữ đúng trần này để không bị cắt giữa chừng.
@@ -134,6 +135,146 @@ ${bridgeBlock}
 [GỢI Ý BIỂU ĐỒ]
 ${chartBlock}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+}
+
+function normalizeIntentText(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D")
+    .toLowerCase();
+}
+
+function isExamGenerationRequest(question: string): boolean {
+  const text = normalizeIntentText(question);
+  return /(soan|ra|tao|sinh).{0,24}(de)|de hsg|ma tran|huong dan cham|barem|chuan so/.test(text);
+}
+
+function buildCompactExamSystemPrompt(): string {
+  const blueprint = hsg9Blueprint as {
+    matrix: Array<{ section: string; type: string; topic?: string; points: number; topics?: Array<{ name: string; points: number }> }>;
+  };
+  const matrixLines = blueprint.matrix.map((item) => {
+    const topic = item.topic ?? item.topics?.map((t) => `${t.name} ${t.points}đ`).join("; ") ?? "";
+    return `- ${item.section}: ${item.type}, ${item.points} điểm. ${topic}`;
+  }).join("\n");
+
+  return `Bạn là trợ lý ra đề HSG Địa lí 9 Hà Nội trong HUB Teacher OS.
+Nhiệm vụ hiện tại là SOẠN ĐỀ, HDC, MA TRẬN theo phong cách Sở, không giải thích dài về hệ thống.
+
+Luật bắt buộc:
+- Tổng điểm 20, thời gian 150 phút.
+- Phần A: 4 điểm, gồm 8 câu lựa chọn + 2 câu đúng/sai.
+- 8 câu lựa chọn phải cân bằng đáp án A/B/C/D = 2/2/2/2.
+- Mỗi câu đúng/sai có 4 ý a,b,c,d; HDC đúng/sai chấm lũy tiến: 1 ý = 0,10; 2 ý = 0,25; 3 ý = 0,50; 4 ý = 1,00.
+- Phần B tự luận 16 điểm: Tự nhiên Việt Nam 3,5; Dân cư + ngành kinh tế 4,5; TDMNPB + ĐBSH 4,0; biểu đồ 4,0.
+- Tỉ lệ nhận thức toàn đề: NB 20%, TH 45%, VD 35%.
+- Giữ nền lớp 8/Tự nhiên Việt Nam; không sao chép đề gốc của Sở.
+- Câu hỏi phải khác đề mẫu nhưng cùng cấu trúc, cùng kiểu tư duy.
+- HDC phải có barem điểm chi tiết, chấp nhận cách diễn đạt khác nếu đúng bản chất.
+- Biểu đồ ưu tiên dạng kết hợp cột - đường khi có hai đại lượng khác đơn vị.
+
+Ma trận khóa:
+${matrixLines}
+
+Đầu ra bắt buộc:
+1. MA TRẬN TÓM TẮT.
+2. ĐỀ THI.
+3. ĐÁP ÁN/HƯỚNG DẪN CHẤM.
+4. AUDIT NGẮN: tổng điểm, A/B/C/D, đúng/sai, tỉ lệ nhận thức, điểm biểu đồ.`;
+}
+
+function buildExamGenerationFallback(attempted: string[], lastError?: string): string {
+  return `⚠️ **LLM đang quá tải, HUB dùng bộ sinh đề chuẩn Sở nội bộ để không rơi KG-only.**
+
+**1. Ma trận tóm tắt**
+- Tổng điểm: 20,0; thời gian: 150 phút.
+- Phần A: 4,0 điểm gồm 8 câu lựa chọn và 2 câu đúng/sai.
+- Phần B: 16,0 điểm gồm Tự nhiên Việt Nam 3,5; Dân cư + ngành kinh tế 4,5; Vùng TDMNPB + ĐBSH 4,0; biểu đồ 4,0.
+- Nhận thức: NB 20%, TH 45%, VD 35%.
+
+**2. Đề thi mẫu khác đề Sở**
+
+**A. Trắc nghiệm khách quan - 4,0 điểm**
+*I. Lựa chọn đáp án đúng nhất. Mỗi câu 0,25 điểm.*
+
+1. Nhân tố làm thiên nhiên Việt Nam có tính nhiệt đới rõ là
+A. nằm trong khu vực nội chí tuyến. B. có nhiều cao nguyên. C. có đồng bằng rộng. D. có nhiều đô thị.
+
+2. Ảnh hưởng của Biển Đông đến thiên nhiên nước ta thể hiện rõ ở
+A. làm khí hậu khô hạn. B. làm tăng tính ẩm và lượng mưa. C. làm mất tính mùa. D. làm giảm bão.
+
+3. Đất feralit ở nước ta phổ biến chủ yếu do
+A. khí hậu lạnh quanh năm. B. ít mưa. C. khí hậu nóng ẩm, mưa nhiều và rửa trôi mạnh. D. địa hình bằng phẳng.
+
+4. Vùng thuận lợi phát triển cây công nghiệp, cây dược liệu cận nhiệt ở TDMNPB là nơi có
+A. bãi triều rộng. B. khí hậu phân hóa theo độ cao. C. đất phèn lớn. D. mạng lưới kênh rạch dày.
+
+5. Đặc điểm nổi bật của dân cư Đồng bằng sông Hồng là
+A. thưa dân. B. mật độ dân số thấp. C. thiếu lao động. D. dân cư đông, mật độ cao.
+
+6. Nhân tố tự nhiên tạo cơ sở cho công nghiệp khai khoáng là
+A. thị trường. B. khoáng sản. C. lao động. D. chính sách.
+
+7. Biểu đồ phù hợp nhất khi thể hiện một đại lượng tuyệt đối và một đại lượng tốc độ tăng trưởng là
+A. biểu đồ tròn. B. biểu đồ miền. C. biểu đồ cột chồng. D. biểu đồ kết hợp.
+
+8. Khi nhận xét bảng số liệu HSG, thao tác bắt buộc là
+A. nêu xu hướng, so sánh và dẫn số liệu. B. chỉ đọc lại từng số. C. bỏ qua đơn vị. D. nêu cảm tính.
+
+*II. Đúng/Sai. Mỗi câu có 4 ý; chấm lũy tiến theo HDC.*
+
+9. Về tự nhiên Việt Nam:
+a) Vị trí nội chí tuyến làm nước ta có nền nhiệt cao.
+b) Biển Đông làm thiên nhiên nước ta hoàn toàn khô hạn.
+c) Lãnh thổ kéo dài góp phần làm thiên nhiên phân hóa Bắc - Nam.
+d) Khí hậu nóng ẩm thúc đẩy phong hóa hóa học và feralit hóa.
+
+10. Về dân cư, kinh tế và vùng:
+a) ĐBSH có dân cư đông, lao động dồi dào nhưng chịu sức ép lớn về việc làm, đất đai, môi trường.
+b) TDMNPB không có tiềm năng thủy điện.
+c) Khoáng sản là cơ sở để phát triển một số ngành công nghiệp ở TDMNPB.
+d) Liên kết TDMNPB - ĐBSH giúp bổ sung nguyên liệu, năng lượng, thị trường và lao động.
+
+**B. Tự luận - 16,0 điểm**
+
+**Câu I. Tự nhiên Việt Nam - 3,5 điểm**
+1. Phân tích ảnh hưởng của vị trí địa lí và phạm vi lãnh thổ đến khí hậu, sinh vật và cảnh quan thiên nhiên Việt Nam. 2,0 điểm.
+2. Giải thích vì sao đất feralit phổ biến ở vùng đồi núi nước ta và nêu vấn đề bảo vệ đất ở khu vực này. 1,5 điểm.
+
+**Câu II. Dân cư và ngành kinh tế - 4,5 điểm**
+1. Trình bày đặc điểm quần cư thành thị ở nước ta và giải thích xu hướng tăng tỉ lệ dân thành thị. 2,0 điểm.
+2. Phân tích tác động của các nhân tố tự nhiên đến sự phát triển và phân bố công nghiệp nước ta. 2,5 điểm.
+
+**Câu III. Vùng kinh tế - 4,0 điểm**
+1. Chứng minh điều kiện tự nhiên và tài nguyên thiên nhiên của TDMNPB tạo thuận lợi cho phát triển nông nghiệp hàng hóa, du lịch, thủy điện và khai khoáng. 2,5 điểm.
+2. Phân tích đặc điểm dân cư ĐBSH và giải thích vì sao cần tăng cường liên kết kinh tế giữa ĐBSH với TDMNPB. 1,5 điểm.
+
+**Câu IV. Kĩ năng biểu đồ - 4,0 điểm**
+Cho bảng số liệu giả định:
+Năm: 2015 | 2017 | 2019 | 2021 | 2023
+GDP, tỉ USD: 95 | 112 | 138 | 160 | 196
+Tốc độ tăng trưởng GDP, %: 6,2 | 6,6 | 7,0 | 5,1 | 7,3
+
+1. Vẽ biểu đồ thích hợp nhất thể hiện GDP và tốc độ tăng trưởng GDP giai đoạn 2015-2023. 2,0 điểm.
+2. Nhận xét GDP và tốc độ tăng trưởng GDP giai đoạn trên. 1,5 điểm.
+3. Giải thích vì sao biểu đồ đã chọn là phù hợp. 0,5 điểm.
+
+**3. Đáp án/HDC tóm tắt**
+- Lựa chọn: 1A 2B 3C 4B 5D 6B 7D 8A. A/B/C/D = 2/2/2/2.
+- Đúng/Sai: 9: a Đ, b S, c Đ, d Đ. 10: a Đ, b S, c Đ, d Đ. Chấm mỗi câu theo thang lũy tiến: 1 ý 0,10; 2 ý 0,25; 3 ý 0,50; 4 ý 1,00.
+- Tự luận chấm theo barem luận điểm, cơ chế, dẫn chứng; chấp nhận cách diễn đạt khác nếu đúng bản chất.
+- Câu IV: biểu đồ kết hợp cột - đường; đủ tên, chú giải, đơn vị, 2 trục; nhận xét GDP tăng, tốc độ tăng trưởng biến động.
+
+**4. Audit**
+- Cấu trúc: 8 lựa chọn + 2 đúng/sai + tự luận 16 điểm.
+- Tổng điểm: 20,0.
+- Đáp án lựa chọn cân bằng A/B/C/D = 2/2/2/2.
+- Có thang đúng/sai lũy tiến đúng HDC Sở.
+- Không sao chép đề Sở; giữ cùng ma trận và kiểu tư duy.
+
+**Kĩ thuật:** model đã thử: ${attempted.join(", ") || "không có"}${lastError ? `; lỗi cuối: ${lastError}` : ""}.`;
 }
 
 // ─────────────── Cơ chế Fallback tuần tự 3 tầng (APIVN) ───────────────
@@ -315,12 +456,17 @@ function estimatePromptSize(messages: ChatMessage[]): number {
 }
 
 function buildAttemptTimeouts(messages: ChatMessage[], needsVision: boolean): number[] {
-  const text = JSON.stringify(sanitizeMessagesForLog(messages)).toLowerCase();
+  const text = normalizeIntentText(JSON.stringify(sanitizeMessagesForLog(messages)));
   const promptSize = estimatePromptSize(messages);
+  const examGenerationPrompt = /(soan|ra|tao|sinh).{0,24}(de)|de hsg|ma tran|huong dan cham|chuan so/.test(text);
   const longReasoningPrompt =
     needsVision ||
     promptSize > 6000 ||
     /(hsg|hoc sinh gioi|học sinh giỏi|luyen|luyện|phan tich|phân tích|chuyen de|chuyên đề|de thi|đề thi|barem|tho nhuong|thổ nhưỡng)/i.test(text);
+
+  if (examGenerationPrompt) {
+    return [30000, 5000, 2000, 1000, 800, 500, 500, 500];
+  }
 
   return longReasoningPrompt
     ? [34000, 10000, 6000, 3000, 2000, 1500, 1200, 1000]
@@ -497,7 +643,8 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    const systemPrompt = buildSystemPrompt(question);
+    const isExamRequest = isExamGenerationRequest(question);
+    const systemPrompt = isExamRequest ? buildCompactExamSystemPrompt() : buildSystemPrompt(question);
 
     // ── Cache tầng "context": bơm lời giải gốc làm context ngắn (~200 tokens) ──
     let contextPrompt = systemPrompt;
@@ -528,6 +675,19 @@ export async function POST(req: NextRequest) {
 
     // ── Toàn bộ chain thất bại → trả context KG thay vì lỗi trắng ──
     if (result.degraded) {
+      if (isExamRequest && !hasAttachments) {
+        return NextResponse.json({
+          answer: buildExamGenerationFallback(result.attempted, result.lastError),
+          entities: ctx.entityLabels,
+          facts_count: ctx.facts.length,
+          paths_count: ctx.causalPaths.length,
+          model_used: "hsg9-template-degraded",
+          model_attempted: result.attempted,
+          last_error: result.lastError ?? null,
+          degraded: true,
+        });
+      }
+
       const factLines = ctx.facts.length > 0
         ? ctx.facts.map((f) => `• **${f.indicator}**: ${f.value}${f.unit ? ` ${f.unit}` : ""}${f.year ? ` (${f.year})` : ""}`).join("\n")
         : "• (Không có facts trực tiếp cho câu hỏi này)";
