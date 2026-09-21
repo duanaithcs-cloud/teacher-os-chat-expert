@@ -306,6 +306,10 @@ const UNAVAILABLE_MODEL_IDS = new Set<string>([
   "kimi-3",
 ]);
 
+// Model sinh de dai nhanh nhat do duoc tren APIVN (~24s cho ~12k ky tu).
+// Dung lam moc dau cho tac vu ra de de kip tran 60s cua Vercel.
+const FAST_EXAM_MODEL = "gemini-3.7-flash";
+
 function parseModelList(value?: string): string[] {
   return (value ?? "")
     .split(",")
@@ -321,7 +325,7 @@ function pushModel(chain: ModelAttempt[], seen: Set<string>, model: string | und
   chain.push({ model: normalized, label });
 }
 
-function buildModelChain(needsVision = false): ModelAttempt[] {
+function buildModelChain(needsVision = false, examIntent = false): ModelAttempt[] {
   const chain: ModelAttempt[] = [];
   const seen = new Set<string>();
   const vision = process.env.LLM_VISION_MODEL?.trim();
@@ -353,6 +357,16 @@ function buildModelChain(needsVision = false): ModelAttempt[] {
 
   if (chain.length === 0) {
     chain.push({ model: "deepseek-v4.1-flash", label: "Default" });
+  }
+
+  // Tac vu ra de can model sinh dai; uu tien model nhanh nhat len dau chain
+  // de khong dot ngan sach 60s vao model sinh cham/ngan.
+  if (examIntent && !needsVision) {
+    const fastIndex = chain.findIndex((item) => item.model === FAST_EXAM_MODEL);
+    if (fastIndex > 0) {
+      const [fast] = chain.splice(fastIndex, 1);
+      chain.unshift(fast);
+    }
   }
 
   return chain.slice(0, 8);
@@ -481,7 +495,7 @@ function buildAttemptTimeouts(messages: ChatMessage[], needsVision: boolean): nu
     /(hsg|hoc sinh gioi|học sinh giỏi|luyen|luyện|phan tich|phân tích|chuyen de|chuyên đề|de thi|đề thi|barem|tho nhuong|thổ nhưỡng)/i.test(text);
 
   if (examGenerationPrompt) {
-    return [26000, 16000, 8000, 4000, 2000, 1500, 1000, 1000];
+    return [45000, 8000, 4000, 2000, 1500, 1000, 1000, 1000];
   }
 
   return longReasoningPrompt
@@ -495,12 +509,13 @@ async function callLLMSequence(
   apiKey: string,
   needsVision = false
 ): Promise<LLMResult> {
-  const chain = buildModelChain(needsVision);
+  const examIntent = hasExamIntent(messages);
+  const chain = buildModelChain(needsVision, examIntent);
   const attempted: string[] = [];
   let lastError = "";
   const TIMEOUTS_MS = buildAttemptTimeouts(messages, needsVision);
   // Tran cung cua Vercel Hobby la 60s/function: giu tong ngan sach duoi nguong nay.
-  const totalBudgetMs = hasExamIntent(messages) ? 52000 : 55000;
+  const totalBudgetMs = examIntent ? 52000 : 55000;
   const startedAt = Date.now();
 
   for (let i = 0; i < chain.length; i++) {
