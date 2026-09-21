@@ -168,6 +168,7 @@ interface LLMResult {
   model: string;
   attempted: string[];
   degraded: boolean;
+  lastError?: string;
 }
 
 interface ChatAttachment {
@@ -189,6 +190,82 @@ interface ChatMessage {
   content: ChatMessageContent;
 }
 
+type ProviderJson = {
+  choices?: Array<{
+    message?: { content?: unknown };
+    delta?: { content?: unknown };
+    finish_reason?: string | null;
+  }>;
+  error?: { message?: string; code?: string | number; type?: string };
+  usage?: unknown;
+};
+
+function truncateForLog(value: string, limit = 1200): string {
+  if (value.length <= limit) return value;
+  return `${value.slice(0, limit)}...<truncated:${value.length - limit}>`;
+}
+
+function sanitizeContentForLog(content: ChatMessageContent): unknown {
+  if (typeof content === "string") return truncateForLog(content);
+  return content.map((item) => {
+    if (item.type === "text") return { ...item, text: truncateForLog(item.text) };
+    return { type: "image_url", image_url: { url: "<redacted-data-url>" } };
+  });
+}
+
+function sanitizeMessagesForLog(messages: ChatMessage[]): unknown[] {
+  return messages.map((message) => ({
+    role: message.role,
+    content: sanitizeContentForLog(message.content),
+  }));
+}
+
+function extractTextContent(content: unknown): string {
+  if (typeof content === "string") return content.trim();
+  if (Array.isArray(content)) {
+    return content
+      .map((part) => {
+        if (part && typeof part === "object" && "text" in part) {
+          const text = (part as { text?: unknown }).text;
+          return typeof text === "string" ? text : "";
+        }
+        return "";
+      })
+      .filter(Boolean)
+      .join("\n")
+      .trim();
+  }
+  return "";
+}
+
+function isProviderIdentityOnlyResponse(content: string): boolean {
+  const normalized = content
+    .toLowerCase()
+    .replace(/[^a-z0-9\s.'-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const hasIdentityMarker =
+    /\bi\s*(am|'m)\s+glm\b/.test(normalized) ||
+    /\bmade by zhipu\b/.test(normalized) ||
+    /\bzhipu\s*ai\b/.test(normalized) ||
+    /我是.*(glm|智谱|智譜)/.test(content) ||
+    /智谱清言|智譜清言/.test(content);
+
+  return hasIdentityMarker && normalized.length < 240;
+}
+
+function sanitizeHistoryMessages(messages?: { role: string; content: string }[]): ChatMessage[] {
+  const allowedRoles = new Set(["user", "assistant"]);
+  return (messages ?? [])
+    .filter((message) => allowedRoles.has(message.role))
+    .map((message) => ({
+      role: message.role,
+      content: message.content.trim().slice(0, 8000),
+    }))
+    .filter((message) => message.content.length > 0)
+    .slice(-8);
+}
+
 async function callLLMSequence(
   messages: ChatMessage[],
   baseUrl: string,
@@ -198,18 +275,35 @@ async function callLLMSequence(
   const chain = buildModelChain(needsVision);
   const attempted: string[] = [];
   let lastError = "";
-
-  // Cấp phát timeout theo thứ tự ưu tiên: tầng Primary được ưu tiên thời gian
-  // sinh bài dài (4096 tokens); tổng 25 + 18 + 15 = 58s, giữ dưới trần 60s Vercel Hobby.
   const TIMEOUTS_MS = [25000, 18000, 15000];
 
   for (let i = 0; i < chain.length; i++) {
     const attempt = chain[i];
     attempted.push(attempt.model);
+
     try {
       const controller = new AbortController();
       const timeoutMs = TIMEOUTS_MS[i] ?? 18000;
       const timer = setTimeout(() => controller.abort(), timeoutMs);
+      const requestPayload = {
+        model: attempt.model,
+        messages,
+        temperature: 0.2,
+        top_p: 0.85,
+        stream: false,
+        max_tokens: 4096,
+      };
+
+      console.error("[api/chat] LLM request payload", {
+        model: attempt.model,
+        label: attempt.label,
+        base_url: baseUrl,
+        timeout_ms: timeoutMs,
+        payload: {
+          ...requestPayload,
+          messages: sanitizeMessagesForLog(messages),
+        },
+      });
 
       const res = await fetch(`${baseUrl}/chat/completions`, {
         method: "POST",
@@ -217,46 +311,75 @@ async function callLLMSequence(
           "Content-Type": "application/json",
           Authorization: `Bearer ${apiKey}`,
         },
-        body: JSON.stringify({
-          model: attempt.model,
-          messages,
-          temperature: 0.2,
-          // 4096 tokens đủ cho bài phân tích HSG 4 khối, tránh cắt ngang giữa chừng.
-          max_tokens: 4096,
-        }),
+        body: JSON.stringify(requestPayload),
         signal: controller.signal,
       });
       clearTimeout(timer);
 
+      const rawText = await res.text();
       if (!res.ok) {
-        const errText = await res.text();
-        lastError = `${attempt.model} → HTTP ${res.status}: ${errText.slice(0, 160)}`;
-        continue; // thử tầng kế tiếp
+        lastError = `${attempt.model} -> HTTP ${res.status}: ${truncateForLog(rawText, 240)}`;
+        console.error("[api/chat] LLM HTTP error", {
+          model: attempt.model,
+          status: res.status,
+          body: truncateForLog(rawText, 2000),
+        });
+        continue;
       }
 
-      const data = await res.json() as {
-        choices?: { message?: { content?: string } }[];
-        error?: { message?: string };
-      };
-      const content = data.choices?.[0]?.message?.content;
+      let data: ProviderJson;
+      try {
+        data = JSON.parse(rawText) as ProviderJson;
+      } catch (parseErr) {
+        const msg = parseErr instanceof Error ? parseErr.message : String(parseErr);
+        lastError = `${attempt.model} -> malformed JSON: ${msg}`;
+        console.error("[api/chat] LLM malformed JSON", {
+          model: attempt.model,
+          body: truncateForLog(rawText, 2000),
+        });
+        continue;
+      }
+
+      console.error("[api/chat] LLM raw response", {
+        model: attempt.model,
+        status: res.status,
+        finish_reason: data.choices?.[0]?.finish_reason ?? null,
+        usage: data.usage ?? null,
+        body: truncateForLog(rawText, 2000),
+      });
+
+      const content = extractTextContent(
+        data.choices?.[0]?.message?.content ?? data.choices?.[0]?.delta?.content
+      );
       if (!content) {
-        lastError = `${attempt.model} → phản hồi rỗng (${data.error?.message ?? "no content"})`;
+        lastError = `${attempt.model} -> empty response (${data.error?.message ?? "no content"})`;
+        continue;
+      }
+
+      if (isProviderIdentityOnlyResponse(content)) {
+        lastError = `${attempt.model} -> provider identity-only response`;
+        console.error("[api/chat] LLM rejected identity-only response", {
+          model: attempt.model,
+          content: truncateForLog(content, 500),
+        });
         continue;
       }
 
       return { answer: content, model: attempt.model, attempted, degraded: false };
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      lastError = `${attempt.model} → ${msg}`;
-      continue; // thử tầng kế tiếp
+      lastError = `${attempt.model} -> ${msg}`;
+      console.error("[api/chat] LLM request failed", {
+        model: attempt.model,
+        error: msg,
+      });
+      continue;
     }
   }
 
-  // Toàn bộ chain thất bại → chế độ KG-only degraded
-  return { answer: "", model: "", attempted, degraded: true };
+  return { answer: "", model: "", attempted, degraded: true, lastError };
 }
 
-// ─────────────── POST /api/chat ───────────────
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json() as {
@@ -333,7 +456,7 @@ export async function POST(req: NextRequest) {
 
     const messages: ChatMessage[] = [
       { role: "system", content: contextPrompt },
-      ...(body.messages?.filter((m) => m.role !== "system").slice(-8) ?? []),
+      ...sanitizeHistoryMessages(body.messages),
       { role: "user", content: userContent },
     ];
 
@@ -358,6 +481,7 @@ export async function POST(req: NextRequest) {
         paths_count: ctx.causalPaths.length,
         model_used: "kg-only-degraded",
         model_attempted: result.attempted,
+        last_error: result.lastError ?? null,
         degraded: true,
       });
     }
@@ -376,6 +500,7 @@ export async function POST(req: NextRequest) {
     });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
+    console.error("[api/chat] route fatal", { error: msg });
     return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
