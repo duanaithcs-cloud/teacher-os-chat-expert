@@ -1,5 +1,24 @@
 [
   {
+    "id": "hsg-l8-tho-nhuong-viet-nam-tu-duy-phan-tich",
+    "question": "Dùng module luyện thao tác tư duy HSG: luyện phân tích chuyên đề thổ nhưỡng lớp 8",
+    "answer": "**Luyện tư duy phân tích HSG - Chuyên đề Thổ nhưỡng Việt Nam (Địa lí 8)**\n\n**1. Trục tư duy cần nắm**\nThổ nhưỡng Việt Nam phải phân tích theo chuỗi: khí hậu nhiệt đới ẩm gió mùa + địa hình đồi núi + sông ngòi + sinh vật + tác động con người -> quá trình hình thành đất -> nhóm đất -> phân bố -> giá trị sử dụng -> vấn đề bảo vệ.\n\n**2. Luận điểm 1: Đặc điểm tổng quát và nguyên nhân hình thành**\nĐất nước ta đa dạng, trong đó đất feralit là nhóm chủ yếu ở vùng đồi núi thấp. Khí hậu nóng ẩm, mưa nhiều làm phong hóa hóa học mạnh; nước mưa rửa trôi các chất bazơ dễ hòa tan như Ca2+, Mg2+, K+, đồng thời tích tụ oxit sắt và nhôm tạo đất đỏ vàng.\n\n**3. Luận điểm 2: Sự phân hóa không gian**\nTheo lãnh thổ: đất feralit ở đồi núi thấp, khoảng 65% diện tích đất tự nhiên; đất phù sa ở ĐBSH, ĐBSCL và đồng bằng duyên hải miền Trung, khoảng 24%; đất mùn trên núi ở vùng núi cao trên 1600-1700 m. Theo đai cao: đất feralit -> đất mùn feralit -> đất mùn thô.\n\n**4. Luận điểm 3: Giá trị sử dụng và giới hạn sinh thái**\nFeralit trên đá bazan và đá vôi có tầng phong hóa dày, giàu dinh dưỡng, thích hợp cây công nghiệp lâu năm. Đất phù sa phì nhiêu, dễ canh tác, thuận lợi trồng lúa, hoa màu, cây thực phẩm. ĐBSCL có đất phèn, đất mặn cần cải tạo; ĐBSH có đất trong đê không được bồi đắp hằng năm nên dễ bạc màu.\n\n**5. Luận điểm 4: Thoái hóa đất và giải pháp**\nĐịa hình đồi núi dốc kết hợp mưa tập trung theo mùa làm tăng nguy cơ xói mòn, rửa trôi, bạc màu khi mất rừng. Cần bảo vệ lớp phủ thực vật, trồng rừng, canh tác theo đường đồng mức, làm ruộng bậc thang, bón phân hữu cơ, cải tạo đất phèn - mặn và sử dụng đất bền vững.\n\n**Lỗi thường gặp:** chỉ kể tên đất; nhầm đất feralit với đất đỏ bazan; nêu phân bố nhưng không giải thích cơ chế; quên liên hệ sử dụng nông - lâm nghiệp và bảo vệ đất.",
+    "category": "CHUYEN_DE_TU_NHIEN_L8",
+    "source_module": "teacher-os-hsg9/thổ nhưỡng Việt Nam L8",
+    "tags": [
+      "thổ nhưỡng",
+      "đất feralit",
+      "đất phù sa",
+      "đất mùn trên núi",
+      "HSG lớp 8",
+      "luyện phân tích"
+    ],
+    "similarity_hash": "4f589d1c93df625ffef2004e",
+    "hit_count": 0,
+    "created_at": "2026-09-21T05:49:44Z",
+    "doc_synced": false
+  },
+  {
     "id": "hsg-skill-cham-loi",
     "question": "Dùng module chấm lỗi HSG như thế nào?",
     "answer": "Module Chấm lỗi HSG không chỉ báo tổng điểm. HUB phải phân loại lỗi theo kiến thức nền lớp 8, kiến thức lớp 9, thao tác tư duy, khai thác ngữ liệu, trình bày barem và kĩ năng biểu đồ. Các lỗi cần bắt gồm thiếu luận điểm, thiếu dẫn chứng, sai cơ chế nhân quả, kể ý thay vì phân tích, nhận xét số liệu cảm tính, chọn sai biểu đồ, dùng số liệu ngoài bảng, lan ngoài ma trận, bỏ nền tự nhiên lớp 8 khi giải thích nội dung lớp 9. Sau khi chấm, HUB phải chỉ cách sửa và sinh câu luyện bù.",

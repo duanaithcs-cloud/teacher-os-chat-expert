@@ -4461,6 +4461,105 @@
       "lesson": "Chủ đề chung L8: Bảo vệ chủ quyền biển đảo Việt Nam",
       "source": "HSG Chuyên đề chung L8",
       "status": "approved_kntt"
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_feralit_area",
+      "indicator": "Tỉ lệ diện tích nhóm đất feralit",
+      "value": "khoảng 65",
+      "unit": "% diện tích đất tự nhiên",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "dat feralit",
+      "note": "Đất feralit phân bố chủ yếu ở vùng đồi núi thấp."
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_phu_sa_area",
+      "indicator": "Tỉ lệ diện tích nhóm đất phù sa",
+      "value": "khoảng 24",
+      "unit": "% diện tích đất tự nhiên",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "dat phu sa",
+      "note": "Đất phù sa phân bố ở ĐBSH, ĐBSCL và đồng bằng duyên hải miền Trung."
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_dat_mun_altitude",
+      "indicator": "Độ cao phân bố đất mùn trên núi",
+      "value": "trên 1600-1700",
+      "unit": "m",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "dat mun tren nui",
+      "note": "Chủ yếu ở Hoàng Liên Sơn và các khối núi cao phía Nam."
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_feralit_properties",
+      "indicator": "Đặc tính đất feralit",
+      "value": "chua, nghèo mùn, nhiều sét, tích tụ Fe2O3 và Al2O3",
+      "unit": "",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "dac_tinh_dat_feralit_do_vang",
+      "note": "Tích tụ oxit sắt, nhôm tạo màu đỏ vàng."
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_feralit_best",
+      "indicator": "Loại đất feralit có giá trị cao",
+      "value": "feralit trên đá bazan và đá vôi; tầng phong hóa dày, giàu dinh dưỡng",
+      "unit": "",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "dat_feralit_bazan_da_voi",
+      "note": "Tập trung ở Tây Nguyên, Đông Nam Bộ, Trung du và miền núi Bắc Bộ."
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_phu_sa_regions",
+      "indicator": "Phân bố đất phù sa",
+      "value": "Đồng bằng sông Hồng; Đồng bằng sông Cửu Long; đồng bằng duyên hải miền Trung",
+      "unit": "",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "dat phu sa",
+      "note": "Thuận lợi thâm canh lúa, hoa màu, cây thực phẩm."
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_dbscl_phen_man",
+      "indicator": "Hạn chế đất ở ĐBSCL",
+      "value": "diện tích lớn đất phèn, đất mặn cần cải tạo",
+      "unit": "",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "dat_phen_dat_man_dbscl",
+      "note": "Cần thủy lợi, rửa mặn, ém phèn và cơ cấu cây trồng phù hợp."
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_dbsh_trong_de",
+      "indicator": "Hạn chế đất trong đê ĐBSH",
+      "value": "không được bồi đắp phù sa hằng năm, dễ bạc màu",
+      "unit": "",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "dat_trong_de_dbsh_bac_mau",
+      "note": "Do hệ thống đê ngăn lũ."
+    },
+    {
+      "id": "fact_hsg_l8_tho_nhuong_dai_cao",
+      "indicator": "Chuỗi phân hóa thổ nhưỡng theo đai cao",
+      "value": "đất feralit -> đất mùn feralit -> đất mùn thô",
+      "unit": "",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "source": "SGK KNTT 2026 + HSG Hermes 2026",
+      "status": "approved_kntt",
+      "node_ref": "phan_hoa_tho_nhuong_theo_dai_cao",
+      "note": "Từ chân núi nhiệt đới lên cận nhiệt và ôn đới trên núi."
     }
   ]
 }

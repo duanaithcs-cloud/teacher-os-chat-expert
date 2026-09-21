@@ -99,7 +99,11 @@
       "grade": "L8",
       "lesson": "Bài 2. Địa hình Việt Nam",
       "category": "Tự nhiên",
-      "status": "approved_kntt"
+      "status": "approved_kntt",
+      "aliases": [
+        "địa hình đồi núi dốc",
+        "đồi núi dốc dễ xói mòn rửa trôi"
+      ]
     },
     "dia hinh phan bac ro ret": {
       "label": "Địa hình phân bậc rõ rệt",
@@ -418,23 +422,45 @@
         "dat feralit do vang chua ngheo mun",
         "dat feralit nau do va do nau tang day giau dinh duong",
         "Đất feralit nâu đỏ và đỏ nâu tầng dày giàu dinh dưỡng",
-        "Đất feralit đỏ vàng chua nghèo mùn"
+        "Đất feralit đỏ vàng chua nghèo mùn",
+        "dat feralit chiem 65 dien tich dat tu nhien",
+        "nhóm đất feralit",
+        "feralit đỏ vàng",
+        "feralit vùng đồi núi thấp"
       ],
-      "facts": []
+      "facts": [
+        "fact_hsg_l8_tho_nhuong_feralit_area"
+      ]
     },
     "dat phu sa": {
       "label": "Đất phù sa",
       "grade": "L8",
       "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
       "category": "Tự nhiên",
-      "status": "approved_kntt"
+      "status": "approved_kntt",
+      "aliases": [
+        "dat phu sa chiem 24 dien tich",
+        "nhóm đất phù sa",
+        "phù sa đồng bằng sông Hồng sông Cửu Long duyên hải miền Trung"
+      ],
+      "facts": [
+        "fact_hsg_l8_tho_nhuong_phu_sa_regions"
+      ]
     },
     "dat mun tren nui": {
       "label": "Đất mùn trên núi",
       "grade": "L8",
       "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
       "category": "Tự nhiên",
-      "status": "approved_kntt"
+      "status": "approved_kntt",
+      "aliases": [
+        "dat mun tren nui cao tren 1600 1700m",
+        "nhóm đất mùn trên núi",
+        "đất mùn trên Hoàng Liên Sơn"
+      ],
+      "facts": [
+        "fact_hsg_l8_tho_nhuong_dat_mun_altitude"
+      ]
     },
     "thoai hoa dat": {
       "label": "Thoái hóa đất",
@@ -4143,7 +4169,8 @@
       "category": "T? nhi?n",
       "status": "approved_hsg9",
       "aliases": [
-        "n?n nhi?t ?m cao"
+        "khí hậu nhiệt đới ẩm gió mùa",
+        "nóng ẩm mưa nhiều phong hóa hóa học mạnh"
       ]
     },
     "dat_feralit": {
@@ -4194,6 +4221,204 @@
       "status": "approved_hsg9",
       "aliases": [
         "chứng minh; chia ý; dẫn chứng; số liệu; kết luận"
+      ]
+    },
+    "hsg_l8_tho_nhuong_viet_nam": {
+      "label": "Chuyên đề HSG L8: Thổ nhưỡng Việt Nam",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "HSG",
+      "status": "approved_kntt",
+      "aliases": [
+        "luyện phân tích chuyên đề thổ nhưỡng lớp 8",
+        "module luyện thao tác tư duy HSG thổ nhưỡng",
+        "tho nhuong viet nam hsg lop 8",
+        "đất Việt Nam chuyên đề HSG"
+      ]
+    },
+    "qua_trinh_feralit_hoa": {
+      "label": "Quá trình feralit hóa",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "phong hóa hóa học mạnh",
+        "rửa trôi bazơ",
+        "tích tụ oxit sắt nhôm",
+        "hình thành đất feralit"
+      ]
+    },
+    "dac_tinh_dat_feralit_do_vang": {
+      "label": "Đặc tính đất feralit đỏ vàng",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đất feralit chua nghèo mùn nhiều sét",
+        "Fe2O3 Al2O3 tạo màu đỏ vàng",
+        "dat feralit do vang"
+      ],
+      "facts": [
+        "fact_hsg_l8_tho_nhuong_feralit_properties"
+      ]
+    },
+    "dat_feralit_bazan_da_voi": {
+      "label": "Đất feralit trên đá bazan và đá vôi",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đất đỏ bazan",
+        "đất feralit tốt nhất",
+        "dat feralit tren da bazan va da voi",
+        "tầng phong hóa dày giàu dinh dưỡng",
+        "Tây Nguyên Đông Nam Bộ Trung du miền núi Bắc Bộ"
+      ],
+      "facts": [
+        "fact_hsg_l8_tho_nhuong_feralit_best"
+      ]
+    },
+    "dat_phu_sa_dong_bang_song_hong": {
+      "label": "Đất phù sa Đồng bằng sông Hồng",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đất trong đê không được bồi đắp hằng năm",
+        "đất phù sa sông Hồng",
+        "dat phu sa dbsh"
+      ]
+    },
+    "dat_phu_sa_dong_bang_song_cuu_long": {
+      "label": "Đất phù sa Đồng bằng sông Cửu Long",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đất phù sa sông Cửu Long",
+        "dat phu sa dbscl",
+        "phù sa ngọt sông Tiền sông Hậu"
+      ]
+    },
+    "dat_phen_dat_man_dbscl": {
+      "label": "Đất phèn, đất mặn ở Đồng bằng sông Cửu Long",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đất phèn đất mặn cần cải tạo",
+        "phen man dbscl",
+        "mặn hóa phèn hóa đất"
+      ],
+      "facts": [
+        "fact_hsg_l8_tho_nhuong_dbscl_phen_man"
+      ]
+    },
+    "dat_trong_de_dbsh_bac_mau": {
+      "label": "Đất trong đê Đồng bằng sông Hồng dễ bạc màu",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đê ngăn lũ làm đất trong đê không được bồi đắp phù sa hằng năm",
+        "dat trong de bac mau"
+      ],
+      "facts": [
+        "fact_hsg_l8_tho_nhuong_dbsh_trong_de"
+      ]
+    },
+    "dat_mun_feralit_tren_nui": {
+      "label": "Đất mùn feralit trên núi",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đai cận nhiệt đới gió mùa trên núi",
+        "dat mun feralit tren nui"
+      ]
+    },
+    "dat_mun_tho_nui_cao": {
+      "label": "Đất mùn thô núi cao",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đai ôn đới gió mùa trên núi",
+        "dat mun tho nui cao",
+        "núi cao trên 2600m"
+      ]
+    },
+    "phan_hoa_tho_nhuong_theo_dai_cao": {
+      "label": "Phân hóa thổ nhưỡng theo đai cao",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "đất feralit đất mùn feralit đất mùn thô",
+        "phan hoa tho nhuong theo dai cao"
+      ],
+      "facts": [
+        "fact_hsg_l8_tho_nhuong_dai_cao"
+      ]
+    },
+    "mua_tap_trung_theo_mua": {
+      "label": "Mưa tập trung theo mùa",
+      "grade": "L8",
+      "lesson": "Bài 4. Khí hậu Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "mưa mùa hạ tập trung",
+        "mua tap trung theo mua",
+        "dòng chảy mặt mạnh theo mùa"
+      ]
+    },
+    "xoi_mon_rua_troi_thoai_hoa_dat": {
+      "label": "Xói mòn, rửa trôi và thoái hóa đất",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "xói mòn đất",
+        "rửa trôi đất",
+        "thoái hóa đất",
+        "mất lớp phủ thực vật"
+      ]
+    },
+    "bao_ve_cai_tao_dat_ben_vung": {
+      "label": "Bảo vệ và cải tạo đất bền vững",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "Tự nhiên",
+      "status": "approved_kntt",
+      "aliases": [
+        "bảo vệ đất",
+        "cải tạo đất",
+        "sử dụng đất bền vững",
+        "che phủ rừng chống xói mòn"
+      ]
+    },
+    "khung_tu_duy_hsg_tho_nhuong": {
+      "label": "Khung tư duy HSG phân tích thổ nhưỡng",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "category": "HSG",
+      "status": "approved_kntt",
+      "aliases": [
+        "4 luận điểm phân tích thổ nhưỡng",
+        "đặc điểm nguyên nhân phân hóa giá trị thoái hóa giải pháp",
+        "cấu trúc trả lời HSG thổ nhưỡng"
       ]
     }
   },
@@ -4405,26 +4630,6 @@
       "lesson": "Chủ đề chung 1: Sông ngòi & Châu thổ",
       "level": null,
       "note": "Giảm thiểu thiên tai lũ dữ, tạo tập quán \"sống chung với lũ\" và văn hóa sông nước.",
-      "grade": "L8",
-      "status": "approved"
-    },
-    {
-      "source": "mua_lon_rua_troi_bazo_hoa_tan_ket_hop_nhiet_cao_tich_tu_fe2o3_al2o3",
-      "target": "dat feralit",
-      "relation": "hình thành",
-      "lesson": "Chuyên đề VI: Thổ nhưỡng",
-      "level": null,
-      "note": "Quá trình hình thành đất đặc trưng, chiếm >60% diện tích đất tự nhiên vùng đồi núi.",
-      "grade": "L8",
-      "status": "approved"
-    },
-    {
-      "source": "da_me_bazan_va_da_voi_co_cau_truc_phi_nhieu",
-      "target": "dat feralit",
-      "relation": "tạo ra",
-      "lesson": "Chuyên đề VI: Thổ nhưỡng",
-      "level": null,
-      "note": "Đất badan ở Tây Nguyên/Đông Nam Bộ; đất đá vôi ở miền núi phía Bắc, rất tốt cho cây trồng.",
       "grade": "L8",
       "status": "approved"
     },
@@ -4951,17 +5156,6 @@
       "lesson": null,
       "level": null,
       "note": "Tính nhiệt đới ẩm gió mùa (bản chất chung) là nền tảng; sự phân hóa theo độ cao và theo mùa cụ thể hóa điều kiện khí hậu cho đa dạng hóa nông nghiệp.",
-      "kind": "bridge",
-      "status": "approved",
-      "grade": "L9"
-    },
-    {
-      "source": "dat feralit",
-      "target": "cay cong nghiep lau nam",
-      "relation": "tạo nền tảng đất đai cho",
-      "lesson": null,
-      "level": null,
-      "note": "Đất feralit nâu đỏ (trên đá bazan) tầng dày giàu dinh dưỡng là cơ sở đất đai cho vùng chuyên canh cà phê, hồ tiêu lớn nhất nước.",
       "kind": "bridge",
       "status": "approved",
       "grade": "L9"
@@ -5544,15 +5738,6 @@
       "source_ref": "SGK KNTT 2026"
     },
     {
-      "source": "dia hinh doi nui chiem uu the",
-      "relation": "làm tăng",
-      "target": "phan hoa khi hau theo dai cao",
-      "grade": "L8",
-      "lesson": "Bài 2. Địa hình Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
       "source": "hai huong chinh cua dia hinh nuoc ta",
       "relation": "quy định",
       "target": "hai_huong_chay_chinh_cua_song_ngoi_viet_nam",
@@ -5637,15 +5822,6 @@
       "source": "deo hai van",
       "relation": "gắn với",
       "target": "day bach ma",
-      "grade": "L8",
-      "lesson": "Bài 2. Địa hình Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
-      "source": "song ngoi nhieu nuoc giau phu sa",
-      "relation": "bồi tụ",
-      "target": "dong bang chau tho",
       "grade": "L8",
       "lesson": "Bài 2. Địa hình Việt Nam",
       "status": "approved",
@@ -5742,15 +5918,6 @@
       "source_ref": "SGK KNTT 2026"
     },
     {
-      "source": "dia hinh doi nui chiem uu the",
-      "relation": "kết hợp với",
-      "target": "che do mua theo mua",
-      "grade": "L8",
-      "lesson": "Bài 6. Thủy văn Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
       "source": "che do mua theo mua",
       "relation": "quyết định",
       "target": "thuy che song ngoi co hai mua",
@@ -5763,24 +5930,6 @@
       "source": "che do mua theo mua",
       "relation": "nuôi dưỡng",
       "target": "mang luoi song ngoi day dac",
-      "grade": "L8",
-      "lesson": "Bài 6. Thủy văn Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
-      "source": "mang luoi song ngoi day dac",
-      "relation": "làm cho",
-      "target": "song ngoi nhieu nuoc giau phu sa",
-      "grade": "L8",
-      "lesson": "Bài 6. Thủy văn Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
-      "source": "song ngoi nhieu nuoc giau phu sa",
-      "relation": "thúc đẩy",
-      "target": "boi tu dong bang chau tho",
       "grade": "L8",
       "lesson": "Bài 6. Thủy văn Việt Nam",
       "status": "approved",
@@ -5904,33 +6053,6 @@
       "source_ref": "SGK KNTT 2026"
     },
     {
-      "source": "rua troi bazo va tich tu oxit sat nhom",
-      "relation": "hình thành",
-      "target": "dat feralit",
-      "grade": "L8",
-      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
-      "source": "song ngoi nhieu nuoc giau phu sa",
-      "relation": "hình thành",
-      "target": "dat phu sa",
-      "grade": "L8",
-      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
-      "source": "phan hoa khi hau theo dai cao",
-      "relation": "hình thành",
-      "target": "dat mun tren nui",
-      "grade": "L8",
-      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
       "source": "che do mua theo mua",
       "relation": "làm tăng nguy cơ",
       "target": "thoai hoa dat",
@@ -5951,15 +6073,6 @@
     {
       "source": "tinh chat nhiet doi am gio mua",
       "relation": "tạo nền tảng",
-      "target": "da dang sinh hoc",
-      "grade": "L8",
-      "lesson": "Bài 10. Sinh vật Việt Nam",
-      "status": "approved",
-      "source_ref": "SGK KNTT 2026"
-    },
-    {
-      "source": "phan hoa khi hau theo dai cao",
-      "relation": "làm tăng",
       "target": "da dang sinh hoc",
       "grade": "L8",
       "lesson": "Bài 10. Sinh vật Việt Nam",
@@ -6350,15 +6463,6 @@
       "note": "Vị trí tiếp giáp biển tạo dải quần cư đông đúc ven biển"
     },
     {
-      "source": "dia hinh doi nui chiem uu the",
-      "relation": "gây khó khăn quần cư, dân cư thưa thớt",
-      "target": "phan bo dan cu khong deu",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "note": "Đồi núi dốc, đi lại khó, dân cư thưa hơn đồng bằng"
-    },
-    {
       "source": "tai nguyen khi hau thuan loi cho nong nghiep",
       "relation": "thu hút dân cư gắn với sản xuất nông nghiệp",
       "target": "phan bo dan cu khong deu",
@@ -6366,15 +6470,6 @@
       "kind": "bridge",
       "status": "approved",
       "note": "Khí hậu thuận lợi trồng lúa nước tập trung dân ở đồng bằng"
-    },
-    {
-      "source": "dat phu sa",
-      "relation": "cung cấp đất đai màu mỡ cho trồng lúa và quần cư",
-      "target": "phan bo dan cu khong deu",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "note": "Đất phù sa màu mỡ là địa bàn quần cư đông đúc"
     },
     {
       "source": "mang luoi song ngoi day dac",
@@ -6586,16 +6681,6 @@
       "note": "Không gian ven biển và đồng bằng nối sản xuất nông nghiệp với thủy sản."
     },
     {
-      "source": "dat phu sa",
-      "relation": "tạo nền đất màu mỡ cho",
-      "target": "cay luong thuc lua gao",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "lesson": "Nông - Lâm - Thủy sản",
-      "note": "Đất phù sa thuận lợi thâm canh lúa nước ở đồng bằng."
-    },
-    {
       "source": "dong bang chau tho",
       "relation": "hình thành vùng trọng điểm của",
       "target": "vung lua gao dong bang chau tho",
@@ -6604,26 +6689,6 @@
       "status": "approved",
       "lesson": "Nông - Lâm - Thủy sản",
       "note": "Đồng bằng châu thổ là không gian tập trung lúa gạo."
-    },
-    {
-      "source": "dat feralit",
-      "relation": "thuận lợi phát triển",
-      "target": "cay cong nghiep lau nam",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "lesson": "Nông - Lâm - Thủy sản",
-      "note": "Đất feralit, đặc biệt trên bazan, phù hợp cây công nghiệp lâu năm."
-    },
-    {
-      "source": "phan hoa khi hau theo dai cao",
-      "relation": "tạo điều kiện cho",
-      "target": "cay can nhiet va on doi",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "lesson": "Nông - Lâm - Thủy sản",
-      "note": "Đai cao và mùa đông lạnh tạo sản phẩm cận nhiệt, ôn đới."
     },
     {
       "source": "tai nguyen khi hau thuan loi cho nong nghiep",
@@ -6786,36 +6851,6 @@
       "note": "Vị trí trong khu vực châu Á gió mùa và gần tuyến giao thương quốc tế tạo lợi thế kết nối."
     },
     {
-      "source": "dia hinh doi nui chiem uu the",
-      "relation": "tạo tiềm năng thủy điện và cơ cấu kinh tế lâm - nông đặc thù cho",
-      "target": "vung_trung_du_va_mien_nui_bac_bo",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
-      "note": "Địa hình đồi núi, phân bậc và sông ngòi dốc là cơ sở thủy điện, lâm nghiệp và cây đặc sản."
-    },
-    {
-      "source": "phan hoa khi hau theo dai cao",
-      "relation": "tạo thế mạnh cây cận nhiệt, ôn đới cho",
-      "target": "vung_trung_du_va_mien_nui_bac_bo",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
-      "note": "Đai cao và mùa đông lạnh hỗ trợ chè, hồi, dược liệu, rau hoa quả."
-    },
-    {
-      "source": "dat feralit",
-      "relation": "hình thành các vùng chuyên canh cây công nghiệp quy mô lớn tại",
-      "target": "vung_tay_nguyen",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
-      "note": "Đất feralit trên bazan là nền tảng cho cà phê, cao su, hồ tiêu."
-    },
-    {
       "source": "dong bang chau tho",
       "relation": "tạo địa bàn trọng điểm sản xuất lương thực thực phẩm cho",
       "target": "vung_dong_bang_song_cuu_long",
@@ -6824,16 +6859,6 @@
       "status": "approved",
       "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
       "note": "Đồng bằng châu thổ thấp, rộng là địa bàn nông nghiệp và thủy sản trọng điểm."
-    },
-    {
-      "source": "dat phu sa",
-      "relation": "cung cấp nền đất màu mỡ cho",
-      "target": "vung_dong_bang_song_cuu_long",
-      "grade": "L9",
-      "kind": "bridge",
-      "status": "approved",
-      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
-      "note": "Đất phù sa ngọt ven sông Tiền, sông Hậu tạo thế mạnh lúa và cây ăn quả."
     },
     {
       "source": "vung bien viet nam",
@@ -6917,34 +6942,6 @@
       "kind": "bridge"
     },
     {
-      "source": "dia hinh doi nui chiem uu the",
-      "target": "khu_vuc_dong_bac",
-      "relation": "bao gồm",
-      "edge_type": "causal",
-      "evidence": "SGK Địa lí 8 Bài 2"
-    },
-    {
-      "source": "dia hinh doi nui chiem uu the",
-      "target": "khu_vuc_tay_bac",
-      "relation": "bao gồm",
-      "edge_type": "causal",
-      "evidence": "SGK Địa lí 8 Bài 2"
-    },
-    {
-      "source": "dia hinh doi nui chiem uu the",
-      "target": "khu_vuc_truong_son_bac",
-      "relation": "bao gồm",
-      "edge_type": "causal",
-      "evidence": "SGK Địa lí 8 Bài 2"
-    },
-    {
-      "source": "dia hinh doi nui chiem uu the",
-      "target": "khu_vuc_truong_son_nam",
-      "relation": "bao gồm",
-      "edge_type": "causal",
-      "evidence": "SGK Địa lí 8 Bài 2"
-    },
-    {
       "source": "khu_vuc_dong_bac",
       "target": "bon canh cung dong bac",
       "relation": "có địa hình đặc trưng là bốn cánh cung núi chụm ở Tam Đảo",
@@ -7014,14 +7011,6 @@
       "relation": "phản ánh",
       "edge_type": "causal",
       "evidence": "SGK Địa lí 9 Bài 1"
-    },
-    {
-      "source": "dia hinh doi nui chiem uu the",
-      "target": "cac_dan_toc_thieu_so",
-      "relation": "địa hình đồi núi và cao nguyên là không gian cư trú truyền thống của",
-      "edge_type": "bridge",
-      "pedagogical_use": "HSG: giải thích vì sao các dân tộc thiểu số phân bố chủ yếu ở miền núi và cao nguyên",
-      "kind": "bridge"
     },
     {
       "source": "tai nguyen khoang san phong phu da dang ve chung loai",
@@ -7173,14 +7162,6 @@
       "evidence": "SGK Địa lí 9 Bài 3"
     },
     {
-      "source": "dia hinh doi nui chiem uu the",
-      "target": "van de viec lam that nghiep thieu viec lam",
-      "relation": "địa hình đồi núi chia cắt làm thu hẹp cơ hội việc làm phi nông nghiệp ở miền núi và làm nổi bật",
-      "edge_type": "bridge",
-      "pedagogical_use": "HSG: liên hệ đặc điểm tự nhiên miền núi với sức ép giải quyết việc làm và chuyển dịch nghề nghiệp",
-      "kind": "bridge"
-    },
-    {
       "source": "phan bo dan cu khong deu",
       "target": "mat_do_dan_so_cao",
       "relation": "biểu hiện qua",
@@ -7263,43 +7244,6 @@
       "relation": "dân cư tập trung quá đông làm phát sinh",
       "edge_type": "causal",
       "evidence": "SGK Địa lí 9 Bài 2"
-    },
-    {
-      "source": "dat phu sa",
-      "target": "dong_bang_do_thi_dong_dan",
-      "relation": "đất phù sa bằng phẳng, thuận lợi sản xuất và cư trú làm đồng bằng trở thành khu vực dân cư đông",
-      "edge_type": "bridge",
-      "pedagogical_use": "HSG: giải thích vì sao đồng bằng đông dân hơn trung du và miền núi",
-      "kind": "bridge"
-    },
-    {
-      "source": "dia hinh doi nui chiem uu the",
-      "target": "trung_du_mien_nui_thua_dan",
-      "relation": "địa hình đồi núi chia cắt gây khó khăn giao thông và sản xuất, làm trung du miền núi thưa dân hơn",
-      "edge_type": "bridge",
-      "pedagogical_use": "HSG: liên hệ địa hình với phân bố dân cư không đều",
-      "kind": "bridge"
-    },
-    {
-      "source": "phan hoa khi hau theo dai cao",
-      "target": "dai_nhiet_doi_gio_mua",
-      "relation": "phân hóa thành",
-      "edge_type": "causal",
-      "evidence": "Lop_8_HSG_8_PHUNG_VAN_TIEN_DAN_PHUONG.docx"
-    },
-    {
-      "source": "phan hoa khi hau theo dai cao",
-      "target": "dai_can_nhiet_doi_gio_mua_tren_nui",
-      "relation": "phân hóa thành",
-      "edge_type": "causal",
-      "evidence": "Lop_8_HSG_8_PHUNG_VAN_TIEN_DAN_PHUONG.docx"
-    },
-    {
-      "source": "phan hoa khi hau theo dai cao",
-      "target": "dai_on_doi_gio_mua_tren_nui",
-      "relation": "phân hóa thành",
-      "edge_type": "causal",
-      "evidence": "Lop_8_HSG_8_PHUNG_VAN_TIEN_DAN_PHUONG.docx"
     },
     {
       "source": "day_hoang_lien_son_cao_do_so_huong_tay_bac_dong_nam",
@@ -8329,16 +8273,6 @@
       "status": "approved"
     },
     {
-      "source": "tinh_chat_nhiet_doi_am_gio_mua",
-      "target": "dat_feralit",
-      "relation": "th?c ??y qu? tr?nh feralit h?a h?nh th?nh",
-      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
-      "level": "TH",
-      "note": "Nhi?t ?m cao l?m phong h?a m?nh, m?a nhi?u r?a tr?i baz? v? t?ch t? oxit s?t nh?m, t?o ??t feralit.",
-      "grade": "L8",
-      "status": "approved"
-    },
-    {
       "source": "he_qua_tu_nhien_cua_vi_tri_dia_li",
       "target": "giao_thoa_sinh_vat_va_phan_hoa_canh_quan",
       "relation": "bao g?m",
@@ -8376,6 +8310,507 @@
       "level": "VD",
       "note": "Câu chứng minh phải chia ý rõ, có dẫn chứng, số liệu và kết luận.",
       "grade": "L9",
+      "status": "approved"
+    },
+    {
+      "source": "hsg_l8_tho_nhuong_viet_nam",
+      "target": "dat feralit",
+      "relation": "bao gồm nhóm đất chủ đạo",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đất feralit là nhóm đất lớn ở vùng đồi núi thấp, cần phân tích cơ chế feralit hóa.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "hsg_l8_tho_nhuong_viet_nam",
+      "target": "dat phu sa",
+      "relation": "bao gồm nhóm đất đồng bằng",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đất phù sa là cơ sở thâm canh lúa, cây thực phẩm và dân cư đông ở đồng bằng.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "hsg_l8_tho_nhuong_viet_nam",
+      "target": "dat mun tren nui",
+      "relation": "bao gồm nhóm đất theo đai cao",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đất mùn trên núi thể hiện phân hóa thổ nhưỡng theo độ cao.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "tinh_chat_nhiet_doi_am_gio_mua",
+      "target": "qua_trinh_feralit_hoa",
+      "relation": "thúc đẩy",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Nóng ẩm, mưa nhiều làm phong hóa hóa học mạnh, rửa trôi bazơ dễ hòa tan và tích tụ sắt nhôm.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "qua_trinh_feralit_hoa",
+      "target": "dat feralit",
+      "relation": "hình thành",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Feralit hóa tạo đất đỏ vàng chua, nghèo mùn, giàu sét và oxit sắt nhôm.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "dat feralit",
+      "target": "dac_tinh_dat_feralit_do_vang",
+      "relation": "có đặc tính",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đất feralit thường chua, nghèo mùn, nhiều sét, tích tụ Fe2O3 và Al2O3 tạo màu đỏ vàng.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "dat feralit",
+      "target": "dat_feralit_bazan_da_voi",
+      "relation": "có loại tốt nhất là",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Feralit trên đá bazan và đá vôi có tầng phong hóa dày, giàu dinh dưỡng, thích hợp cây công nghiệp lâu năm.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "dat_feralit_bazan_da_voi",
+      "target": "cay cong nghiep lau nam",
+      "relation": "tạo nền đất cho",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đất bazan và đá vôi là cơ sở phát triển cây công nghiệp lâu năm ở Tây Nguyên, Đông Nam Bộ và TDMNBB.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "song ngoi nhieu nuoc giau phu sa",
+      "target": "dat phu sa",
+      "relation": "bồi đắp",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Sông ngòi vận chuyển và bồi tụ phù sa tạo đất phù sa ở các đồng bằng.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "dat phu sa",
+      "target": "dat_phu_sa_dong_bang_song_hong",
+      "relation": "phân hóa thành",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đồng bằng sông Hồng có đất phù sa màu mỡ nhưng vùng trong đê ít được bồi đắp hằng năm.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "dat phu sa",
+      "target": "dat_phu_sa_dong_bang_song_cuu_long",
+      "relation": "phân hóa thành",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đồng bằng sông Cửu Long có phù sa ngọt dọc sông Tiền - sông Hậu và các vùng phèn, mặn cần cải tạo.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "dat_phu_sa_dong_bang_song_cuu_long",
+      "target": "dat_phen_dat_man_dbscl",
+      "relation": "đi kèm vấn đề",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đất phèn và đất mặn là hạn chế lớn, cần thủy lợi, rửa mặn, ém phèn và canh tác phù hợp.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "dat_phu_sa_dong_bang_song_hong",
+      "target": "dat_trong_de_dbsh_bac_mau",
+      "relation": "có hạn chế",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Hệ thống đê ngăn lũ làm đất trong đê không được bồi đắp phù sa tự nhiên hằng năm, dễ bạc màu.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "phan hoa khi hau theo dai cao",
+      "target": "phan_hoa_tho_nhuong_theo_dai_cao",
+      "relation": "chi phối",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Độ cao làm nhiệt, ẩm và sinh vật thay đổi, kéo theo thổ nhưỡng phân hóa theo đai.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "phan_hoa_tho_nhuong_theo_dai_cao",
+      "target": "dat feralit",
+      "relation": "đai thấp hình thành",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đai nhiệt đới gió mùa chân núi chủ yếu có đất feralit.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "phan_hoa_tho_nhuong_theo_dai_cao",
+      "target": "dat_mun_feralit_tren_nui",
+      "relation": "đai giữa hình thành",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đai cận nhiệt đới gió mùa trên núi phát triển đất mùn feralit.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "phan_hoa_tho_nhuong_theo_dai_cao",
+      "target": "dat_mun_tho_nui_cao",
+      "relation": "đai cao hình thành",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Đai ôn đới gió mùa trên núi phát triển đất mùn thô ở nơi rất cao.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "target": "xoi_mon_rua_troi_thoai_hoa_dat",
+      "relation": "làm tăng nguy cơ",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Địa hình dốc làm dòng chảy mặt mạnh, dễ xói mòn và rửa trôi đất.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "mua_tap_trung_theo_mua",
+      "target": "xoi_mon_rua_troi_thoai_hoa_dat",
+      "relation": "làm tăng nguy cơ",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Mưa lớn tập trung theo mùa làm xói mòn, rửa trôi mạnh nếu đất mất lớp phủ thực vật.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "xoi_mon_rua_troi_thoai_hoa_dat",
+      "target": "bao_ve_cai_tao_dat_ben_vung",
+      "relation": "đặt ra yêu cầu",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Thoái hóa đất buộc phải bảo vệ rừng, canh tác theo đường đồng mức, cải tạo phèn mặn và sử dụng phân bón hợp lí.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "khung_tu_duy_hsg_tho_nhuong",
+      "target": "hsg_l8_tho_nhuong_viet_nam",
+      "relation": "định hướng phân tích",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "level": "HSG",
+      "note": "Câu HSG cần đi theo 4 luận điểm: nguyên nhân, phân hóa, giá trị sử dụng, thoái hóa và giải pháp.",
+      "grade": "L8",
+      "status": "approved_kntt"
+    },
+    {
+      "source": "mua_lon_rua_troi_bazo_hoa_tan_ket_hop_nhiet_cao_tich_tu_fe2o3_al2o3",
+      "target": "dat feralit",
+      "relation": "hình thành",
+      "lesson": "Chuyên đề VI: Thổ nhưỡng",
+      "level": null,
+      "note": "Quá trình hình thành đất đặc trưng, chiếm >60% diện tích đất tự nhiên vùng đồi núi.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "da_me_bazan_va_da_voi_co_cau_truc_phi_nhieu",
+      "target": "dat feralit",
+      "relation": "tạo ra",
+      "lesson": "Chuyên đề VI: Thổ nhưỡng",
+      "level": null,
+      "note": "Đất badan ở Tây Nguyên/Đông Nam Bộ; đất đá vôi ở miền núi phía Bắc, rất tốt cho cây trồng.",
+      "grade": "L8",
+      "status": "approved"
+    },
+    {
+      "source": "dat feralit",
+      "target": "cay cong nghiep lau nam",
+      "relation": "tạo nền tảng đất đai cho",
+      "lesson": null,
+      "level": null,
+      "note": "Đất feralit nâu đỏ (trên đá bazan) tầng dày giàu dinh dưỡng là cơ sở đất đai cho vùng chuyên canh cà phê, hồ tiêu lớn nhất nước.",
+      "kind": "bridge",
+      "status": "approved",
+      "grade": "L9"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "relation": "làm tăng",
+      "target": "phan hoa khi hau theo dai cao",
+      "grade": "L8",
+      "lesson": "Bài 2. Địa hình Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "song ngoi nhieu nuoc giau phu sa",
+      "relation": "bồi tụ",
+      "target": "dong bang chau tho",
+      "grade": "L8",
+      "lesson": "Bài 2. Địa hình Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "relation": "kết hợp với",
+      "target": "che do mua theo mua",
+      "grade": "L8",
+      "lesson": "Bài 6. Thủy văn Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "mang luoi song ngoi day dac",
+      "relation": "làm cho",
+      "target": "song ngoi nhieu nuoc giau phu sa",
+      "grade": "L8",
+      "lesson": "Bài 6. Thủy văn Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "song ngoi nhieu nuoc giau phu sa",
+      "relation": "thúc đẩy",
+      "target": "boi tu dong bang chau tho",
+      "grade": "L8",
+      "lesson": "Bài 6. Thủy văn Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "rua troi bazo va tich tu oxit sat nhom",
+      "relation": "hình thành",
+      "target": "dat feralit",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "song ngoi nhieu nuoc giau phu sa",
+      "relation": "hình thành",
+      "target": "dat phu sa",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "phan hoa khi hau theo dai cao",
+      "relation": "hình thành",
+      "target": "dat mun tren nui",
+      "grade": "L8",
+      "lesson": "Bài 9. Thổ nhưỡng Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "phan hoa khi hau theo dai cao",
+      "relation": "làm tăng",
+      "target": "da dang sinh hoc",
+      "grade": "L8",
+      "lesson": "Bài 10. Sinh vật Việt Nam",
+      "status": "approved",
+      "source_ref": "SGK KNTT 2026"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "relation": "gây khó khăn quần cư, dân cư thưa thớt",
+      "target": "phan bo dan cu khong deu",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "note": "Đồi núi dốc, đi lại khó, dân cư thưa hơn đồng bằng"
+    },
+    {
+      "source": "dat phu sa",
+      "relation": "cung cấp đất đai màu mỡ cho trồng lúa và quần cư",
+      "target": "phan bo dan cu khong deu",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "note": "Đất phù sa màu mỡ là địa bàn quần cư đông đúc"
+    },
+    {
+      "source": "dat phu sa",
+      "relation": "tạo nền đất màu mỡ cho",
+      "target": "cay luong thuc lua gao",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "lesson": "Nông - Lâm - Thủy sản",
+      "note": "Đất phù sa thuận lợi thâm canh lúa nước ở đồng bằng."
+    },
+    {
+      "source": "dat feralit",
+      "relation": "thuận lợi phát triển",
+      "target": "cay cong nghiep lau nam",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "lesson": "Nông - Lâm - Thủy sản",
+      "note": "Đất feralit, đặc biệt trên bazan, phù hợp cây công nghiệp lâu năm."
+    },
+    {
+      "source": "phan hoa khi hau theo dai cao",
+      "relation": "tạo điều kiện cho",
+      "target": "cay can nhiet va on doi",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "lesson": "Nông - Lâm - Thủy sản",
+      "note": "Đai cao và mùa đông lạnh tạo sản phẩm cận nhiệt, ôn đới."
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "relation": "tạo tiềm năng thủy điện và cơ cấu kinh tế lâm - nông đặc thù cho",
+      "target": "vung_trung_du_va_mien_nui_bac_bo",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
+      "note": "Địa hình đồi núi, phân bậc và sông ngòi dốc là cơ sở thủy điện, lâm nghiệp và cây đặc sản."
+    },
+    {
+      "source": "phan hoa khi hau theo dai cao",
+      "relation": "tạo thế mạnh cây cận nhiệt, ôn đới cho",
+      "target": "vung_trung_du_va_mien_nui_bac_bo",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
+      "note": "Đai cao và mùa đông lạnh hỗ trợ chè, hồi, dược liệu, rau hoa quả."
+    },
+    {
+      "source": "dat feralit",
+      "relation": "hình thành các vùng chuyên canh cây công nghiệp quy mô lớn tại",
+      "target": "vung_tay_nguyen",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
+      "note": "Đất feralit trên bazan là nền tảng cho cà phê, cao su, hồ tiêu."
+    },
+    {
+      "source": "dat phu sa",
+      "relation": "cung cấp nền đất màu mỡ cho",
+      "target": "vung_dong_bang_song_cuu_long",
+      "grade": "L9",
+      "kind": "bridge",
+      "status": "approved",
+      "lesson": "CĐ05 - Phân hóa lãnh thổ / Các vùng kinh tế",
+      "note": "Đất phù sa ngọt ven sông Tiền, sông Hậu tạo thế mạnh lúa và cây ăn quả."
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "target": "khu_vuc_dong_bac",
+      "relation": "bao gồm",
+      "edge_type": "causal",
+      "evidence": "SGK Địa lí 8 Bài 2"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "target": "khu_vuc_tay_bac",
+      "relation": "bao gồm",
+      "edge_type": "causal",
+      "evidence": "SGK Địa lí 8 Bài 2"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "target": "khu_vuc_truong_son_bac",
+      "relation": "bao gồm",
+      "edge_type": "causal",
+      "evidence": "SGK Địa lí 8 Bài 2"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "target": "khu_vuc_truong_son_nam",
+      "relation": "bao gồm",
+      "edge_type": "causal",
+      "evidence": "SGK Địa lí 8 Bài 2"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "target": "cac_dan_toc_thieu_so",
+      "relation": "địa hình đồi núi và cao nguyên là không gian cư trú truyền thống của",
+      "edge_type": "bridge",
+      "pedagogical_use": "HSG: giải thích vì sao các dân tộc thiểu số phân bố chủ yếu ở miền núi và cao nguyên",
+      "kind": "bridge"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "target": "van de viec lam that nghiep thieu viec lam",
+      "relation": "địa hình đồi núi chia cắt làm thu hẹp cơ hội việc làm phi nông nghiệp ở miền núi và làm nổi bật",
+      "edge_type": "bridge",
+      "pedagogical_use": "HSG: liên hệ đặc điểm tự nhiên miền núi với sức ép giải quyết việc làm và chuyển dịch nghề nghiệp",
+      "kind": "bridge"
+    },
+    {
+      "source": "dat phu sa",
+      "target": "dong_bang_do_thi_dong_dan",
+      "relation": "đất phù sa bằng phẳng, thuận lợi sản xuất và cư trú làm đồng bằng trở thành khu vực dân cư đông",
+      "edge_type": "bridge",
+      "pedagogical_use": "HSG: giải thích vì sao đồng bằng đông dân hơn trung du và miền núi",
+      "kind": "bridge"
+    },
+    {
+      "source": "dia hinh doi nui chiem uu the",
+      "target": "trung_du_mien_nui_thua_dan",
+      "relation": "địa hình đồi núi chia cắt gây khó khăn giao thông và sản xuất, làm trung du miền núi thưa dân hơn",
+      "edge_type": "bridge",
+      "pedagogical_use": "HSG: liên hệ địa hình với phân bố dân cư không đều",
+      "kind": "bridge"
+    },
+    {
+      "source": "phan hoa khi hau theo dai cao",
+      "target": "dai_nhiet_doi_gio_mua",
+      "relation": "phân hóa thành",
+      "edge_type": "causal",
+      "evidence": "Lop_8_HSG_8_PHUNG_VAN_TIEN_DAN_PHUONG.docx"
+    },
+    {
+      "source": "phan hoa khi hau theo dai cao",
+      "target": "dai_can_nhiet_doi_gio_mua_tren_nui",
+      "relation": "phân hóa thành",
+      "edge_type": "causal",
+      "evidence": "Lop_8_HSG_8_PHUNG_VAN_TIEN_DAN_PHUONG.docx"
+    },
+    {
+      "source": "phan hoa khi hau theo dai cao",
+      "target": "dai_on_doi_gio_mua_tren_nui",
+      "relation": "phân hóa thành",
+      "edge_type": "causal",
+      "evidence": "Lop_8_HSG_8_PHUNG_VAN_TIEN_DAN_PHUONG.docx"
+    },
+    {
+      "source": "tinh_chat_nhiet_doi_am_gio_mua",
+      "target": "dat_feralit",
+      "relation": "th?c ??y qu? tr?nh feralit h?a h?nh th?nh",
+      "lesson": "HSG9 - T? nhi?n Vi?t Nam",
+      "level": "TH",
+      "note": "Nhi?t ?m cao l?m phong h?a m?nh, m?a nhi?u r?a tr?i baz? v? t?ch t? oxit s?t nh?m, t?o ??t feralit.",
+      "grade": "L8",
       "status": "approved"
     }
   ]

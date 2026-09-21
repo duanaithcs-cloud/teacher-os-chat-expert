@@ -266,6 +266,27 @@ function sanitizeHistoryMessages(messages?: { role: string; content: string }[])
     .slice(-8);
 }
 
+function estimatePromptSize(messages: ChatMessage[]): number {
+  return messages.reduce((total, message) => {
+    if (typeof message.content === "string") return total + message.content.length;
+    return total + message.content.reduce((sum, part) => {
+      if (part.type === "text") return sum + part.text.length;
+      return sum + 1200;
+    }, 0);
+  }, 0);
+}
+
+function buildAttemptTimeouts(messages: ChatMessage[], needsVision: boolean): number[] {
+  const text = JSON.stringify(sanitizeMessagesForLog(messages)).toLowerCase();
+  const promptSize = estimatePromptSize(messages);
+  const longReasoningPrompt =
+    needsVision ||
+    promptSize > 6000 ||
+    /(hsg|hoc sinh gioi|học sinh giỏi|luyen|luyện|phan tich|phân tích|chuyen de|chuyên đề|de thi|đề thi|barem|tho nhuong|thổ nhưỡng)/i.test(text);
+
+  return longReasoningPrompt ? [42000, 12000, 4000] : [30000, 18000, 8000];
+}
+
 async function callLLMSequence(
   messages: ChatMessage[],
   baseUrl: string,
@@ -275,16 +296,17 @@ async function callLLMSequence(
   const chain = buildModelChain(needsVision);
   const attempted: string[] = [];
   let lastError = "";
-  const TIMEOUTS_MS = [25000, 18000, 15000];
+  const TIMEOUTS_MS = buildAttemptTimeouts(messages, needsVision);
 
   for (let i = 0; i < chain.length; i++) {
     const attempt = chain[i];
     attempted.push(attempt.model);
 
+    let timer: ReturnType<typeof setTimeout> | null = null;
     try {
       const controller = new AbortController();
-      const timeoutMs = TIMEOUTS_MS[i] ?? 18000;
-      const timer = setTimeout(() => controller.abort(), timeoutMs);
+      const timeoutMs = TIMEOUTS_MS[i] ?? 8000;
+      timer = setTimeout(() => controller.abort(), timeoutMs);
       const requestPayload = {
         model: attempt.model,
         messages,
@@ -315,6 +337,7 @@ async function callLLMSequence(
         signal: controller.signal,
       });
       clearTimeout(timer);
+      timer = null;
 
       const rawText = await res.text();
       if (!res.ok) {
@@ -367,6 +390,7 @@ async function callLLMSequence(
 
       return { answer: content, model: attempt.model, attempted, degraded: false };
     } catch (err) {
+      if (timer) clearTimeout(timer);
       const msg = err instanceof Error ? err.message : String(err);
       lastError = `${attempt.model} -> ${msg}`;
       console.error("[api/chat] LLM request failed", {
