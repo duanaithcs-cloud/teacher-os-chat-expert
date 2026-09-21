@@ -151,6 +151,10 @@ function isExamGenerationRequest(question: string): boolean {
   return /(soan|ra|tao|sinh).{0,24}(de)|de hsg|ma tran|huong dan cham|barem|chuan so/.test(text);
 }
 
+function hasExamIntent(messages: ChatMessage[]): boolean {
+  return isExamGenerationRequest(JSON.stringify(sanitizeMessagesForLog(messages)));
+}
+
 function buildCompactExamSystemPrompt(): string {
   const blueprint = hsg9Blueprint as {
     matrix: Array<{ section: string; type: string; topic?: string; points: number; topics?: Array<{ name: string; points: number }> }>;
@@ -285,10 +289,14 @@ interface ModelAttempt {
 }
 
 const DEFAULT_LOAD_SPREAD_MODELS = [
+  // Model ID phai ton tai tren APIVN; xep theo do tre do duoc thuc te.
+  "gemini-3.7-flash",
   "deepseek-v4.1-flash",
+  "gemini-3.8-flash",
+  "qwen3.8-flash",
+  "kimi-k2.6",
+  "glm-5.3-flash",
   "glm-5.3",
-  "kimi-2.7",
-  "qwen-3.8",
 ];
 
 function parseModelList(value?: string): string[] {
@@ -465,7 +473,7 @@ function buildAttemptTimeouts(messages: ChatMessage[], needsVision: boolean): nu
     /(hsg|hoc sinh gioi|học sinh giỏi|luyen|luyện|phan tich|phân tích|chuyen de|chuyên đề|de thi|đề thi|barem|tho nhuong|thổ nhưỡng)/i.test(text);
 
   if (examGenerationPrompt) {
-    return [30000, 5000, 2000, 1000, 800, 500, 500, 500];
+    return [40000, 12000, 4000, 2000, 1000, 500, 500, 500];
   }
 
   return longReasoningPrompt
@@ -493,13 +501,14 @@ async function callLLMSequence(
       const controller = new AbortController();
       const timeoutMs = TIMEOUTS_MS[i] ?? 8000;
       timer = setTimeout(() => controller.abort(), timeoutMs);
+      const examIntent = hasExamIntent(messages);
       const requestPayload = {
         model: attempt.model,
         messages,
         temperature: 0.2,
         top_p: 0.85,
         stream: false,
-        max_tokens: 4096,
+        max_tokens: examIntent ? 8000 : 4096,
       };
 
       console.error("[api/chat] LLM request payload", {
