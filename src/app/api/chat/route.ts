@@ -299,6 +299,13 @@ const DEFAULT_LOAD_SPREAD_MODELS = [
   "glm-5.3",
 ];
 
+// Model ID da do thuc te la 404 tren APIVN - loai khoi chain de khong dot timeout.
+const UNAVAILABLE_MODEL_IDS = new Set<string>([
+  "kimi-2.7",
+  "qwen-3.8",
+  "kimi-3",
+]);
+
 function parseModelList(value?: string): string[] {
   return (value ?? "")
     .split(",")
@@ -309,6 +316,7 @@ function parseModelList(value?: string): string[] {
 function pushModel(chain: ModelAttempt[], seen: Set<string>, model: string | undefined, label: string) {
   const normalized = model?.trim();
   if (!normalized || seen.has(normalized)) return;
+  if (UNAVAILABLE_MODEL_IDS.has(normalized)) return;
   seen.add(normalized);
   chain.push({ model: normalized, label });
 }
@@ -473,7 +481,7 @@ function buildAttemptTimeouts(messages: ChatMessage[], needsVision: boolean): nu
     /(hsg|hoc sinh gioi|học sinh giỏi|luyen|luyện|phan tich|phân tích|chuyen de|chuyên đề|de thi|đề thi|barem|tho nhuong|thổ nhưỡng)/i.test(text);
 
   if (examGenerationPrompt) {
-    return [40000, 12000, 4000, 2000, 1000, 500, 500, 500];
+    return [26000, 16000, 8000, 4000, 2000, 1500, 1000, 1000];
   }
 
   return longReasoningPrompt
@@ -491,15 +499,24 @@ async function callLLMSequence(
   const attempted: string[] = [];
   let lastError = "";
   const TIMEOUTS_MS = buildAttemptTimeouts(messages, needsVision);
+  // Tran cung cua Vercel Hobby la 60s/function: giu tong ngan sach duoi nguong nay.
+  const totalBudgetMs = hasExamIntent(messages) ? 52000 : 55000;
+  const startedAt = Date.now();
 
   for (let i = 0; i < chain.length; i++) {
     const attempt = chain[i];
     attempted.push(attempt.model);
 
+    const remainingMs = totalBudgetMs - (Date.now() - startedAt);
+    if (remainingMs <= 1500) {
+      lastError = `${attempt.model} -> skipped: total budget exhausted`;
+      break;
+    }
+
     let timer: ReturnType<typeof setTimeout> | null = null;
     try {
       const controller = new AbortController();
-      const timeoutMs = TIMEOUTS_MS[i] ?? 8000;
+      const timeoutMs = Math.min(TIMEOUTS_MS[i] ?? 8000, remainingMs);
       timer = setTimeout(() => controller.abort(), timeoutMs);
       const examIntent = hasExamIntent(messages);
       const requestPayload = {
