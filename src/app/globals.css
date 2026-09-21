@@ -20,3 +20,7 @@ html { scroll-behavior: smooth; }
 /* Ẩn scrollbar cho thanh tab / segmented control */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Hide native textarea scrollbar artifact in the compact chat composer. */
+.chat-input-textarea::-webkit-scrollbar { display: none; }
+.chat-input-textarea { -ms-overflow-style: none; scrollbar-width: none; }

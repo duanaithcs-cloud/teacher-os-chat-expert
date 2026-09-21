@@ -62,6 +62,13 @@ export default function HomePage() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
+  useEffect(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    textarea.style.height = "46px";
+    textarea.style.height = `${Math.min(textarea.scrollHeight, 128)}px`;
+  }, [input]);
+
   const sendMessage = useCallback(
     async (question: string) => {
       const q = question.trim();
@@ -127,6 +134,10 @@ export default function HomePage() {
       e.preventDefault();
       sendMessage(input);
     }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(e.target.value);
   };
 
   const addAttachments = useCallback(async (files: FileList | null) => {
@@ -414,11 +425,11 @@ export default function HomePage() {
               <textarea
                 ref={textareaRef}
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
-                placeholder="Hỏi bất kỳ điều gì hoặc ghim ảnh bài làm..."
+                placeholder="Hỏi bất cứ điều gì..."
                 rows={1}
-                className="flex-1 resize-none rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none px-4 py-3 text-sm text-slate-800 placeholder-slate-400 max-h-32 overflow-y-auto"
+                className="chat-input-textarea flex-1 resize-none rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none pl-4 pr-3 py-3 text-sm leading-5 text-slate-800 placeholder-slate-400 max-h-32 overflow-y-auto no-scrollbar shadow-none"
                 style={{ minHeight: "46px" }}
               />
               <button
